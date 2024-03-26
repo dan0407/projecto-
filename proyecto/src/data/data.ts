@@ -1,53 +1,116 @@
 interface DataShape {
+	id: number;
 	name: string;
 	image: string;
 	profileImage: string;
 }
 
-export const usuarios: DataShape[] = [
+export const workers: DataShape[] = [
 	{
-		name: 'juanito94',
-		profileImage: 'https://img.freepik.com/vector-premium/silueta-vector-perfil-hombre-17_554682-2811.jpg',
-		image: 'https://media.gq.com.mx/photos/625db17471f363f634bce022/master/pass/ejercicio-1388957838.jpg',
+		id: 1,
+		name: 'Maria Lopez',
+		image: 'https://www.pexels.com/es-es/foto/mujer-en-camisa-con-cuello-774909/',
+		profileImage:
+			'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x',
 	},
 	{
-		name: 'maria_garcia',
-		profileImage: 'https://img.freepik.com/vector-premium/silueta-vector-perfil-hombre-17_554682-2811.jpg',
-		image: 'https://media.gq.com.mx/photos/625db17471f363f634bce022/master/pass/ejercicio-1388957838.jpg',
+		id: 2,
+		name: 'Emily Johnson',
+		image: 'https://www.pexels.com/es-es/foto/mujer-sonriendo-a-la-camara-1181686/',
+		profileImage:
+			'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x',
 	},
 	{
-		name: 'rockstar87',
-		profileImage: 'https://img.freepik.com/vector-premium/silueta-vector-perfil-hombre-17_554682-2811.jpg',
-		image: 'https://media.gq.com.mx/photos/625db17471f363f634bce022/master/pass/ejercicio-1388957838.jpg',
+		id: 3,
+		name: 'John Smith',
+		image: 'https://www.pexels.com/es-es/foto/hombre-de-chaqueta-roja-1681010/',
+		profileImage:
+			'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x',
 	},
 	{
-		name: 'sara_smith',
-		profileImage: 'https://img.freepik.com/vector-premium/silueta-vector-perfil-hombre-17_554682-2811.jpg',
-		image: 'https://media.gq.com.mx/photos/625db17471f363f634bce022/master/pass/ejercicio-1388957838.jpg',
+		id: 4,
+		name: 'Michael Brown',
+		image: 'https://www.pexels.com/es-es/foto/hombre-brazos-cruzados-1516680/',
+		profileImage:
+			'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x',
 	},
 	{
-		name: 'coding_guru',
-		profileImage: 'https://img.freepik.com/vector-premium/silueta-vector-perfil-hombre-17_554682-2811.jpg',
-		image: 'https://media.gq.com.mx/photos/625db17471f363f634bce022/master/pass/ejercicio-1388957838.jpg',
+		id: 5,
+		name: 'Sophia Martinez',
+		image: 'https://www.pexels.com/es-es/foto/mujer-llevando-negro-correa-espagueti-top-415829/',
+		profileImage:
+			'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x',
 	},
 	{
-		name: 'dance_queen',
-		profileImage: 'https://img.freepik.com/vector-premium/silueta-vector-perfil-hombre-17_554682-2811.jpg',
-		image: 'https://media.gq.com.mx/photos/625db17471f363f634bce022/master/pass/ejercicio-1388957838.jpg',
+		id: 6,
+		name: 'Isabella Garcia',
+		image: 'https://www.pexels.com/es-es/foto/mujer-cerca-de-casa-2804282/',
+		profileImage:
+			'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x',
+	},
+
+	{
+		id: 7,
+		name: 'William Taylor',
+		image: 'https://images.pexels.com/photos/2589653/pexels-photo-2589653.jpeg?auto=compress&cs=tinysrgb&w=600',
+		profileImage:
+			'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x',
 	},
 	{
-		name: 'nature_lover',
-		profileImage: 'https://img.freepik.com/vector-premium/silueta-vector-perfil-hombre-17_554682-2811.jpg',
-		image: 'https://media.gq.com.mx/photos/625db17471f363f634bce022/master/pass/ejercicio-1388957838.jpg',
+		id: 8,
+		name: 'Ethan Wilson',
+		image: 'https://www.pexels.com/es-es/foto/camisa-de-vestir-azul-para-hombre-1043471/',
+		profileImage:
+			'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x',
 	},
 	{
-		name: 'football_fanatic',
-		profileImage: 'https://img.freepik.com/vector-premium/silueta-vector-perfil-hombre-17_554682-2811.jpg',
-		image: 'https://media.gq.com.mx/photos/625db17471f363f634bce022/master/pass/ejercicio-1388957838.jpg',
+		id: 9,
+		name: 'Olivia Anderson',
+		image: 'https://www.pexels.com/es-es/foto/riendo-a-mujer-formal-en-elegante-chaqueta-5905902/',
+		profileImage:
+			'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x',
 	},
 	{
-		name: 'bookworm88',
-		profileImage: 'https://img.freepik.com/vector-premium/silueta-vector-perfil-hombre-17_554682-2811.jpg',
-		image: 'https://media.gq.com.mx/photos/625db17471f363f634bce022/master/pass/ejercicio-1388957838.jpg',
+		id: 10,
+		name: 'Emma Brown',
+		image: 'https://www.pexels.com/es-es/foto/moda-mujer-modelo-camisa-19130891/',
+		profileImage:
+			'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x',
+	},
+	{
+		id: 11,
+		name: 'James Martinez',
+		image:
+			'https://www.pexels.com/es-es/foto/fotografia-de-hombre-con-camisa-blanca-con-reloj-analogico-negro-redondo-697509/',
+		profileImage:
+			'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x',
+	},
+	{
+		id: 12,
+		name: 'Alexander Rodriguez',
+		image: 'https://www.pexels.com/es-es/foto/hombre-vestido-con-camiseta-azul-con-cuello-circular-2379005/',
+		profileImage:
+			'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x',
+	},
+	{
+		id: 13,
+		name: 'Ava Wilson',
+		image: 'https://www.pexels.com/es-es/foto/mujer-retrato-morena-confianza-14541208/',
+		profileImage:
+			'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x',
+	},
+	{
+		id: 14,
+		name: 'Mia Perez',
+		image: 'https://www.pexels.com/es-es/foto/joven-retrato-adolescente-sonreir-5878568/',
+		profileImage:
+			'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x',
+	},
+	{
+		id: 15,
+		name: 'Daniel Thompson',
+		image: 'https://www.pexels.com/es-es/foto/hombre-sentado-junto-a-la-pared-purpura-2232981/',
+		profileImage:
+			'https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2018/08/fotos-perfil-whatsapp_16.jpg?tf=3840x',
 	},
 ];

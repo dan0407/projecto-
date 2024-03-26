@@ -2,12 +2,14 @@ export enum Attribute {
 	'name' = 'name',
 	'image' = 'image',
 	'profileImage' = 'profileImage',
+	'uid' = 'uid',
 }
 
 class Component extends HTMLElement {
 	name?: string;
 	image?: string;
 	profileImage?: string;
+	uid?: number;
 
 	constructor() {
 		super(); // always call super() first in the ctor.
@@ -19,11 +21,16 @@ class Component extends HTMLElement {
 			name: null,
 			image: null,
 			profileImage: null,
+			uid: null,
 		};
 		return Object.keys(attrs);
 	}
 	attributeChangedCallback(propName: Attribute, oldValue: string | undefined, newValue: string | undefined) {
 		switch (propName) {
+			case Attribute.uid:
+				this.uid = newValue ? Number(newValue) : undefined;
+				break;
+
 			default:
 				this[propName] = newValue;
 				break;
@@ -40,6 +47,7 @@ class Component extends HTMLElement {
       <h1>${this.name}</h1>
       <img src=${this.image}/>
       <img src=${this.profileImage}/>
+			<p>${this.uid} </p>
       </section>
       `;
 		}
