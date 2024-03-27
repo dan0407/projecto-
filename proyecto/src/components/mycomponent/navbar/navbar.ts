@@ -1,54 +1,110 @@
 import CardStyle from './navbar.css';
+import Suggestions, { Attribute } from '../sidebar/Suggestions';
+import { workers } from '../../../data/data';
 
 class Bar extends HTMLElement {
+	Component: Suggestions[] = [];
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
 	}
 
 	connectedCallback() {
-		this.mount();
-	}
-
-	mount() {
 		this.render();
-
-		const btn = this.shadowRoot?.querySelector('#btn-barrita');
-
-		btn?.addEventListener('click', () => {
-			console.log('se presiona el botón 1');
-			this.dispatchEvent(new CustomEvent('btnBarritaClicked'));
-		});
 	}
 
 	render() {
-		let images = ['pesa.png', 'icons8-chicle--100 1.png', 'icons8-usuario-60.png', 'Ellipse 15.png'];
+		const images = ['pesa.png', 'icons8-chicle--100 1.png', 'icons8-usuario-60.png', 'Ellipse 15.png'];
+
+		// Crear elementos
+		const section = document.createElement('section');
+		const nav = document.createElement('nav');
+		const divBrand = document.createElement('div');
+		const ul = document.createElement('ul');
+		const liHome = document.createElement('li');
+		const liUsers = document.createElement('li');
+		const liAccount = document.createElement('li');
+		const aHome = document.createElement('a');
+		const btnUsers = document.createElement('a');
+		const aAccount = document.createElement('a');
+		const imgLogo = document.createElement('img');
+		const imgHome = document.createElement('img');
+		const imgUsers = document.createElement('img');
+		const imgAccount = document.createElement('img');
+
+		// Establecer atributos y contenido
+		section.innerHTML = `
+		<style>
+		${CardStyle}
+		</style>
+		`;
+
+		const filterdworkers = workers.filter((item) => item.id % 2 === 0);
+		filterdworkers.forEach((user) => {
+			const mycomponentcard = this.ownerDocument.createElement('my-si') as Suggestions;
+			mycomponentcard.setAttribute(Attribute.name, user.name);
+			this.Component.push(mycomponentcard);
+		});
+
+		imgLogo.src = `../../../../imagenes/${images[0]}`;
+		imgLogo.alt = 'Logo';
+		imgLogo.id = 'logo';
+
+		imgHome.src = `../../../../imagenes/${images[1]}`;
+		imgHome.id = 'navbar-icons';
+		aHome.href = '#';
+		aHome.textContent = 'HOME';
+		aHome.appendChild(imgHome);
+		liHome.appendChild(aHome);
+
+		imgUsers.src = `../../../../imagenes/${images[2]}`;
+		imgUsers.id = 'navbar-icons';
+		btnUsers.id = 'usersbtn';
+		btnUsers.textContent = 'USERS';
+		btnUsers.addEventListener('click', () => {
+			suggestions.classList.toggle('hidden');
+		});
+
+		btnUsers.appendChild(imgUsers);
+		liUsers.appendChild(btnUsers);
+
+		imgAccount.src = `../../../../imagenes/${images[3]}`;
+		imgAccount.id = 'navbar-icons';
+		aAccount.href = '#';
+		aAccount.textContent = 'ACCOUNT';
+		aAccount.appendChild(imgAccount);
+		liAccount.appendChild(aAccount);
+
+		// Estructurar elementos
+		ul.classList.add('navbar-nav');
+		liHome.classList.add('nav-item');
+		liUsers.classList.add('nav-item');
+		liAccount.classList.add('nav-item');
+
+		divBrand.classList.add('navbar-brand');
+		divBrand.appendChild(imgLogo);
+
+		ul.appendChild(liHome);
+		ul.appendChild(liUsers);
+		ul.appendChild(liAccount);
+
+		nav.classList.add('navbar');
+		nav.appendChild(divBrand);
+		nav.appendChild(ul);
+
+		const suggestions = this.ownerDocument.createElement('my-si') as Suggestions;
+
+		suggestions.className = 'hidden';
+
+		section.appendChild(nav);
+		section.appendChild(suggestions);
 
 		if (this.shadowRoot) {
-			this.shadowRoot.innerHTML = `
-			<style>
-			${CardStyle}
-			</style>
-                    <section>
-                      <nav class="navbar">
-                        <div class="navbar-brand">
-                          <img src="../../../../imagenes/${images[0]}" alt="Logo" id="logo" />
-                        </div>
-
-                        <ul class="navbar-nav">
-                          <li class="nav-item">
-                            <a href="#"> <img src="../../../../imagenes/${images[1]}" id="navbar-icons" /> HOME </a>
-                          </li>
-                          <li class="nav-item">
-                            <a href="#" id="btn-barrita"> <img src="../../../../imagenes/${images[2]}" id="navbar-icons" /> USERS </a>
-                          </li>
-                          <li class="nav-item">
-                            <a href="#"> <img src="../../../../imagenes/${images[3]}" id="navbar-icons" /> ACCOUNT </a>
-                          </li>
-                        </ul>
-                      </nav>
-                    </section>
-                `;
+			this.shadowRoot.innerHTML = '';
+			this.shadowRoot.appendChild(section);
+			this.Component.forEach((Component) => {
+				this.shadowRoot?.appendChild(Component);
+			});
 		}
 	}
 }

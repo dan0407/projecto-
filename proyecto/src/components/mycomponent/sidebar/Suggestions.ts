@@ -50,7 +50,7 @@ class Suggestions extends HTMLElement {
 									<style>
 									${styles}
 									</style>
-                    <section>
+                    <section  class="section">
 
 															<a href="#"><img src="../../../../imagenes/Ellipse 15.png" id="navbar-icons" />${this.name}</a>
 
