@@ -40,21 +40,20 @@ class Suggestions extends HTMLElement {
 	}
 
 	render() {
-		const cssProfile = this.ownerDocument.createElement('style');
-		cssProfile.innerHTML = styles;
-		this.shadowRoot?.appendChild(cssProfile);
 		let images = ['pesa.png', 'icons8-chicle--100 1.png', 'icons8-usuario-60.png', 'Ellipse 15.png'];
 
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
 									<style>
 									${styles}
+
 									</style>
-                    <section  class="section">
-
-															<a href="#"><img src="../../../../imagenes/Ellipse 15.png" id="navbar-icons" />${this.name}</a>
-
+                    <div class="sidebar">
+										<h1 class="h1">Suggestions</h1>
+									<section  >
+										<a href="#"><img src="../../../../imagenes/Ellipse 15.png" id="navbar-icons" />${this.name}</a>
                     </section>
+										</div>
                 `;
 		}
 	}

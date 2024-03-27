@@ -4,6 +4,7 @@ import { workers } from '../../../data/data';
 
 class Bar extends HTMLElement {
 	Component: Suggestions[] = [];
+
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -24,9 +25,9 @@ class Bar extends HTMLElement {
 		const liHome = document.createElement('li');
 		const liUsers = document.createElement('li');
 		const liAccount = document.createElement('li');
-		const aHome = document.createElement('a');
-		const btnUsers = document.createElement('a');
-		const aAccount = document.createElement('a');
+		const btnhome = document.createElement('a');
+		const btnUsers = document.createElement('a'); //'button'
+		const btnaccount = document.createElement('a');
 		const imgLogo = document.createElement('img');
 		const imgHome = document.createElement('img');
 		const imgUsers = document.createElement('img');
@@ -40,10 +41,14 @@ class Bar extends HTMLElement {
 		`;
 
 		const filterdworkers = workers.filter((item) => item.id % 2 === 0);
-		filterdworkers.forEach((user) => {
+
+		const shownWorkers = filterdworkers.slice(0, 5);
+
+		shownWorkers.forEach((user) => {
 			const mycomponentcard = this.ownerDocument.createElement('my-si') as Suggestions;
 			mycomponentcard.setAttribute(Attribute.name, user.name);
 			this.Component.push(mycomponentcard);
+			console.log(this.Component);
 		});
 
 		imgLogo.src = `../../../../imagenes/${images[0]}`;
@@ -52,10 +57,10 @@ class Bar extends HTMLElement {
 
 		imgHome.src = `../../../../imagenes/${images[1]}`;
 		imgHome.id = 'navbar-icons';
-		aHome.href = '#';
-		aHome.textContent = 'HOME';
-		aHome.appendChild(imgHome);
-		liHome.appendChild(aHome);
+		btnhome.href = '#';
+		btnhome.textContent = 'HOME';
+		btnhome.appendChild(imgHome);
+		liHome.appendChild(btnhome);
 
 		imgUsers.src = `../../../../imagenes/${images[2]}`;
 		imgUsers.id = 'navbar-icons';
@@ -70,10 +75,10 @@ class Bar extends HTMLElement {
 
 		imgAccount.src = `../../../../imagenes/${images[3]}`;
 		imgAccount.id = 'navbar-icons';
-		aAccount.href = '#';
-		aAccount.textContent = 'ACCOUNT';
-		aAccount.appendChild(imgAccount);
-		liAccount.appendChild(aAccount);
+		btnaccount.href = '#';
+		btnaccount.textContent = 'ACCOUNT';
+		btnaccount.appendChild(imgAccount);
+		liAccount.appendChild(btnaccount);
 
 		// Estructurar elementos
 		ul.classList.add('navbar-nav');
