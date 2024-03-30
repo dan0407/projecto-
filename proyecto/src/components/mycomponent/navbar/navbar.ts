@@ -8,6 +8,17 @@ class Bar extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+
+		const filterdworkers = workers.filter((item) => item.id);
+
+		const shownWorkers = filterdworkers.slice(0, 10);
+
+		shownWorkers.forEach((user) => {
+			const mycomponentcard = this.ownerDocument.createElement('my-si') as Suggestions;
+			mycomponentcard.setAttribute(Attribute.name, user.name);
+			this.Component.push(mycomponentcard);
+			console.log(this.Component);
+		});
 	}
 
 	connectedCallback() {
@@ -19,6 +30,8 @@ class Bar extends HTMLElement {
 
 		// Crear elementos
 		const section = document.createElement('section');
+		section.className = 'section';
+		const titleSuggestions = document.createElement('h2');
 		const nav = document.createElement('nav');
 		const divBrand = document.createElement('div');
 		const ul = document.createElement('ul');
@@ -40,17 +53,6 @@ class Bar extends HTMLElement {
 		</style>
 		`;
 
-		const filterdworkers = workers.filter((item) => item.id % 2 === 0);
-
-		const shownWorkers = filterdworkers.slice(0, 5);
-
-		shownWorkers.forEach((user) => {
-			const mycomponentcard = this.ownerDocument.createElement('my-si') as Suggestions;
-			mycomponentcard.setAttribute(Attribute.name, user.name);
-			this.Component.push(mycomponentcard);
-			console.log(this.Component);
-		});
-
 		imgLogo.src = `../../../../imagenes/${images[0]}`;
 		imgLogo.alt = 'Logo';
 		imgLogo.id = 'logo';
@@ -61,13 +63,18 @@ class Bar extends HTMLElement {
 		btnhome.textContent = 'HOME';
 		btnhome.appendChild(imgHome);
 		liHome.appendChild(btnhome);
+		btnhome.addEventListener('click', () => {
+			window.location.reload();
+		});
 
 		imgUsers.src = `../../../../imagenes/${images[2]}`;
 		imgUsers.id = 'navbar-icons';
 		btnUsers.id = 'usersbtn';
 		btnUsers.textContent = 'USERS';
 		btnUsers.addEventListener('click', () => {
-			suggestions.classList.toggle('hidden');
+			if (suggestionsSection) {
+				suggestionsSection.classList.toggle('show');
+			}
 		});
 
 		btnUsers.appendChild(imgUsers);
@@ -97,19 +104,22 @@ class Bar extends HTMLElement {
 		nav.appendChild(divBrand);
 		nav.appendChild(ul);
 
-		const suggestions = this.ownerDocument.createElement('my-si') as Suggestions;
+		const suggestionsSection = this.ownerDocument.createElement('section');
+		suggestionsSection.className = 'hidden';
 
-		suggestions.className = 'hidden';
+		titleSuggestions.textContent = 'Suggestions';
+		suggestionsSection.appendChild(titleSuggestions);
+
+		this.Component.forEach((component) => {
+			suggestionsSection.appendChild(component);
+		});
 
 		section.appendChild(nav);
-		section.appendChild(suggestions);
+		section.appendChild(suggestionsSection);
 
 		if (this.shadowRoot) {
-			this.shadowRoot.innerHTML = '';
+			this.shadowRoot.innerHTML += '';
 			this.shadowRoot.appendChild(section);
-			this.Component.forEach((Component) => {
-				this.shadowRoot?.appendChild(Component);
-			});
 		}
 	}
 }
