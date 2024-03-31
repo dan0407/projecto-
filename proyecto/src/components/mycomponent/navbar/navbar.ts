@@ -1,4 +1,4 @@
-import CardStyle from './navbar.css';
+import styles from './navbar.css';
 import Suggestions, { Attribute } from '../sidebar/Suggestions';
 import { workers } from '../../../data/data';
 
@@ -48,9 +48,7 @@ class Bar extends HTMLElement {
 
 		// Establecer atributos y contenido
 		section.innerHTML = `
-		<style>
-		${CardStyle}
-		</style>
+
 		`;
 
 		imgLogo.src = `../../../../imagenes/${images[0]}`;
@@ -121,7 +119,11 @@ class Bar extends HTMLElement {
 			this.shadowRoot.innerHTML += '';
 			this.shadowRoot.appendChild(section);
 		}
+		const cssProfile = this.ownerDocument.createElement('style');
+		cssProfile.innerHTML = styles;
+		this.shadowRoot?.appendChild(cssProfile);
 	}
 }
+
 customElements.define('my-bar', Bar);
 export default Bar;

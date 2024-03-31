@@ -2,16 +2,21 @@ import { dcard } from '../../indexpadre';
 import styles from './carta.css';
 import { datacard } from '../../../data/datacard';
 
+import like from '../../../../imagenes/like.png';
+import dislike from '../../../../imagenes/dislike.png';
+import save from '../../../../imagenes/save.png';
+import saveoscuro from '../../../../imagenes/saveoscuro.png';
+
 export enum AttributeCard {
 	'name' = 'name',
 	'image' = 'image',
-	'profileImage' = 'profileImage',
+	'profileimage' = 'profileimage',
 }
 
 class card extends HTMLElement {
 	name?: string;
 	image?: string;
-	profileImage?: string;
+	profileimage?: string;
 
 	constructor() {
 		super(); // always call super() first in the ctor.
@@ -22,7 +27,7 @@ class card extends HTMLElement {
 		const attrs: Record<AttributeCard, null> = {
 			name: null,
 			image: null,
-			profileImage: null,
+			profileimage: null,
 		};
 		return Object.keys(attrs);
 	}
@@ -41,25 +46,31 @@ class card extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `<section class="carta">
+			<div class="lo">
 			<h1 class="h1">${this.name}</h1>
-
+			<img class="img-i" src=${this.profileimage}/>
 	      <img class="img" src=${this.image}/>
+				</div>
 				</section>
 	      `;
-			const cssProfile = this.ownerDocument.createElement('style');
-			cssProfile.innerHTML = styles;
-			this.shadowRoot?.appendChild(cssProfile);
+			const iconContainer = document.createElement('div');
+			iconContainer.className = 'icon-container';
+
+			const likeIcon = document.createElement('img');
+			likeIcon.src = like;
+			likeIcon.className = 'like-icon';
+
+			const saveIcon = document.createElement('img');
+			saveIcon.src = save;
+			saveIcon.className = 'save-icon';
+
+			iconContainer.appendChild(likeIcon);
+			iconContainer.appendChild(saveIcon);
+			this.shadowRoot?.appendChild(iconContainer);
 		}
-
-		const miDiv = document.createElement('miDiv');
-
-		miDiv.addEventListener('click', function () {
-			if (miDiv.classList.contains('like')) {
-				miDiv.classList.remove('like');
-			} else {
-				miDiv.classList.add('like');
-			}
-		});
+		const cssProfile = this.ownerDocument.createElement('style');
+		cssProfile.innerHTML = styles;
+		this.shadowRoot?.appendChild(cssProfile);
 	}
 }
 

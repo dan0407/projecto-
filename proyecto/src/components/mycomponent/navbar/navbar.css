@@ -1,13 +1,13 @@
 .navbar {
-	background-color: #c7c7c7;
 	width: 100%;
+	background-color: #c7c7c7;
 	height: 3rem;
 	padding: 10px 20px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-image: url('../../../../imagenes/Group\ 3.png');
 	position: fixed;
+	background-image: url('../../../../imagenes/Group\ 3.png');
 }
 
 .navbar-brand img {
@@ -73,4 +73,9 @@
 	width: 250px;
 	color: #ffffff;
 	position: fixed;
+}
+
+h2 {
+	display: flex;
+	margin-left: 26%;
 }
