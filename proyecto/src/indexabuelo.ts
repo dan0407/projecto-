@@ -2,8 +2,9 @@ import './components/indexpadre';
 import Suggestions, { Attribute } from './components/mycomponent/sidebar/Suggestions';
 import Bar from './components/mycomponent/navbar/navbar';
 import { workers } from './data/data';
-import Component from './components/mycomponent/carta';
-import Card, { AttributeCard } from './components/mycomponent/carta';
+import Card, { AttributeCard } from './components/mycomponent/carta/carta';
+import { datacard } from './data/datacard';
+import styles from './indexabuelo.css';
 
 class AppContainer extends HTMLElement {
 	cards: Card[] = [];
@@ -19,13 +20,14 @@ class AppContainer extends HTMLElement {
 	render() {
 		const btnUsers = document.createElement('a');
 		const navBar = this.ownerDocument.createElement('my-bar') as Bar;
+		const card = this.ownerDocument.createElement('my-card') as Card;
 		this.shadowRoot?.appendChild(navBar);
 
-		workers.forEach((cards) => {
+		datacard.forEach((cards) => {
 			const card = this.ownerDocument.createElement('my-card') as Card;
 			card.setAttribute(Attribute.name, cards.name);
+
 			card.setAttribute(AttributeCard.image, cards.image);
-			card.setAttribute(AttributeCard.profileImage, cards.profileImage);
 			this.cards.push(card);
 		});
 
@@ -34,6 +36,9 @@ class AppContainer extends HTMLElement {
 				this.shadowRoot?.appendChild(mycard);
 			});
 		}
+		const cssProfile = this.ownerDocument.createElement('style');
+		cssProfile.innerHTML = styles;
+		this.shadowRoot?.appendChild(cssProfile);
 	}
 }
 

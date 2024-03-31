@@ -11,7 +11,7 @@ class Bar extends HTMLElement {
 
 		const filterdworkers = workers.filter((item) => item.id);
 
-		const shownWorkers = filterdworkers.slice(0, 10);
+		const shownWorkers = filterdworkers.slice(0, 8);
 
 		shownWorkers.forEach((user) => {
 			const mycomponentcard = this.ownerDocument.createElement('my-si') as Suggestions;

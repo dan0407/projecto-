@@ -1,0 +1,22 @@
+.carta {
+	/* margin-top: 5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center; */
+	box-shadow: inset 0px 0px 0px 1.7px #000;
+	overflow: hidden;
+	width: 35rem;
+	margin-top: 7rem;
+	margin-left: 25rem;
+	border-color: black;
+}
+
+.img {
+	width: 32rem;
+	height: auto;
+	margin-left: 1.5rem;
+}
+.h1 {
+	margin-top: 0;
+	padding: 20px;
+}
