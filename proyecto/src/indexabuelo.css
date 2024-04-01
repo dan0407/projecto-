@@ -1,14 +1,15 @@
-:host {
-	/* background-image: url('../imagenes/image\ 3.jpg'); */
-	background-color: rgb(149 149 149);
-	display: block;
-	position: sticky;
-	background-size: cover;
+
+.container {
+    background-image: url('https://pbs.twimg.com/media/GKGRGWUWcAAccp7?format=jpg&name=900x900');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.5); /* Opacidad del 50% (valor de 0.5) */
 }
+
 @media (max-width: 431px) {
 	:host {
-		/* background-image: url('../imagenes/image\ 3.jpg'); */
-		background-color: rgb(149 149 149);
+		
 		display: block;
 		position: sticky;
 		background-size: cover;
