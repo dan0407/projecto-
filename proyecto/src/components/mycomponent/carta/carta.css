@@ -5,6 +5,7 @@
 	margin-top: 7rem;
 	margin-left: 25rem;
 	border-color: black;
+	height: 32rem;
 }
 
 .img {
@@ -28,6 +29,15 @@
 }
 .likeicon {
 	display: flex;
-	width: 3rem;
+	width: 10rem;
 	background-image: url('../../../../imagenes/like.png');
+}
+.licon-container {
+	margin-left: 27rem;
+	margin-top: 2rem;
+}
+
+.likeicon1 {
+	margin-left: 27rem;
+	margin-top: 2rem;
 }
