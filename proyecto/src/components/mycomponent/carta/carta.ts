@@ -46,13 +46,13 @@ class card extends HTMLElement {
 	}
 	render() {
 		if (this.shadowRoot) {
-			this.shadowRoot.innerHTML = `<section class="carta">
-			<div class="lo">
+			this.shadowRoot.innerHTML = `
+
 			<h1 class="h1">${this.name}</h1>
 			<img class="img-i" src=${this.profileimage}/>
 	      <img class="img" src=${this.image}/>
-				</div>
-				</section>`;
+
+				`;
 
 			const section = document.createElement('section');
 

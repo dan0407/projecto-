@@ -11,21 +11,21 @@
 .img {
 	width: 32rem;
 	height: auto;
-	margin-left: 1.5rem;
+	margin-left: 26.5rem;
 	border-radius: 3rem;
 }
 .h1 {
-	margin-top: 18px;
-	padding-left: 75px;
-	margin-bottom: -40px;
+	margin-top: 8rem;
+	padding-left: 34rem;
+	margin-bottom: -41px;
 }
 .img-i {
-	margin: 2%;
-	height: 2rem;
+	margin: 0%;
+	height: 3rem;
 	border-radius: 24%;
 	display: flex;
 	margin-bottom: 27px;
-	margin-left: 24px;
+	margin-left: 28rem;
 }
 .likeicon {
 	display: flex;
@@ -47,4 +47,40 @@
 }
 .likeicon2 {
 	margin-left: 1rem;
+}
+/* iphone 14 pro max */
+@media (max-width: 431px) {
+	.img {
+		width: 23rem;
+		height: auto;
+		margin-left: 5.5%;
+		border-radius: 2rem;
+	}
+	.likeicon1 {
+		margin-left: 1rem;
+		margin-top: 2rem;
+		height: 39px;
+	}
+	.likeicon2 {
+		margin-left: 19px;
+		height: 39px;
+	}
+	.saveicon {
+		margin-left: 53%;
+		height: 39px;
+	}
+	.img-i {
+		margin: 0%;
+		height: 35px;
+		border-radius: 24%;
+		display: flex;
+		margin-bottom: 32px;
+		margin-left: 7%;
+	}
+	.h1 {
+		margin-top: 86px;
+		padding-left: 6rem;
+		margin-bottom: -36px;
+		font-size: 24px;
+	}
 }

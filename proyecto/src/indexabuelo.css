@@ -1,6 +1,16 @@
 :host {
-	background-image: url('../imagenes/image\ 3.jpg');
+	/* background-image: url('../imagenes/image\ 3.jpg'); */
+	background-color: rgb(149 149 149);
 	display: block;
 	position: sticky;
 	background-size: cover;
+}
+@media (max-width: 431px) {
+	:host {
+		/* background-image: url('../imagenes/image\ 3.jpg'); */
+		background-color: rgb(149 149 149);
+		display: block;
+		position: sticky;
+		background-size: cover;
+	}
 }

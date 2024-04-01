@@ -46,7 +46,6 @@ class Suggestions extends HTMLElement {
 			this.shadowRoot.innerHTML = `
 									<style>
 									${styles}
-
 									</style>
 									<section class='suggestion-item'>
 										<a href="#"><img src="../../../../imagenes/Ellipse 15.png" id="navbar-icons" />${this.name}</a>
