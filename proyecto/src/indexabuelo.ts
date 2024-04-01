@@ -6,9 +6,6 @@ import Card, { AttributeCard } from './components/mycomponent/carta/carta';
 import { datacard } from './data/datacard';
 import styles from './indexabuelo.css';
 
-'<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>'
-		'<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>'
-
 class AppContainer extends HTMLElement {
 	cards: Card[] = [];
 	constructor() {

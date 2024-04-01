@@ -46,27 +46,31 @@ class card extends HTMLElement {
 	}
 	render() {
 		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = `<section class="carta">
+			<div class="lo">
+			<h1 class="h1">${this.name}</h1>
+			<img class="img-i" src=${this.profileimage}/>
+	      <img class="img" src=${this.image}/>
+				</div>
+				</section>`;
+
 			const section = document.createElement('section');
-			section.className = 'carta';
-
-			const div = document.createElement('div');
-			div.className = 'lo';
-
-			const h1 = document.createElement('h1');
-			h1.className = 'h1';
-			h1.textContent = this.name || ''; // Usa textContent para establecer el texto
-
-			const profileImg = document.createElement('img');
-			profileImg.className = 'img-i';
-			profileImg.src = this.profileimage || ''; // Usa src para establecer la fuente de la imagen
-
-			const img = document.createElement('img');
-			img.className = 'img';
-			img.src = this.image || ''; // Usa src para establecer la fuente de la imagen
 
 			const likeIcon = document.createElement('img');
 			likeIcon.src = like;
 			likeIcon.className = 'likeicon1';
+
+			// Agregar event listener al botón
+			likeIcon.addEventListener('click', function () {
+				// Verificar la imagen actual
+				if (likeIcon.src === like) {
+					// Cambiar a la nueva imagen
+					likeIcon.src = dislike;
+				} else {
+					// Cambiar a la imagen original
+					likeIcon.src = like;
+				}
+			});
 
 			const comentIcon = document.createElement('img');
 			comentIcon.src = coment;
@@ -76,14 +80,22 @@ class card extends HTMLElement {
 			saveIcon.src = save;
 			saveIcon.className = 'saveicon';
 
-			div.appendChild(likeIcon);
-			div.appendChild(comentIcon);
-			div.appendChild(saveIcon);
+			// Agregar event listener al botón
+			saveIcon.addEventListener('click', function () {
+				// Verificar la imagen actual
+				if (saveIcon.src === save) {
+					// Cambiar a la nueva imagen
+					saveIcon.src = saveoscuro;
+				} else {
+					// Cambiar a la imagen original
+					saveIcon.src = save;
+				}
+			});
 
-			div.appendChild(h1);
-			div.appendChild(profileImg);
-			div.appendChild(img);
-			section.appendChild(div);
+			section.appendChild(likeIcon);
+			section.appendChild(comentIcon);
+			section.appendChild(saveIcon);
+
 			this.shadowRoot.appendChild(section);
 		}
 

@@ -1,0 +1,6 @@
+:host {
+	background-image: url('../imagenes/image\ 3.jpg');
+	display: block;
+	position: sticky;
+	background-size: cover;
+}
