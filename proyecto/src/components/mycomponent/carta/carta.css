@@ -1,13 +1,10 @@
-.carta {
-	box-shadow: inset 0px 0px 0px 1.7px #000;
-	overflow: hidden;
-	width: 35rem;
-	margin-top: 7rem;
-	margin-left: 25rem;
-	border-color: black;
-	height: 32rem;
+.section {
+	border-bottom: solid;
+	width: 55%;
+	margin-left: 18rem;
+	margin-top: 3rem;
+	margin-bottom: -3rem;
 }
-
 .img {
 	width: 32rem;
 	height: auto;
@@ -22,32 +19,35 @@
 .img-i {
 	margin: 0%;
 	height: 3rem;
-	border-radius: 24%;
+	border-radius: 50%;
 	display: flex;
 	margin-bottom: 27px;
 	margin-left: 28rem;
 }
-.likeicon {
-	display: flex;
-	width: 10rem;
-	background-image: url('../../../../imagenes/like.png');
-}
+
 .licon-container {
 	margin-left: 27rem;
 	margin-top: 2rem;
 }
 
 .likeicon1 {
-	margin-left: 27rem;
-	margin-top: 2rem;
+	margin-left: 10rem;
+	margin-top: -1rem;
+	margin-bottom: 3rem;
 }
 
 .saveicon {
-	margin-left: 20rem;
+	margin-left: 19rem;
+	margin-top: -3rem;
+	margin-bottom: 6%;
 }
+
 .likeicon2 {
-	margin-left: 1rem;
+	margin-left: 2rem;
+	margin-top: -3rem;
+	margin-bottom: 6%;
 }
+
 /* iphone 14 pro max */
 @media (max-width: 431px) {
 	.img {

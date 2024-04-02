@@ -55,6 +55,7 @@ class card extends HTMLElement {
 				`;
 
 			const section = document.createElement('section');
+			section.className = 'section';
 
 			const likeIcon = document.createElement('img');
 			likeIcon.src = like;
