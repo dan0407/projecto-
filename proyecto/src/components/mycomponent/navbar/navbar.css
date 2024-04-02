@@ -81,14 +81,14 @@ h2 {
 @media (max-width: 431px) {
 	.navbar {
 		width: 87%;
-		background-color: #c7c7c7;
 		height: 2rem;
 		padding: 10px 20px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		position: fixed;
-		background-image: url(http://localhost:3000/dist/1c93578….png);
+		background-image: url('https://pbs.twimg.com/media/GKIEiRTX0AAzbq2?format=jpg&name=large');
+		background-size: cover;
 	}
 	.navbar-brand img {
 		height: 17px;
@@ -116,7 +116,7 @@ h2 {
 	}
 	.show {
 		display: flex;
-		background-color: rgb(101, 101, 101);
+		background-color: rgb(139 136 136);
 		flex-direction: column;
 		position: absolute;
 		top: 94px;
@@ -124,7 +124,7 @@ h2 {
 		border-radius: 13px;
 		height: 51vh;
 		width: 234px;
-		color: #ffffff;
+		color: #000000;
 		position: fixed;
 	}
 	h2 {
