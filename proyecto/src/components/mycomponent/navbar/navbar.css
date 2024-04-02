@@ -1,13 +1,11 @@
 .navbar {
 	width: 96.3%;
-	background-image: url('https://envato-shoebox-0.imgix.net/7f2a/4b70-72c3-4cd0-bc0e-64771a4d2fff/DSC09847.jpg?auto=compress%2Cformat&mark=https%3A%2F%2Felements-assets.envato.com%2Fstatic%2Fwatermark2.png&w=700&fit=max&markalign=center%2Cmiddle&markalpha=18&s=31b2d4fd3a83e9bf6ffca90cb5338347');
-	height: 3rem;
+	background-image: url('https://pbs.twimg.com/media/GKHt7rtXQAAyNuw?format=jpg&name=medium');
 	padding: 10px 20px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	position: fixed;
-	
 }
 
 .navbar-brand img {
@@ -49,7 +47,7 @@
 
 .usersbtn {
 	display: inline-block;
-	background-color: #c7c7c7;
+	background-color: #ffffff;
 }
 
 .section {
@@ -63,7 +61,7 @@
 }
 .show {
 	display: flex;
-	background-color: rgb(101, 101, 101);
+	background-color: rgb(139 136 136);
 	flex-direction: column;
 	position: absolute;
 	top: 94px;
@@ -71,7 +69,7 @@
 	border-radius: 13px;
 	height: 65vh;
 	width: 250px;
-	color: #ffffff;
+	color: #000000;
 	position: fixed;
 }
 
