@@ -4,6 +4,7 @@ import Bar from './components/mycomponent/navbar/navbar';
 import { workers } from './data/data';
 import Card, { AttributeCard } from './components/mycomponent/carta/carta';
 import { datacard } from './data/datacard';
+import { sideC } from './components/indexpadre';
 import styles from './indexabuelo.css';
 
 class AppContainer extends HTMLElement {
@@ -58,10 +59,13 @@ class AppContainer extends HTMLElement {
 render() {
     const divContainer = this.ownerDocument.createElement('div');
     divContainer.classList.add('container');
-
+    
     const navBar = this.createNavigationBar();
     const cardContainer = this.ownerDocument.createElement('div');
-
+    
+    const sideBarC = this.ownerDocument.createElement('my-sidec')
+    this.shadowRoot?.appendChild(sideBarC)
+    
     // Crear y añadir las tarjetas
     this.createCards();
     this.cards.forEach((card) => {
@@ -79,6 +83,7 @@ render() {
     const cssProfile = this.ownerDocument.createElement('style');
     cssProfile.innerHTML = styles;
     this.shadowRoot?.appendChild(cssProfile);
+
 }
 
 createNavigationBar(): HTMLElement {
@@ -97,17 +102,6 @@ createCards(): void {
         this.cards.push(card);
     });
     
-    const suggestionsSection = this.ownerDocument.createElement('section');
-    suggestionsSection.className = 'hidden';
-    section.appendChild(suggestionsSection);
-    
-    const titleSuggestions = document.createElement('h2');
-    titleSuggestions.textContent = 'Suggestions';
-    suggestionsSection.appendChild(titleSuggestions);
-    
-    this.Component.forEach((component) => {
-        suggestionsSection.appendChild(component);
-    });
 }
 
 }

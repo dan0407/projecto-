@@ -1,7 +1,6 @@
 import styles from './navbar.css';
 import Suggestions, { Attribute } from '../sidebar/Suggestions';
 import { workers } from '../../../data/data';
-import button from './botones'
 
 class Bar extends HTMLElement {
 	Component: Suggestions[] = [];
@@ -90,11 +89,11 @@ class Bar extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.appendChild(section);
 		}
-		
+
 		const nav = document.createElement('nav');
 		nav.classList.add('navbar');
 		section.appendChild(nav);
-		
+
 		const ul = document.createElement('ul');
 		ul.classList.add('navbar-nav');
 		nav.appendChild(ul);
@@ -109,19 +108,32 @@ class Bar extends HTMLElement {
 		imgLogo.id = 'logo';
 		divBrand.appendChild(imgLogo);
 
-	
-			const myBUTTONhome = this.ownerDocument.createElement('my-button') as button;
-			myBUTTONhome.setAttribute('name', 'HOME');
-			myBUTTONhome.setAttribute('image',`../../../../imagenes/icons8-chicle--100 1.png` );
-			
+		const myBUTTONhome = this.ownerDocument.createElement('my-button')
+		myBUTTONhome.setAttribute('name', 'HOME');
+		myBUTTONhome.setAttribute('image', `../../../../imagenes/icons8-chicle--100 1.png`);
+		nav.appendChild(myBUTTONhome)
 
+		const myBUTTONuser = this.ownerDocument.createElement('my-button')
+		myBUTTONuser.setAttribute('name', 'USERS');
+		myBUTTONuser.setAttribute('image', `../../../../imagenes/icons8-usuario-60.png`);
+		nav.appendChild(myBUTTONuser)
 
+		const myBUTTONaccount = this.ownerDocument.createElement('my-button')
+		myBUTTONaccount.setAttribute('name', 'ACCOUNT');
+		myBUTTONaccount.setAttribute('image', `../../../../imagenes/Ellipse 15.png`);
+		nav.appendChild(myBUTTONaccount)
+
+		const myBUTTONpost = this.ownerDocument.createElement('my-button')
+		myBUTTONpost.setAttribute('name', 'POST');
+		myBUTTONpost.setAttribute('image', `../../../../imagenes/icons8-add-100 1.png`);
+		nav.appendChild(myBUTTONpost)
 
 		
-
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;
 		this.shadowRoot?.appendChild(cssProfile);
+
+
 	}
 }
 

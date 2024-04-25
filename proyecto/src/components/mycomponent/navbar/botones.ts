@@ -1,10 +1,11 @@
+
 export enum AttributeCard {
 	'name' = 'name',
 	'image' = 'image',
-	
+
 }
 
-class button extends HTMLElement {
+export class button extends HTMLElement {
 	name?: string;
 	image?: string;
 
@@ -12,6 +13,7 @@ class button extends HTMLElement {
 	constructor() {
 		super(); // always call super() first in the ctor.
 		this.attachShadow({ mode: 'open' });
+		console.log("Contructor")
 	}
 
 	static get observedAttributes() {
@@ -34,35 +36,43 @@ class button extends HTMLElement {
 		this.render();
 	}
 	render() {
-        const images = ['pesa.png', 'icons8-chicle--100 1.png', 'icons8-usuario-60.png', 'Ellipse 15.png'];
+		console.log("Render boon Home")
+		if (this.shadowRoot) {
+			this.shadowRoot.innerHTML = ""
 
-
-        const CONTAINER = document.createElement('div');
-        const img= document.createElement('img');
-        img.src = `../../../../imagenes/${images[1]}`;
-		img.id = 'navbar-icons';
-        const btnhome = document.createElement('a');
-		btnhome.href = '#';
-		btnhome.textContent = 'HOME';
-		btnhome.appendChild(img);
-		CONTAINER.appendChild(btnhome);
-		btnhome.addEventListener('click', () => {
-			window.location.reload();
-		});
-        CONTAINER.classList.add('nav-item');
-if( this.name === "HOME"){  
-    
-	CONTAINER.addEventListener('click', () => {
-		if (suggestionsSection) {
-			suggestionsSection.classList.toggle('show');
 		}
-	});
 
+		const CONTAINER = document.createElement('div');
+		CONTAINER.classList.add('nav-item');
+		this.shadowRoot?.appendChild(CONTAINER)
+
+		
+		const btnhome = document.createElement('p');
+		if (this.name) {
+			btnhome.textContent = this.name
+			
+		}
+		CONTAINER.appendChild(btnhome);
+		
+		const img = document.createElement('img');
+		img.src = `../../../../imagenes/${this.image}`;
+		img.id = 'navbar-icons';
+		CONTAINER.appendChild(img);
+
+		if (this.name === "HOME") {
+			CONTAINER.addEventListener('click', () => {
+				window.location.reload();
+			});
+		}
+		if (this.name === "user") {
+			CONTAINER.addEventListener('click', () => {
+			
+				suggestionsSection.classList.toggle('show');
+
+		});
+	
+
+	}
 }
-        
-
-
-    }
 }
 customElements.define('my-button', button);
-export default button;
