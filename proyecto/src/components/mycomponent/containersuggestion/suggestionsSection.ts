@@ -1,6 +1,7 @@
 
 import Suggestions, { Attribute } from '../sidebar/Suggestions';
 import { workers } from '../../../data/data';
+import styles from './suggestionsSection.css'
 
 
 export class sideC extends HTMLElement {
@@ -28,6 +29,10 @@ export class sideC extends HTMLElement {
 	}
 
 	render() {
+		const cssProfile = this.ownerDocument.createElement('style');
+		cssProfile.innerHTML = styles;
+		this.shadowRoot?.appendChild(cssProfile);
+
 		const suggestionsSection = this.ownerDocument.createElement('section');
 		suggestionsSection.className = 'hidden';
 		this.shadowRoot?.appendChild(suggestionsSection);

@@ -35,7 +35,6 @@ export class button extends HTMLElement {
 		this.render();
 	}
 	render() {
-		console.log('Render boon Home');
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = '';
 		}
@@ -60,9 +59,20 @@ export class button extends HTMLElement {
 				window.location.reload();
 			});
 		}
-		if (this.name === 'user') {
+		if (this.name === 'USERS') {
 			CONTAINER.addEventListener('click', () => {
-				suggestionsSection.classList.toggle('show');
+				const suggestionContainer = this.ownerDocument.querySelector('app-container')?.shadowRoot?.querySelector('app-dashboard')?.shadowRoot?.querySelector('my-sidec')?.shadowRoot?.querySelector('section')
+
+				console.log("Sugggestion")
+
+				if (suggestionContainer?.className === 'hidden') {
+					console.log("Hidden")
+					suggestionContainer.classList.remove('hidden')
+					suggestionContainer.classList.add('suggestionsSectionShow')
+				} else if (suggestionContainer?.className === 'suggestionsSectionShow') {
+					suggestionContainer.classList.remove('suggestionsSectionShow')
+					suggestionContainer.classList.add('hidden')
+				}
 			});
 		}
 	}

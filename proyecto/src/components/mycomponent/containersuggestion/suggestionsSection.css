@@ -1,0 +1,11 @@
+.hidden {
+    display: none;
+}
+
+.suggestionsSectionShow {
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    flex-direction: column;
+    background-color: white;
+}
