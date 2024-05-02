@@ -107,11 +107,16 @@ class Bar extends HTMLElement {
 		imgLogo.alt = 'Logo';
 		imgLogo.id = 'logo';
 		divBrand.appendChild(imgLogo);
-
+		
 		const myBUTTONhome = this.ownerDocument.createElement('my-button')
 		myBUTTONhome.setAttribute('name', 'HOME');
 		myBUTTONhome.setAttribute('image', `../../../../imagenes/icons8-chicle--100 1.png`);
 		nav.appendChild(myBUTTONhome)
+		
+		const myBUTTONpost = this.ownerDocument.createElement('my-button')
+		myBUTTONpost.setAttribute('name', 'POST');
+		myBUTTONpost.setAttribute('image', `../../../../imagenes/icons8-add-100 1.png`);
+		nav.appendChild(myBUTTONpost)
 
 		const myBUTTONuser = this.ownerDocument.createElement('my-button')
 		myBUTTONuser.setAttribute('name', 'USERS');
@@ -123,10 +128,6 @@ class Bar extends HTMLElement {
 		myBUTTONaccount.setAttribute('image', `../../../../imagenes/Ellipse 15.png`);
 		nav.appendChild(myBUTTONaccount)
 
-		const myBUTTONpost = this.ownerDocument.createElement('my-button')
-		myBUTTONpost.setAttribute('name', 'POST');
-		myBUTTONpost.setAttribute('image', `../../../../imagenes/icons8-add-100 1.png`);
-		nav.appendChild(myBUTTONpost)
 
 		
 		const cssProfile = this.ownerDocument.createElement('style');

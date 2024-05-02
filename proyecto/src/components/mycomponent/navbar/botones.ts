@@ -1,3 +1,5 @@
+import './botones.css'
+
 export enum AttributeCard {
 	'name' = 'name',
 	'image' = 'image',

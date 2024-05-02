@@ -6,7 +6,7 @@ import Card, { AttributeCard } from '../components/mycomponent/carta/carta';
 import { datacard } from '../data/datacard';
 import styles from './indexabuelo.css';
 
-class AppContainer extends HTMLElement {
+class dashboard extends HTMLElement {
 	cards: Card[] = [];
 	constructor() {
 		super();
@@ -99,4 +99,5 @@ class AppContainer extends HTMLElement {
 	}
 }
 
-customElements.define('app-container', AppContainer);
+customElements.define('app-dashboard', dashboard);
+export default dashboard;
