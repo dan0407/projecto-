@@ -1,8 +1,6 @@
-
 import Suggestions, { Attribute } from '../sidebar/Suggestions';
 import { workers } from '../../../data/data';
-import styles from './suggestionsSection.css'
-
+import styles from './suggestionsSection.css';
 
 export class sideC extends HTMLElement {
 	Component: Suggestions[] = [];
@@ -15,16 +13,17 @@ export class sideC extends HTMLElement {
 
 		const shownWorkers = filterdworkers.slice(0, 8);
 
-		shownWorkers.forEach((user:any) => {
+		shownWorkers.forEach((user: any) => {
 			const mycomponentcard = this.ownerDocument.createElement('my-si') as Suggestions;
 			mycomponentcard.setAttribute(Attribute.name, user.name);
 			this.Component.push(mycomponentcard);
 			console.log(this.Component);
 		});
-
 	}
 
 	connectedCallback() {
+		console.log('emtraaaa');
+
 		this.render();
 	}
 
@@ -36,15 +35,15 @@ export class sideC extends HTMLElement {
 		const suggestionsSection = this.ownerDocument.createElement('section');
 		suggestionsSection.className = 'hidden';
 		this.shadowRoot?.appendChild(suggestionsSection);
-		
+
 		const titleSuggestions = document.createElement('h2');
 		titleSuggestions.textContent = 'Suggestions';
 		suggestionsSection.appendChild(titleSuggestions);
-		
+
 		this.Component.forEach((component) => {
 			suggestionsSection.appendChild(component);
 		});
 	}
-	}
+}
 
-	customElements.define('my-sidec', sideC);
+customElements.define('my-sidec', sideC);

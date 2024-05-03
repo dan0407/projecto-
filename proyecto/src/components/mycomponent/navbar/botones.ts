@@ -1,5 +1,5 @@
 import styles from './botones.css';
-
+import '../../indexpadre';
 export enum AttributeCard {
 	'name' = 'name',
 	'image' = 'image',
@@ -72,6 +72,7 @@ export class button extends HTMLElement {
 					?.shadowRoot?.querySelector('section');
 
 				console.log('Sugggestion');
+				console.log(suggestionContainer);
 
 				if (suggestionContainer?.className === 'hidden') {
 					console.log('Hidden');

@@ -48,14 +48,27 @@ class card extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = `
 
-			<h1 class="h1">${this.name}</h1>
-			<img class="img-i" src=${this.profileimage}/>
-	      <img class="img" src=${this.image}/>
+
 
 				`;
 
 			const section = document.createElement('section');
 			section.className = 'section';
+
+			// Crear el elemento h1
+			const h1 = document.createElement('h1');
+			h1.className = 'h1';
+			h1.textContent = this.name || '';
+
+			// Crear el primer elemento img
+			const img1 = document.createElement('img');
+			img1.className = 'img-i';
+			img1.src = this.profileimage || '';
+
+			// Crear el segundo elemento img
+			const img2 = document.createElement('img');
+			img2.className = 'img';
+			img2.src = this.image || '';
 
 			const likeIcon = document.createElement('img');
 			likeIcon.src = like;
@@ -92,7 +105,9 @@ class card extends HTMLElement {
 					saveIcon.src = save;
 				}
 			});
-
+			section.appendChild(h1);
+			section.appendChild(img1);
+			section.appendChild(img2);
 			section.appendChild(likeIcon);
 			section.appendChild(comentIcon);
 			section.appendChild(saveIcon);

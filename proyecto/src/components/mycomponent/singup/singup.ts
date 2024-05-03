@@ -44,12 +44,39 @@ class singup extends HTMLElement {
 			passwordInput.id = 'password';
 
 			const userLabel = document.createElement('label');
-			userLabel.setAttribute('for', 'Password');
-			userLabel.textContent = 'Password';
+			userLabel.textContent = 'User';
 
 			const userInput = document.createElement('input');
 			userInput.type = 'text';
 			userInput.id = 'user';
+
+			const ageLabel = document.createElement('label');
+			ageLabel.textContent = 'age';
+
+			const ageInput = document.createElement('input');
+			ageInput.type = 'text';
+			ageInput.id = 'age';
+
+			const BenchpressLabel = document.createElement('label');
+			BenchpressLabel.textContent = 'Bench press';
+
+			const BenchpressInput = document.createElement('input');
+			BenchpressInput.type = 'text';
+			BenchpressInput.id = 'Bench press';
+
+			const DeadLiftLabel = document.createElement('label');
+			DeadLiftLabel.textContent = 'DeadLift';
+
+			const DeadLiftInput = document.createElement('input');
+			DeadLiftInput.type = 'text';
+			DeadLiftInput.id = 'DeadLift';
+
+			const SquatLabel = document.createElement('label');
+			SquatLabel.textContent = 'Squat';
+
+			const SquatInput = document.createElement('input');
+			SquatInput.type = 'text';
+			SquatInput.id = 'Squat';
 
 			// Create the login button
 			const loginButton = document.createElement('button');
@@ -61,6 +88,16 @@ class singup extends HTMLElement {
 			image.src = '';
 
 			// Append the elements to build the structure
+			inputsDiv.appendChild(userLabel);
+			inputsDiv.appendChild(userInput);
+			inputsDiv.appendChild(ageLabel);
+			inputsDiv.appendChild(ageInput);
+			inputsDiv.appendChild(BenchpressLabel);
+			inputsDiv.appendChild(BenchpressInput);
+			inputsDiv.appendChild(DeadLiftLabel);
+			inputsDiv.appendChild(DeadLiftInput);
+			inputsDiv.appendChild(SquatLabel);
+			inputsDiv.appendChild(SquatInput);
 			inputsDiv.appendChild(emailLabel);
 			inputsDiv.appendChild(emailInput);
 			inputsDiv.appendChild(passwordLabel);
