@@ -1,4 +1,4 @@
-import './botones.css'
+import styles from './botones.css';
 
 export enum AttributeCard {
 	'name' = 'name',
@@ -39,6 +39,10 @@ export class button extends HTMLElement {
 			this.shadowRoot.innerHTML = '';
 		}
 
+		const cssProfile = this.ownerDocument.createElement('style');
+		cssProfile.innerHTML = styles;
+		this.shadowRoot?.appendChild(cssProfile);
+
 		const CONTAINER = document.createElement('div');
 		CONTAINER.classList.add('nav-item');
 		this.shadowRoot?.appendChild(CONTAINER);
@@ -61,17 +65,21 @@ export class button extends HTMLElement {
 		}
 		if (this.name === 'USERS') {
 			CONTAINER.addEventListener('click', () => {
-				const suggestionContainer = this.ownerDocument.querySelector('app-container')?.shadowRoot?.querySelector('app-dashboard')?.shadowRoot?.querySelector('my-sidec')?.shadowRoot?.querySelector('section')
+				const suggestionContainer = this.ownerDocument
+					.querySelector('app-container')
+					?.shadowRoot?.querySelector('app-dashboard')
+					?.shadowRoot?.querySelector('my-sidec')
+					?.shadowRoot?.querySelector('section');
 
-				console.log("Sugggestion")
+				console.log('Sugggestion');
 
 				if (suggestionContainer?.className === 'hidden') {
-					console.log("Hidden")
-					suggestionContainer.classList.remove('hidden')
-					suggestionContainer.classList.add('suggestionsSectionShow')
+					console.log('Hidden');
+					suggestionContainer.classList.remove('hidden');
+					suggestionContainer.classList.add('suggestionsSectionShow');
 				} else if (suggestionContainer?.className === 'suggestionsSectionShow') {
-					suggestionContainer.classList.remove('suggestionsSectionShow')
-					suggestionContainer.classList.add('hidden')
+					suggestionContainer.classList.remove('suggestionsSectionShow');
+					suggestionContainer.classList.add('hidden');
 				}
 			});
 		}

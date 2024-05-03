@@ -1,6 +1,6 @@
 import './components/mycomponent/login/imput';
-import './index.css';
-import './screens/login';
+import './indexabuelo.css';
+import './screens/indesx';
 
 class AppContainer extends HTMLElement {
 	constructor() {
@@ -13,7 +13,7 @@ class AppContainer extends HTMLElement {
 	}
 
 	render() {
-		const something = this.ownerDocument.createElement('my-imputs');
+		const something = this.ownerDocument.createElement('singup-page');
 		this.shadowRoot?.appendChild(something);
 	}
 }

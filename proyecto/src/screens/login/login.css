@@ -55,3 +55,9 @@ button:hover {
 #password {
 	background-color: 666666;
 }
+
+#logo {
+	position: absolute;
+	left: 2%;
+	top: 9%;
+}

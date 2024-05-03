@@ -1,47 +1,25 @@
-import styles from './input.css';
-export enum AttributeCard {
-	'name' = 'name',
-	'image' = 'image',
-}
+import styles from '../login/input.css';
 
-class imputs extends HTMLElement {
-	name?: string;
-	image?: string;
-
+class singup extends HTMLElement {
 	constructor() {
 		super(); // always call super() first in the ctor.
 		this.attachShadow({ mode: 'open' });
 	}
 
-	static get observedAttributes() {
-		const attrs: Record<AttributeCard, null> = {
-			name: null,
-			image: null,
-		};
-		return Object.keys(attrs);
-	}
-	attributeChangedCallback(propName: AttributeCard, oldValue: string | undefined, newValue: string | undefined) {
-		switch (propName) {
-			default:
-				this[propName] = newValue;
-				break;
-		}
-
-		this.render();
-	}
 	connectedCallback() {
 		this.render();
 	}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ` `;
 
 			// Create the general div
-			const generalDiv = document.createElement('div');
-			generalDiv.id = 'general';
+			const general = document.createElement('div');
+			general.id = 'general';
 
-			const otro = document.createElement('div');
-			otro.id = 'sing';
+			const div = document.createElement('div');
+			div.id = 'sing';
 
 			// Create the inputs div
 			const inputsDiv = document.createElement('div');
@@ -65,10 +43,18 @@ class imputs extends HTMLElement {
 			passwordInput.type = 'password';
 			passwordInput.id = 'password';
 
+			const userLabel = document.createElement('label');
+			userLabel.setAttribute('for', 'Password');
+			userLabel.textContent = 'Password';
+
+			const userInput = document.createElement('input');
+			userInput.type = 'text';
+			userInput.id = 'user';
+
 			// Create the login button
 			const loginButton = document.createElement('button');
 			loginButton.classList.add('button');
-			loginButton.textContent = 'login';
+			loginButton.textContent = 'create account';
 			loginButton.style.fontFamily = 'Poppins, sans-serif';
 
 			const image = document.createElement('img');
@@ -81,30 +67,32 @@ class imputs extends HTMLElement {
 			inputsDiv.appendChild(passwordInput);
 			inputsDiv.appendChild(loginButton);
 
-			generalDiv.appendChild(inputsDiv);
+			general.appendChild(inputsDiv);
 
 			// Add the general div to the document body
-			document.body.appendChild(generalDiv);
-			this.shadowRoot.appendChild(generalDiv);
+			document.body.appendChild(general);
+			this.shadowRoot.appendChild(general);
 
 			const create = document.createElement('p');
 			create.textContent = 'Don’t have an acount?';
-			otro.appendChild(create);
+			div.appendChild(create);
 
 			const up = document.createElement('p');
 			up.textContent = 'Sign up';
-			otro.appendChild(up);
+			div.appendChild(up);
 
 			const sing = document.createElement('p');
 			sing.textContent = 'Forget your password';
 			this.shadowRoot.appendChild(sing);
 
-			this.shadowRoot.appendChild(otro);
+			this.shadowRoot.appendChild(div);
 		}
+
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;
 		this.shadowRoot?.appendChild(cssProfile);
 	}
 }
-customElements.define('my-imputs', imputs);
-export default imputs;
+
+customElements.define('my-singup', singup);
+export default singup;
