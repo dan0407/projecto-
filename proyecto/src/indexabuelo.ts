@@ -13,7 +13,7 @@ class AppContainer extends HTMLElement {
 	}
 
 	render() {
-		const something = this.ownerDocument.createElement('singup-page');
+		const something = this.ownerDocument.createElement('post-page');
 		this.shadowRoot?.appendChild(something);
 	}
 }
