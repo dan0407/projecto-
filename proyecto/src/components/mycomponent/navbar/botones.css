@@ -22,8 +22,11 @@
 	font-weight: bold;
 	text-decoration: none;
 	transition: color 0.3s ease;
-	margin-right: 10px;
+	margin-right: 23px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 20px;
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 .nav-item a:hover {
 	color: #ff9900;

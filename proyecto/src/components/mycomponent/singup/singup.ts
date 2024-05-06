@@ -1,8 +1,8 @@
-import styles from '../login/input.css';
+import styles from '../singup/singup.css';
 
 class singup extends HTMLElement {
 	constructor() {
-		super(); // always call super() first in the ctor.
+		super();
 		this.attachShadow({ mode: 'open' });
 	}
 
@@ -17,9 +17,6 @@ class singup extends HTMLElement {
 			// Create the general div
 			const general = document.createElement('div');
 			general.id = 'general';
-
-			const div = document.createElement('div');
-			div.id = 'sing';
 
 			// Create the inputs div
 			const inputsDiv = document.createElement('div');
@@ -79,15 +76,42 @@ class singup extends HTMLElement {
 			SquatInput.id = 'Squat';
 
 			// Create the login button
-			const loginButton = document.createElement('button');
-			loginButton.classList.add('button');
-			loginButton.textContent = 'create account';
-			loginButton.style.fontFamily = 'Poppins, sans-serif';
+			const createButton = document.createElement('button');
+			createButton.classList.add('button');
+			createButton.textContent = 'create account';
 
-			const image = document.createElement('img');
-			image.src = '';
+			// Agregar evento de clic al botón de "crear cuenta"
+			createButton.addEventListener('click', () => {
+				// Código a ejecutar cuando se haga clic en el botón
+				console.log('Se hizo clic en el botón de "crear cuenta"');
+				// Aquí puedes agregar la lógica para mostrar un formulario de registro
+			});
 
-			// Append the elements to build the structure
+			// Add the general div to the document body
+			document.body.appendChild(general);
+			this.shadowRoot.appendChild(general);
+
+			const create = document.createElement('h4');
+			create.classList.add('h4');
+			create.textContent = 'Already have an ccount?';
+
+			const up = document.createElement('h5');
+			up.textContent = 'Log in';
+			up.classList.add('h5');
+
+			// Agregar event listener
+			up.addEventListener('click', () => {
+				// Código a ejecutar cuando se haga clic en el elemento h5
+				console.log('Se hizo clic en el elemento h5');
+			});
+
+			const titulo = document.createElement('text');
+			titulo.textContent = 'Create an account';
+			titulo.classList.add('text');
+
+			inputsDiv.appendChild(titulo);
+			inputsDiv.appendChild(create);
+			inputsDiv.appendChild(up);
 			inputsDiv.appendChild(userLabel);
 			inputsDiv.appendChild(userInput);
 			inputsDiv.appendChild(ageLabel);
@@ -102,27 +126,8 @@ class singup extends HTMLElement {
 			inputsDiv.appendChild(emailInput);
 			inputsDiv.appendChild(passwordLabel);
 			inputsDiv.appendChild(passwordInput);
-			inputsDiv.appendChild(loginButton);
-
+			inputsDiv.appendChild(createButton);
 			general.appendChild(inputsDiv);
-
-			// Add the general div to the document body
-			document.body.appendChild(general);
-			this.shadowRoot.appendChild(general);
-
-			const create = document.createElement('p');
-			create.textContent = 'Don’t have an acount?';
-			div.appendChild(create);
-
-			const up = document.createElement('p');
-			up.textContent = 'Sign up';
-			div.appendChild(up);
-
-			const sing = document.createElement('p');
-			sing.textContent = 'Forget your password';
-			this.shadowRoot.appendChild(sing);
-
-			this.shadowRoot.appendChild(div);
 		}
 
 		const cssProfile = this.ownerDocument.createElement('style');

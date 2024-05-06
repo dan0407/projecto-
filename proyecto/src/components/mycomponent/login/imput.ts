@@ -40,9 +40,6 @@ class imputs extends HTMLElement {
 			const generalDiv = document.createElement('div');
 			generalDiv.id = 'general';
 
-			const otro = document.createElement('div');
-			otro.id = 'sing';
-
 			// Create the inputs div
 			const inputsDiv = document.createElement('div');
 			inputsDiv.id = 'inputs';
@@ -71,8 +68,39 @@ class imputs extends HTMLElement {
 			loginButton.textContent = 'login';
 			loginButton.style.fontFamily = 'Poppins, sans-serif';
 
+			// Agregar evento de clic al botón de inicio de sesión
+			loginButton.addEventListener('click', () => {
+				// Código a ejecutar cuando se haga clic en el botón
+				console.log('Se hizo clic en el botón de inicio de sesión');
+				// Aquí puedes agregar la lógica para validar las credenciales de inicio de sesión
+				
+			});
+
 			const image = document.createElement('img');
 			image.src = '';
+
+			const create = document.createElement('h4');
+			create.classList.add('h4');
+			create.textContent = 'Don’t have an acount?';
+
+			const up = document.createElement('h5');
+			up.textContent = 'Sign up';
+			up.classList.add('h5');
+
+			// Agregar evento de clic
+			up.addEventListener('click', () => {
+				// Código a ejecutar cuando se haga clic en el elemento
+				console.log('Se hizo clic en "Sign up"');
+
+			});
+			const sing = document.createElement('h6');
+			sing.textContent = 'Forget your password';
+			sing.classList.add('h6');
+
+			const titulo = document.createElement('text');
+			titulo.textContent = 'log in';
+			titulo.classList.add('text');
+			inputsDiv.appendChild(titulo);
 
 			// Append the elements to build the structure
 			inputsDiv.appendChild(emailLabel);
@@ -80,6 +108,9 @@ class imputs extends HTMLElement {
 			inputsDiv.appendChild(passwordLabel);
 			inputsDiv.appendChild(passwordInput);
 			inputsDiv.appendChild(loginButton);
+			inputsDiv.appendChild(sing);
+			inputsDiv.appendChild(create);
+			inputsDiv.appendChild(up);
 
 			generalDiv.appendChild(inputsDiv);
 
@@ -87,19 +118,7 @@ class imputs extends HTMLElement {
 			document.body.appendChild(generalDiv);
 			this.shadowRoot.appendChild(generalDiv);
 
-			const create = document.createElement('p');
-			create.textContent = 'Don’t have an acount?';
-			otro.appendChild(create);
-
-			const up = document.createElement('p');
-			up.textContent = 'Sign up';
-			otro.appendChild(up);
-
-			const sing = document.createElement('p');
-			sing.textContent = 'Forget your password';
-			this.shadowRoot.appendChild(sing);
-
-			this.shadowRoot.appendChild(otro);
+			this.shadowRoot.appendChild(generalDiv);
 		}
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;

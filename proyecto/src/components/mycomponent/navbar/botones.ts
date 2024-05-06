@@ -84,6 +84,18 @@ export class button extends HTMLElement {
 				}
 			});
 		}
+		if (this.name === 'POST') {
+			CONTAINER.addEventListener('click', () => {
+				// Lógica para el botón de "POST"
+				console.log('Se hizo clic en el botón de "POST"');
+			});
+		}
+		if (this.name === 'ACCOUNT') {
+			CONTAINER.addEventListener('click', () => {
+				// Lógica para el botón de "ACCOUNT"
+				console.log('Se hizo clic en el botón de "ACCOUNT"');
+			});
+		}
 	}
 }
 customElements.define('my-button', button);

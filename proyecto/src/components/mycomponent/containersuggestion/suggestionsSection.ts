@@ -38,6 +38,7 @@ export class sideC extends HTMLElement {
 
 		const titleSuggestions = document.createElement('h2');
 		titleSuggestions.textContent = 'Suggestions';
+		titleSuggestions.className = 'h2';
 		suggestionsSection.appendChild(titleSuggestions);
 
 		this.Component.forEach((component) => {

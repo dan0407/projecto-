@@ -1,6 +1,15 @@
 .poppins {
 	font-family: 'Poppins', sans-serif;
 }
+.text {
+	margin-bottom: 61px;
+
+	font-size: 61px;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Poppins', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
 #general {
 	background: rgb(255 255 255 / 8%);
@@ -55,3 +64,27 @@ button:hover {
 #password {
 	background-color: 666666;
 }
+h4 {
+	color: black;
+	font-size: 21px;
+	font-family: 'Poppins', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+h5 {
+	color: #000000;
+	font-size: 21px;
+	margin-left: 16rem;
+	margin-top: -13%;
+	font-family: 'Poppins', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+h6 {
+	display: flex;
+	color: black;
+	font-size: 22px;
+	align-items: center;
+	flex-direction: column;
+	font-family: 'Poppins', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
