@@ -1,4 +1,7 @@
 import styles from './input.css';
+import { dispatch } from "../../../store/index";
+import { navigate } from "../../../store/actions";
+import { Screens } from "../../../types/trips";
 export enum AttributeCard {
 	'name' = 'name',
 	'image' = 'image',
@@ -32,6 +35,13 @@ class imputs extends HTMLElement {
 	connectedCallback() {
 		this.render();
 	}
+
+	handleLoginButton() {
+		dispatch(navigate(Screens.DASHBOARD));
+}
+	handleSignupButton() {
+		dispatch(navigate(Screens.SINGUP));
+}
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ` `;
@@ -69,12 +79,12 @@ class imputs extends HTMLElement {
 			loginButton.style.fontFamily = 'Poppins, sans-serif';
 
 			// Agregar evento de clic al botón de inicio de sesión
-			loginButton.addEventListener('click', () => {
-				// Código a ejecutar cuando se haga clic en el botón
+			loginButton.addEventListener("click", this.handleLoginButton);
+
 				console.log('Se hizo clic en el botón de inicio de sesión');
-				// Aquí puedes agregar la lógica para validar las credenciales de inicio de sesión
-				
-			});
+
+
+
 
 			const image = document.createElement('img');
 			image.src = '';
@@ -89,7 +99,7 @@ class imputs extends HTMLElement {
 
 			// Agregar evento de clic
 			up.addEventListener('click', () => {
-				// Código a ejecutar cuando se haga clic en el elemento
+				up.addEventListener("click", this.handleSignupButton);
 				console.log('Se hizo clic en "Sign up"');
 
 			});

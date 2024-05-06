@@ -1,6 +1,6 @@
-export interface Trip {
-    caption: string;
-    url: string;
-    btn_text: string;
-    text: string;
+export enum Screens {
+    LOGIN = "LOGIN",
+    DASHBOARD = "DASHBOARD",
+    SINGUP = "SINGUP",
+
 }

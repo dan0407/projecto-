@@ -1,4 +1,4 @@
-import styles from './input.css';
+import styles from './post.css';
 export enum AttributeCard {
 	'name' = 'name',
 	'image' = 'image',

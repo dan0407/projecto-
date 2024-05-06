@@ -1,5 +1,8 @@
 import styles from './botones.css';
 import '../../indexpadre';
+import { addObserver, appState, dispatch } from "../../../store/index";
+import { navigate } from "../../../store/actions";
+import { Screens } from "../../../types/trips";
 export enum AttributeCard {
 	'name' = 'name',
 	'image' = 'image',
@@ -92,7 +95,8 @@ export class button extends HTMLElement {
 		}
 		if (this.name === 'ACCOUNT') {
 			CONTAINER.addEventListener('click', () => {
-				// Lógica para el botón de "ACCOUNT"
+				dispatch(navigate(Screens.LOGIN))
+
 				console.log('Se hizo clic en el botón de "ACCOUNT"');
 			});
 		}

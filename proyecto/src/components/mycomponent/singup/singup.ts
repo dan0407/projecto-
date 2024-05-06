@@ -1,4 +1,7 @@
 import styles from '../singup/singup.css';
+import { dispatch } from "../../../store/index";
+import { navigate } from "../../../store/actions";
+import { Screens } from "../../../types/trips";
 
 class singup extends HTMLElement {
 	constructor() {
@@ -9,6 +12,13 @@ class singup extends HTMLElement {
 	connectedCallback() {
 		this.render();
 	}
+	handleCreatButton() {
+		dispatch(navigate(Screens.DASHBOARD));
+
+}
+handlelogButton() {
+	dispatch(navigate(Screens.LOGIN));
+}
 
 	render() {
 		if (this.shadowRoot) {
@@ -81,11 +91,10 @@ class singup extends HTMLElement {
 			createButton.textContent = 'create account';
 
 			// Agregar evento de clic al botón de "crear cuenta"
-			createButton.addEventListener('click', () => {
-				// Código a ejecutar cuando se haga clic en el botón
+			createButton.addEventListener("click", this.handleCreatButton, );
 				console.log('Se hizo clic en el botón de "crear cuenta"');
-				// Aquí puedes agregar la lógica para mostrar un formulario de registro
-			});
+
+
 
 			// Add the general div to the document body
 			document.body.appendChild(general);
@@ -98,12 +107,9 @@ class singup extends HTMLElement {
 			const up = document.createElement('h5');
 			up.textContent = 'Log in';
 			up.classList.add('h5');
-
-			// Agregar event listener
-			up.addEventListener('click', () => {
-				// Código a ejecutar cuando se haga clic en el elemento h5
+			up.addEventListener("click", this.handlelogButton, );
 				console.log('Se hizo clic en el elemento h5');
-			});
+			;
 
 			const titulo = document.createElement('text');
 			titulo.textContent = 'Create an account';

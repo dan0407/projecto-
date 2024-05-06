@@ -1,1 +1,8 @@
-import { AddTripAction, AuthActions, GetTripsAction, LogInAction, LogOutAction, TripsActions } from '../types/store';
+import { Screens } from "../types/trips";
+
+export const navigate = (screen: Screens) => {
+    return {
+        type: "NAVIGATE",
+        payload: screen,
+    };
+};
