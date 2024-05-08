@@ -44,6 +44,24 @@ export class loginPge extends HTMLElement {
 			Logo.alt = 'Logo';
 			Logo.id = 'logo';
 			this.shadowRoot.appendChild(Logo);
+
+			const email = this.ownerDocument.createElement("input");
+        	email.placeholder = "email";
+       		 email.type = "email";
+        	email.addEventListener(
+        	"change",
+        	(e: any) => (console.log(e))
+        	);
+        	this.shadowRoot?.appendChild(email);
+
+       		 const password = this.ownerDocument.createElement("input");
+        	password.placeholder = "*********";
+        	password.type = "password";
+        	password.addEventListener(
+        	"change",
+        	(e: any) => (console.log(e))
+        	);
+        	this.shadowRoot?.appendChild(password);
 		}
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;
