@@ -1,5 +1,7 @@
 import styles from './postcarddiv.css';
 import '../../components/indexpadre';
+
+
 export enum AttributeCard {
 	'name' = 'name',
 	'image' = 'image',
@@ -36,7 +38,9 @@ export class publica extends HTMLElement {
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ``;
-			const something = this.ownerDocument.createElement('my-postcard');
+
+
+			const something = this.ownerDocument.createElement('my-post');
 			this.shadowRoot?.appendChild(something);
 
 			const Logo = document.createElement('img');

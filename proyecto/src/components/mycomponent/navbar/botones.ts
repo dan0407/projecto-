@@ -89,7 +89,7 @@ export class button extends HTMLElement {
 		}
 		if (this.name === 'POST') {
 			CONTAINER.addEventListener('click', () => {
-				// Lógica para el botón de "POST"
+				dispatch(navigate(Screens.POST))
 				console.log('Se hizo clic en el botón de "POST"');
 			});
 		}

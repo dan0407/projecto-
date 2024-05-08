@@ -127,8 +127,6 @@ class imputs extends HTMLElement {
 			// Add the general div to the document body
 			document.body.appendChild(generalDiv);
 			this.shadowRoot.appendChild(generalDiv);
-
-			this.shadowRoot.appendChild(generalDiv);
 		}
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;
