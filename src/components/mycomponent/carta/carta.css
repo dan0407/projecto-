@@ -1,0 +1,87 @@
+/* Estilos generales */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+.section {
+    background-color: #d0cdcd;
+    width: 38%;
+    margin: 11rem auto 0;
+    padding: 2rem;
+    border-radius: 86px;
+    box-shadow: 0 0 10px 13px rgba(0, 0, 0, 0.2);
+}
+
+.h1 {
+    margin-left: -15.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: -4rem;
+}
+
+.img {
+    width: 100%;
+    height: auto;
+    border-radius: 3rem;
+    display: block;
+    margin: 0 auto;
+}
+
+.img-i {
+    height: 3rem;
+    border-radius: 50%;
+    margin: 1rem auto;
+    display: block;
+    margin-left: 3rem;
+}
+
+/* Iconos */
+.icon-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.likeicon1, .likeicon2, .saveicon {
+    width: 3rem;
+    height: 3rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 431px) {
+    .section {
+        width: 77%;
+        margin: 3rem auto;
+        padding: 1rem;
+    }
+
+    .h1 {
+        font-size: 1.5rem;
+    }
+
+    .img {
+        width: 90%;
+        border-radius: 2rem;
+    }
+
+    .img-i {
+        height: 2rem;
+        margin: 0.5rem auto;
+    }
+
+    .icon-container {
+        margin-top: 0.5rem;
+    }
+
+    .likeicon1,
+    .likeicon2,
+    .saveicon {
+        width: 1.5rem;
+        height: 1.5rem;
+        margin: 0 0.5rem;
+    }
+}
