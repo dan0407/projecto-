@@ -1,5 +1,5 @@
 import './components/mycomponent/login/imput';
-import './indexabuelo.css';
+import styles from './indexabuelo.css';
 import './screens/indesx';
 import { addObserver } from "./store/index";
 import { appState } from "./store/index";
@@ -46,6 +46,9 @@ getPosts()
         default:
             break;
 		}
+		const cssProfile = this.ownerDocument.createElement('style');
+		cssProfile.innerHTML = styles;
+		this.shadowRoot?.appendChild(cssProfile);
 	}
 }
 
