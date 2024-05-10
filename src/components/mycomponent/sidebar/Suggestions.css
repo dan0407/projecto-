@@ -42,7 +42,7 @@ a {
 }
 
 /* iphone 14 pro max */
-@media (min-width: 431px) {
+@media (max-width: 431px) {
 
 	#navbar-icons {
 		vertical-align: middle;
@@ -53,9 +53,10 @@ a {
 		height: 35px;
 		margin-right: 13px;
 	}
-	a {
+
+	.suggestion-item > a {
 		text-decoration: none;
-		margin-bottom: 7px;
+		margin-bottom: 19px;
 		font-size: 137%;
 }
 }
