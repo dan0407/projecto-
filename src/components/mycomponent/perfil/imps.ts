@@ -32,38 +32,6 @@ handlelogButton() {
 			const inputsDiv = document.createElement('div');
 			inputsDiv.id = 'inputs';
 
-			// Create the email label and input
-			const emailLabel = document.createElement('label');
-			emailLabel.setAttribute('for', 'email');
-			emailLabel.textContent = 'Email address or user name';
-
-			const emailInput = document.createElement('input');
-			emailInput.type = 'email';
-			emailInput.classList.add('email');
-
-			// Create the password label, input, and button
-			const passwordLabel = document.createElement('label');
-			passwordLabel.setAttribute('for', 'Password');
-			passwordLabel.textContent = 'Password';
-
-			const passwordInput = document.createElement('input');
-			passwordInput.type = 'password';
-			passwordInput.id = 'password';
-
-			const userLabel = document.createElement('label');
-			userLabel.textContent = 'User';
-
-			const userInput = document.createElement('input');
-			userInput.type = 'text';
-			userInput.id = 'user';
-
-			const ageLabel = document.createElement('label');
-			ageLabel.textContent = 'age';
-
-			const ageInput = document.createElement('input');
-			ageInput.type = 'text';
-			ageInput.id = 'age';
-
 			const BenchpressLabel = document.createElement('label');
 			BenchpressLabel.textContent = 'Bench press';
 
@@ -88,11 +56,11 @@ handlelogButton() {
 			// Create the login button
 			const createButton = document.createElement('button');
 			createButton.classList.add('button');
-			createButton.textContent = 'create account';
+			createButton.textContent = '';
 
 			// Agregar evento de clic al botón de "crear cuenta"
-			createButton.addEventListener("click", this.handleCreatButton, );
-				console.log('Se hizo clic en el botón de "crear cuenta"');
+			// createButton.addEventListener("click", this.handleCreatButton, );
+			// 	console.log('Se hizo clic en el botón de "crear cuenta"');
 
 
 
@@ -102,13 +70,13 @@ handlelogButton() {
 
 			const create = document.createElement('h4');
 			create.classList.add('h4');
-			create.textContent = 'Already have an ccount?';
+			create.textContent = '';
 
 			const up = document.createElement('h5');
-			up.textContent = 'Log in';
+			up.textContent = '';
 			up.classList.add('h5');
-			up.addEventListener("click", this.handlelogButton, );
-				console.log('Se hizo clic en el elemento h5');
+			// up.addEventListener("click", this.handlelogButton, );
+			// 	console.log('Se hizo clic en el elemento h5');
 			;
 
 			const titulo = document.createElement('text');
