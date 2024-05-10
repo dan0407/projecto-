@@ -1,7 +1,5 @@
 import { dcard } from '../../indexpadre';
 import styles from './carta.css';
-import { datacard } from '../../../data/datacard';
-
 import like from '../../../../imagenes/like.png';
 import dislike from '../../../../imagenes/dislike.png';
 import save from '../../../../imagenes/save.png';

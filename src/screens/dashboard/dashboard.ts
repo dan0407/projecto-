@@ -2,7 +2,6 @@ import Suggestions, { Attribute } from '../../components/mycomponent/sidebar/Sug
 import Bar from '../../components/mycomponent/navbar/navbar';
 import { workers } from '../../data/data';
 import Card, { AttributeCard } from '../../components/mycomponent/carta/carta';
-import { datacard } from '../../data/datacard';
 import styles from './dashboard.css';
 
 import '../../components/indexpadre';
@@ -62,9 +61,9 @@ export class dashboard extends HTMLElement {
 	async createCards(data: any) {
 		this.cards = []; // Inicializar el array de tarjetas
 		console.log("Firebase Cards Data")
-		
+
 		this.renderCards(data)
-		
+
 	}
 
 	renderCards(array: any) {
