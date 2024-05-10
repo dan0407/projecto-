@@ -147,13 +147,15 @@ h4 {
 	color: black;
 	font-size: 17px;
 	font-family: 'Poppins', sans-serif;
-	margin-left: 10%;
+	margin-left: 13%;
+	margin-top: -3%;
 }
 h5 {
 	color: #000000;
 	font-size: 17px;
-	margin-left: 15rem;
+	margin-left: 16rem;
 	margin-top: -10.5%;
 	font-family: 'Poppins', sans-serif;
 }
+
 }
