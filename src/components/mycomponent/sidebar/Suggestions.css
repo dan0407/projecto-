@@ -40,8 +40,10 @@ a {
 	margin-bottom: 7px;
 	font-size: 2rem;
 }
+
 /* iphone 14 pro max */
 @media (min-width: 431px) {
+
 	#navbar-icons {
 		vertical-align: middle;
 		height: 45px;
