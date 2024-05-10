@@ -1,4 +1,4 @@
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from 'firebase/app'
 import { addDoc, collection, doc, getDocs, getFirestore, setDoc } from 'firebase/firestore';
 import { Post } from '../types/data';
 
@@ -43,7 +43,7 @@ export const getPosts =async () => {
 // Query a reference to a subcollection
 const querySnapshot = await getDocs(collection(db, "posts"));
 const postData: Array<any> = []
-querySnapshot.forEach((doc) => {
+querySnapshot.forEach((doc: any) => {
   postData.push(doc.data())
 });
 return postData
