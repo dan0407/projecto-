@@ -15,29 +15,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
-const songDocuments = collection(db, 'songs');
 
-export const addSongs = async (Post: Post) => {
-	try {
-		await addDoc(songDocuments, Post);
-		console.log('Se añadió');
-	} catch (error) {
-		console.error(error);
-	}
-};
-
-export const getSongs = async () => {
-	const querySnapshot = await getDocs(songDocuments);
-	const songs: Post[] = [];
-
-	querySnapshot.docs.forEach((doc: any) => {
-		const data: Omit<Post, 'id'> = doc.data() as any;
-		const songData = doc.data() as Post;
-		songs.push(songData);
-	});
-	console.log(songs);
-	return songs;
-};
 
 export const getPosts =async () => {
 // Query a reference to a subcollection
