@@ -51,4 +51,9 @@ a {
 		height: 35px;
 		margin-right: 13px;
 	}
+	a {
+    text-decoration: none;
+    margin-bottom: 7px;
+    font-size: 149%;
+}
 }
