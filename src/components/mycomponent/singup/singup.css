@@ -101,4 +101,18 @@ h6 {
 	font-family: 'Poppins', sans-serif;
 	margin-top: -25%;
 }
+h4 {
+	color: black;
+	font-size: 17px;
+	font-family: 'Poppins', sans-serif;
+	margin-left: 4%;
+	margin-top: -3%;
+}
+h5 {
+	color: #000000;
+	font-size: 21px;
+	margin-left: 235px;
+	margin-top: -12%;
+	font-family: 'Poppins', sans-serif;
+}
 }
