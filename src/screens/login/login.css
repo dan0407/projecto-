@@ -61,3 +61,12 @@ button:hover {
 	left: 2%;
 	top: 9%;
 }
+
+@media (max-width: 431px) {
+	#logo{
+	position: absolute;
+	left: 5%;
+	top: 5%;
+	height: 28px;
+}
+}
