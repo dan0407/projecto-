@@ -58,6 +58,10 @@ handlelogButton() {
 			createButton.classList.add('button');
 			createButton.textContent = '';
 
+			const editButton = document.createElement('button');
+			editButton.classList.add('button');
+			editButton.textContent = '';
+
 			// Agregar evento de clic al botón de "crear cuenta"
 			// createButton.addEventListener("click", this.handleCreatButton, );
 			// 	console.log('Se hizo clic en el botón de "crear cuenta"');
@@ -86,21 +90,14 @@ handlelogButton() {
 			inputsDiv.appendChild(titulo);
 			inputsDiv.appendChild(create);
 			inputsDiv.appendChild(up);
-			inputsDiv.appendChild(userLabel);
-			inputsDiv.appendChild(userInput);
-			inputsDiv.appendChild(ageLabel);
-			inputsDiv.appendChild(ageInput);
 			inputsDiv.appendChild(BenchpressLabel);
 			inputsDiv.appendChild(BenchpressInput);
 			inputsDiv.appendChild(DeadLiftLabel);
 			inputsDiv.appendChild(DeadLiftInput);
 			inputsDiv.appendChild(SquatLabel);
 			inputsDiv.appendChild(SquatInput);
-			inputsDiv.appendChild(emailLabel);
-			inputsDiv.appendChild(emailInput);
-			inputsDiv.appendChild(passwordLabel);
-			inputsDiv.appendChild(passwordInput);
 			inputsDiv.appendChild(createButton);
+			inputsDiv.appendChild(editButton);
 			general.appendChild(inputsDiv);
 		}
 
