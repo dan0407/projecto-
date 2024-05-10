@@ -24,3 +24,18 @@
 	font-family: 'Poppins', sans-serif;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+@media (max-width: 431px) {
+.suggestionsSectionShow {
+    width: 23rem;
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    flex-direction: column;
+    background-color: #959595;
+    border-radius: 14px;
+    margin-left: 2rem;
+    margin-top: 7rem;
+    height: 34rem;
+}
+}
