@@ -1,4 +1,4 @@
-.hidden {
+/* .hidden {
 	display: none;
 }
 
@@ -39,4 +39,83 @@
         height: 35rem;
     }
 
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Colores */
+:root {
+  --primary-color: #e53935; /* Rojo intenso */
+  --secondary-color: #212121; /* Gris oscuro */
+  --accent-color: #ffc107; /* Amarillo */
+  --text-color: #ffffff; /* Blanco */
+  --background-color: #f5f5f5; /* Gris claro */
+}
+
+.hidden {
+  display: none;
+}
+
+.suggestionsSectionShow {
+    width: 23rem;
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    flex-direction: column;
+    background-color: var(--text-color);
+    border-radius: 14px;
+    margin-left: 70rem;
+    margin-top: 7rem;
+    height: 34rem;
+    box-shadow: inset 20px 1px 40px 20px rgba(0, 0, 0, 0.1);
+}
+
+.h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+  font-family: 'Poppins', sans-serif;
+  color: var(--primary-color);
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease;
+}
+
+.suggestion-item:hover {
+  background-color: var(--background-color);
+}
+
+.suggestion-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.suggestion-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 431px) {
+  .suggestionsSectionShow {
+    width: 17rem;
+    margin-left: 8rem;
+    margin-top: 4rem;
+    height: 35rem;
+  }
 }
