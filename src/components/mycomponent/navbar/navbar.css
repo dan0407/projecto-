@@ -75,6 +75,9 @@
   }
 
   .navbar-icons {
-    height: 24px;
-  }
+     height: 27px;
+}
+  .navbar-brand img {
+    height: 18px;
+}
 }
