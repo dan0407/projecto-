@@ -1,135 +1,98 @@
-.poppins {
-	font-family: 'Poppins', sans-serif;
-}
-.text {
-	margin-bottom: 61px;
 
-	font-size: 61px;
-	display: flex;
-	flex-direction: column;
-	font-family: 'Poppins', sans-serif;
-}
+
+
+/* Importar la fuente Poppins desde Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
+/* Estilos generales */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Estilos para el contenedor principal */
 #general {
-	background: rgb(255 255 255 / 8%);
-	border-radius: 10px;
-	padding: 20px;
-	width: 400px;
-	margin: 214px auto;
-	font-family: 'Poppins', sans-serif;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 30px;
+  width: 400px;
+  margin: 214px auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
+/* Estilos para el título */
+.text {
+  margin-bottom: 30px;
+  font-size: 36px;
+  text-align: center;
+}
+
+/* Estilos para las etiquetas */
 label {
-	display: block;
-	font-size: 23px;
-	color: #666;
-	font-weight: 500;
-	padding: 12px;
-	font-family: 'Poppins', sans-serif;
+  display: block;
+  font-size: 18px;
+  color: #666;
+  font-weight: 500;
+  padding: 10px 0;
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
+/* Estilos para los campos de entrada */
 input {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 10px;
-	width: 99%;
-	margin-bottom: 20px;
-	border-radius: 12px;
-	height: 15rem;
-	font-size: 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 16px;
 }
+
+/* Estilos para el botón */
 button {
-	background: #666666;
-	border: none;
-	border-radius: 3px;
-	color: #fff;
-	padding: 12px 20px;
-	cursor: pointer;
-	width: 105%;
-	border-radius: 32px;
-	align-content: center;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column-reverse;
-	font-size: 23px;
-	margin-top: 17px;
+  background: #666666;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  padding: 12px 20px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-	background: #000000;
+  background-color: #333;
 }
 
-#password {
-	background-color: 666666;
+/* Estilos para el texto adicional */
+h4, h5, h6 {
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 10px;
 }
-h4 {
-	color: black;
-	font-size: 21px;
-	font-family: 'Poppins', sans-serif;
-}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
 h5 {
-	color: #000000;
-	font-size: 21px;
-	margin-left: 16rem;
-	margin-top: -13%;
-	font-family: 'Poppins', sans-serif;
+  margin-left: 0;
+  margin-top: 0;
+  text-align: right;
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-h6 {
-	display: flex;
-	color: black;
-	font-size: 22px;
-	align-items: center;
-	flex-direction: column;
-	font-family: 'Poppins', sans-serif;
-}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
-
-
+/* Estilos para pantallas pequeñas */
 @media (max-width: 431px) {
+  #general {
+    width: 90%;
+    padding: 20px;
+  }
 
-	label {
-		display: block;
-		font-size: 34px;
-		color: #000;
-		font-weight: 500;
-		padding: 12px;
-		font-family: 'Poppins', sans-serif;
-		margin-top: -25%;
-}
+  label {
+    font-size: 16px;
+  }
 
-input {
-	border: 1px solid #ddd;
-	border-radius: 3px;
-	padding: 10px;
-	width: 89%;
-	margin-bottom: 20px;
-	border-radius: 12px;
-	height: 196px;
-	font-size: 0;
-}
+  input {
+    height: 40px;
+  }
 
-button {
-	background: #666666;
-	border: none;
-	border-radius: 3px;
-	color: #fff;
-	padding: 12px 20px;
-	cursor: pointer;
-	width: 94%;
-	border-radius: 32px;
-	align-content: center;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column-reverse;
-	font-size: 23px;
-	margin-top: 17px;
-}
-
+  button {
+    font-size: 16px;
+  }
 }
