@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app'
-import { addDoc, collection, doc, getDocs, getFirestore, setDoc } from 'firebase/firestore';
+import { addDoc, collection, doc, getDocs, getFirestore, setDoc, updateDoc } from 'firebase/firestore';
 import { Post } from '../types/data';
 
 const firebaseConfig = {
@@ -25,4 +25,21 @@ querySnapshot.forEach((doc: any) => {
   postData.push(doc.data())
 });
 return postData
+}
+export const registrarUsuario = async (user: string, age: number, benchpress: number, deadLift: number, squat: number,  emailaddress: string, password: string )=> {
+  const docRef = await addDoc(collection(db, "users"), {
+    user: user,
+    age: age,
+    benchpress: benchpress,
+    deadLift: deadLift,
+    squat: squat,
+    emailaddress: emailaddress,
+    password: password,
+  
+  });
+  //console.log("Document written with ID: ", docRef.id);
+  await updateDoc(docRef, {
+    firebaseID: docRef.id
+  });
+  return docRef.id
 }
