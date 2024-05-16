@@ -13,10 +13,7 @@ class singup extends HTMLElement {
 	connectedCallback() {
 		this.render();
 	}
-	handleCreatButton() {
-		dispatch(navigate(Screens.DASHBOARD));
 
-}
 handlelogButton() {
 	dispatch(navigate(Screens.LOGIN));
 }
@@ -69,21 +66,21 @@ handlelogButton() {
 			BenchpressLabel.textContent = 'Bench press';
 
 			const BenchpressInput = document.createElement('input');
-			BenchpressInput.type = 'text';
+			BenchpressInput.type = 'number';
 			BenchpressInput.id = 'Bench press';
 
 			const DeadLiftLabel = document.createElement('label');
 			DeadLiftLabel.textContent = 'DeadLift';
 
 			const DeadLiftInput = document.createElement('input');
-			DeadLiftInput.type = 'text';
+			DeadLiftInput.type = 'number';
 			DeadLiftInput.id = 'DeadLift';
 
 			const SquatLabel = document.createElement('label');
 			SquatLabel.textContent = 'Squat';
 
 			const SquatInput = document.createElement('input');
-			SquatInput.type = 'text';
+			SquatInput.type = 'number';
 			SquatInput.id = 'Squat';
 
 			// Create the login button
@@ -135,10 +132,10 @@ handlelogButton() {
 			general.appendChild(inputsDiv);
 
 			// Agregar evento de clic al botón de "crear cuenta"
-			createButton.addEventListener("click", () => {
-			inputsDiv.appendChild(passwordInput);
-				const userId = registrarUsuario(userInput.value, parseInt(ageInput.value), parseInt(BenchpressInput.value), parseInt(DeadLiftInput.value), parseInt(SquatInput.value),  emailInput.value, passwordInput.value )
+			createButton.addEventListener("click", async () => {
+				const userId = await registrarUsuario(userInput.value, parseInt(ageInput.value), parseInt(BenchpressInput.value), parseInt(DeadLiftInput.value), parseInt(SquatInput.value),  emailInput.value, passwordInput.value )
 				alert(`Usuario registrado con id: ${userId}`)
+				dispatch(navigate(Screens.DASHBOARD));
 			});
 			console.log('Se hizo clic en el botón de "crear cuenta"');
 		}
