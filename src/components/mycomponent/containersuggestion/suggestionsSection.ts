@@ -1,5 +1,5 @@
 import Suggestions, { Attribute } from '../sidebar/Suggestions';
-import { workers } from '../../../data/data';
+//import { workers } from '../../../data/data';
 import styles from './suggestionsSection.css';
 
 export class sideC extends HTMLElement {
@@ -9,16 +9,16 @@ export class sideC extends HTMLElement {
 		super();
 		this.attachShadow({ mode: 'open' });
 
-		const filterdworkers = workers.filter((item) => item.id);
+		//const filterdworkers = workers.filter((item) => item.id);
 
-		const shownWorkers = filterdworkers.slice(0, 8);
+		//const shownWorkers = filterdworkers.slice(0, 8);
 
-		shownWorkers.forEach((user: any) => {
-			const mycomponentcard = this.ownerDocument.createElement('my-si') as Suggestions;
-			mycomponentcard.setAttribute(Attribute.name, user.name);
-			this.Component.push(mycomponentcard);
-			console.log(this.Component);
-		});
+		// shownWorkers.forEach((user: any) => {
+		// 	const mycomponentcard = this.ownerDocument.createElement('my-si') as Suggestions;
+		// 	mycomponentcard.setAttribute(Attribute.name, user.name);
+		// 	this.Component.push(mycomponentcard);
+		// 	console.log(this.Component);
+		// });
 	}
 
 	connectedCallback() {

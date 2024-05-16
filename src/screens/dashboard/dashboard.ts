@@ -1,6 +1,5 @@
 import Suggestions, { Attribute } from '../../components/mycomponent/sidebar/Suggestions';
 import Bar from '../../components/mycomponent/navbar/navbar';
-import { workers } from '../../data/data';
 import Card, { AttributeCard } from '../../components/mycomponent/carta/carta';
 import styles from './dashboard.css';
 

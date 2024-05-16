@@ -1,6 +1,6 @@
 import styles from './navbar.css';
 import Suggestions, { Attribute } from '../sidebar/Suggestions';
-import { workers } from '../../../data/data';
+//import { workers } from '../../../data/data';
 import './botones';
 
 class Bar extends HTMLElement {
@@ -10,16 +10,16 @@ class Bar extends HTMLElement {
 		super();
 		this.attachShadow({ mode: 'open' });
 
-		const filterdworkers = workers.filter((item) => item.id);
+		// const filterdworkers = workers.filter((item) => item.id);
 
-		const shownWorkers = filterdworkers.slice(0, 8);
+		// const shownWorkers = filterdworkers.slice(0, 8);
 
-		shownWorkers.forEach((user) => {
-			const mycomponentcard = this.ownerDocument.createElement('my-si') as Suggestions;
-			mycomponentcard.setAttribute(Attribute.name, user.name);
-			this.Component.push(mycomponentcard);
-			console.log(this.Component);
-		});
+		// shownWorkers.forEach((user) => {
+		// 	const mycomponentcard = this.ownerDocument.createElement('my-si') as Suggestions;
+		// 	mycomponentcard.setAttribute(Attribute.name, user.name);
+		// 	this.Component.push(mycomponentcard);
+		// 	console.log(this.Component);
+		// });
 	}
 
 	connectedCallback() {
