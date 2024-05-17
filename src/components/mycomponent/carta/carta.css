@@ -58,15 +58,19 @@ body {
   margin-top: 1rem;
 }
 
-.likeicon1,
-.likeicon2,
-.saveicon {
+.likeicon1, .likeicon2 {
   width: 3rem;
   height: 3rem;
-  margin: 0 1rem;
   cursor: pointer;
   margin-top: 2rem;
-  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%); /* Filtro para cambiar el color a rojo intenso */
+  margin-left: 2rem;
+}
+.saveicon {
+  margin-left: 29rem;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  margin-top: 2rem;
 }
 
 /* Estilos para dispositivos móviles */
@@ -106,4 +110,5 @@ body {
     margin: 13px 0.5rem;
     margin-bottom: 0%;
   }
+  
 }

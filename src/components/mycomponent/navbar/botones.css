@@ -3,7 +3,7 @@
 
 /* Colores */
 :root {
-  --primary-color: #e53935; /* Rojo intenso */
+  --primary-color: #000000; /* Rojo intenso */
   --secondary-color: #212121; /* Gris oscuro */
   --accent-color: #ffc107; /* Amarillo */
   --text-color: #ffffff; /* Blanco */
@@ -56,7 +56,6 @@
   vertical-align: sub;
   height: 35px;
   margin-right: 10px;
-  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%); /* Filtro para cambiar el color a rojo intenso */
 }
 
 .nav-item a:hover,

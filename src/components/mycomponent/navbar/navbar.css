@@ -54,7 +54,7 @@
   vertical-align: sub;
   height: 35px;
   margin-right: 10px;
-  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%); /* Filtro para cambiar el color a rojo intenso */
+
 }
 
 .nav-item a:hover,
@@ -74,7 +74,7 @@
     height: 24px;
   }
 
-  .navbar-icons {
+  navbar-icons {
      height: 27px;
 }
   .navbar-brand img {

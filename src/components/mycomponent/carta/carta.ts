@@ -106,9 +106,9 @@ class card extends HTMLElement {
 			section.appendChild(h1);
 			section.appendChild(img1);
 			section.appendChild(img2);
-			section.appendChild(saveIcon);
 			section.appendChild(likeIcon);
 			section.appendChild(comentIcon);
+			section.appendChild(saveIcon);
 
 			this.shadowRoot.appendChild(section);
 		}
