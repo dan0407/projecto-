@@ -16,7 +16,15 @@ class foto extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ` `;
 
-            
+            const fotoperfil = document.createElement('section');
+            fotoperfil.className = 'section';
+
+
+        const imagenperfil = document.createElement('img')
+
+
+
+
 
 			
 		}

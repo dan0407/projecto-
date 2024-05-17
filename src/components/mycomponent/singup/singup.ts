@@ -149,4 +149,4 @@ handlelogButton() {
 }
 
 customElements.define('my-singup', singup);
-export default singup;
+export default singup;  
