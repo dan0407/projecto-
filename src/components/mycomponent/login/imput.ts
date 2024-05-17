@@ -2,6 +2,7 @@ import styles from './input.css';
 import { dispatch } from "../../../store/index";
 import { navigate } from "../../../store/actions";
 import { Screens } from "../../../types/trips";
+import { iniciarSesion } from '../../../utils/firebase';
 export enum AttributeCard {
 	'name' = 'name',
 	'image' = 'image',
@@ -78,40 +79,36 @@ class imputs extends HTMLElement {
 			loginButton.textContent = 'login';
 			loginButton.style.fontFamily = 'Poppins, sans-serif';
 
-			// Agregar evento de clic al botón de inicio de sesión
-			loginButton.addEventListener("click", this.handleLoginButton);
-
-				console.log('Se hizo clic en el botón de inicio de sesión');
-
-
-
-
+			
+			
+			
+			
 			const image = document.createElement('img');
 			image.src = '';
-
+			
 			const create = document.createElement('h4');
 			create.classList.add('h4');
 			create.textContent = 'Don’t have an acount?';
-
+			
 			const up = document.createElement('h5');
 			up.textContent = 'Sign up';
 			up.classList.add('h5');
-
+			
 			// Agregar evento de clic
 			up.addEventListener('click', () => {
 				up.addEventListener("click", this.handleSignupButton);
 				console.log('Se hizo clic en "Sign up"');
-
+				
 			});
 			const sing = document.createElement('h6');
 			sing.textContent = 'Forget your password';
 			sing.classList.add('h6');
-
+			
 			const titulo = document.createElement('text');
 			titulo.textContent = 'log in';
 			titulo.classList.add('text');
 			inputsDiv.appendChild(titulo);
-
+			
 			// Append the elements to build the structure
 			inputsDiv.appendChild(emailLabel);
 			inputsDiv.appendChild(emailInput);
@@ -121,12 +118,20 @@ class imputs extends HTMLElement {
 			inputsDiv.appendChild(sing);
 			inputsDiv.appendChild(create);
 			inputsDiv.appendChild(up);
-
+			
 			generalDiv.appendChild(inputsDiv);
-
+			
 			// Add the general div to the document body
 			document.body.appendChild(generalDiv);
 			this.shadowRoot.appendChild(generalDiv);
+
+			// Agregar evento de clic al botón de inicio de sesión
+			loginButton.addEventListener("click", async () => {
+				console.log('Se hizo clic en el botón de inicio de sesión');
+				const usuario = await iniciarSesion(emailInput.value, passwordInput.value)
+				console.log(`Inicio sesion: ${usuario}`)
+			});
+		
 		}
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;

@@ -1,7 +1,7 @@
 import { initializeApp } from 'firebase/app'
 import { addDoc, collection, doc, getDocs, getFirestore, setDoc, updateDoc } from 'firebase/firestore';
 import { Post } from '../types/data';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 
 const firebaseConfig = {
@@ -29,37 +29,67 @@ export const getPosts = async () => {
   });
   return postData
 }
-export const registrarUsuario = async (user: string, age: number, benchpress: number, deadLift: number, squat: number, emailaddress: string, password: string) => {  
+
+export const registrarUsuario = async (user: string, age: number, benchpress: number, deadLift: number, squat: number, emailaddress: string, password: string) => {
   await createUserWithEmailAndPassword(auth, emailaddress, password)
-  .then(async (userCredential) => {
-    // Signed up 
-    const userCredentials = userCredential.user.uid;
+    .then(async (userCredential) => {
+      // Signed up 
+      const userCredentials = userCredential.user.uid;
 
-    console.log(userCredentials)
+      console.log(userCredentials)
 
-    const docRef = await addDoc(collection(db, "users"), {
-      user: user,
-      age: age,
-      benchpress: benchpress,
-      deadLift: deadLift,
-      squat: squat,
-      emailaddress: emailaddress,
-      password: password,
-      authCredentials: userCredentials
+      const docRef = await addDoc(collection(db, "users"), {
+        user: user,
+        age: age,
+        benchpress: benchpress,
+        deadLift: deadLift,
+        squat: squat,
+        emailaddress: emailaddress,
+        password: password,
+        authCredentials: userCredentials
+      });
+      //console.log("Document written with ID: ", docRef.id);
+      await updateDoc(docRef, {
+        firebaseID: docRef.id
+      });
+
+      return docRef.id
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage)
+      // ..
     });
-    //console.log("Document written with ID: ", docRef.id);
-    await updateDoc(docRef, {
-      firebaseID: docRef.id
+}
+
+export const iniciarSesion = async (email: string, password: string) => {
+  let authUser: any = ""
+
+
+  await signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in 
+      authUser = userCredential.user;
+      console.log(authUser)
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
     });
-  
-    return docRef.id
+
+    console.log("Get user")
+    const getUser = await getUserByEmail(authUser.email)
+    return getUser
+}
+
+export const getUserByEmail = async (email: string | null) => {
+  const querySnapshot = await getDocs(collection(db, "users"))
+  querySnapshot.forEach((doc) => {
+    const userData = doc.data()
+    console.log(userData)
+    if (userData.email === email) {
+      return userData
+    }
   })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage)
-    // ..
-  });
-
-  
 }
