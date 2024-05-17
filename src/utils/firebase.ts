@@ -15,7 +15,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+export const auth = getAuth(app);
 
 const db = getFirestore(app);
 
@@ -45,7 +45,6 @@ export const registrarUsuario = async (user: string, age: number, benchpress: nu
         deadLift: deadLift,
         squat: squat,
         emailaddress: emailaddress,
-        password: password,
         authCredentials: userCredentials
       });
       //console.log("Document written with ID: ", docRef.id);
@@ -78,9 +77,7 @@ export const iniciarSesion = async (email: string, password: string) => {
       const errorMessage = error.message;
     });
 
-    console.log("Get user")
-    const getUser = await getUserByEmail(authUser.email)
-    return getUser
+
 }
 
 export const getUserByEmail = async (email: string | null) => {
