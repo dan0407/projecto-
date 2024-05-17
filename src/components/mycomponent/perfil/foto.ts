@@ -21,7 +21,8 @@ class foto extends HTMLElement {
 
 
         const imagenperfil = document.createElement('img')
-
+        
+        imagenperfil.className='img'
 
 
 
