@@ -16,6 +16,8 @@ class foto extends HTMLElement {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ` `;
 
+            
+
 			
 		}
 
