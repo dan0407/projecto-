@@ -1,9 +1,9 @@
-import styles from '../singup/singup.css';
+import styles from '../perfil/imps.css';
 import { dispatch } from "../../../store/index";
 import { navigate } from "../../../store/actions";
 import { Screens } from "../../../types/trips";
 
-class singup extends HTMLElement {
+class perfil extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
@@ -107,5 +107,5 @@ handlelogButton() {
 	}
 }
 
-customElements.define('my-singup', singup);
-export default singup;
+customElements.define('my-perfil', perfil);
+export default perfil;

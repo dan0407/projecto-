@@ -43,6 +43,11 @@ getPosts()
             this.shadowRoot?.appendChild(post);
             break;
 
+					case Screens.PROFILE:
+            const PROFILE = this.ownerDocument.createElement("perfil-page");
+            this.shadowRoot?.appendChild(PROFILE);
+            break;
+
         default:
             break;
 		}

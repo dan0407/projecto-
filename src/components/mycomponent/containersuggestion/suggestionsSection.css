@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
-/* Colores */
+
 :root {
   --primary-color: #e53935; /* Rojo intenso */
   --secondary-color: #212121; /* Gris oscuro */
@@ -23,7 +23,7 @@
   border-radius: 14px;
   margin-left: 68rem;
   margin-top: 7rem;
-  height: 12rem;
+  height: 16rem;
   box-shadow: inset 20px 1px 40px 20px rgba(0, 0, 0, 0.1);
 }
 .h2 {
@@ -66,12 +66,12 @@
   margin-right: 10px;
 }
 
-/* Estilos para dispositivos móviles */
-@media (max-width: 431px) {
+
+/* @media (max-width: 431px) {
   .suggestionsSectionShow {
     width: 17rem;
     margin-left: 8rem;
     margin-top: 4rem;
     height: 35rem;
   }
-}
+} */

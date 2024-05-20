@@ -123,7 +123,7 @@ createDropdownButton(text: string, imagePath: string, screen: Screens) {
 	button.className = 'dropdown-button';
 
 	const img = document.createElement('img');
-	img.src = `../../../../imagenes/${imagePath}`;
+	img.src = `../../../../imagenes/icons8-usuario-60.png`;;
 	img.className = 'dropdown-icon';
 
 	const span = document.createElement('span');

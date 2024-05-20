@@ -69,7 +69,39 @@
   flex-direction: row;
   align-items: center;
 }
+.nav-item {
+  position: relative;
+}
 
+.account-buttons {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+}
+
+.dropdown-button {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+}
+
+.dropdown-button:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
 
 
 
