@@ -66,11 +66,11 @@ body {
   margin-left: 2rem;
 }
 .saveicon {
-  margin-left: 29rem;
+  margin-left: 19rem;
   width: 3rem;
   height: 3rem;
   cursor: pointer;
-  margin-top: 2rem;
+  margin-top: 0rem;
 }
 
 /* Estilos para dispositivos móviles */
@@ -110,5 +110,5 @@ body {
     margin: 13px 0.5rem;
     margin-bottom: 0%;
   }
-  
+
 }

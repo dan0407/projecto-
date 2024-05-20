@@ -1,5 +1,8 @@
 import styles from './postcarddiv.css';
 import '../../components/indexpadre';
+import { dispatch } from "../../store/index";
+import { navigate } from "../../store/actions";
+import { Screens } from "../../types/trips";
 
 
 export enum AttributeCard {
@@ -35,6 +38,9 @@ export class publica extends HTMLElement {
 	connectedCallback() {
 		this.render();
 	}
+	handleButtonpost() {
+		dispatch(navigate(Screens.DASHBOARD));
+}
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ``;
@@ -47,7 +53,11 @@ export class publica extends HTMLElement {
 			Logo.src = `../../../../imagenes/pesa.png`;
 			Logo.alt = 'Logo';
 			Logo.id = 'logo';
-			this.shadowRoot.appendChild(Logo);
+			this.shadowRoot.appendChild(Logo);		Logo.addEventListener('click', () => {
+				Logo.addEventListener("click", this.handleButtonpost);
+				console.log('Se hizo clic en "Sign up"');
+
+			});
 		}
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;

@@ -3,5 +3,6 @@ export enum Screens {
     DASHBOARD = "DASHBOARD",
     SINGUP = "SINGUP",
     POST = "POST",
+    PROFILE = "PROFILE",
 
 }

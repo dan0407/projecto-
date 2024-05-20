@@ -19,7 +19,11 @@
 }
 
 .navbar-brand img {
-  height: 40px;
+  height: 38px;
+  align-items: center;
+  display: flex;
+  align-content: center;
+
 }
 
 .navbar-nav {

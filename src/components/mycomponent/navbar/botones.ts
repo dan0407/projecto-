@@ -95,11 +95,50 @@ export class button extends HTMLElement {
 		}
 		if (this.name === 'ACCOUNT') {
 			CONTAINER.addEventListener('click', () => {
-				dispatch(navigate(Screens.LOGIN))
-
-				console.log('Se hizo clic en el botón de "ACCOUNT"');
+					this.toggleAccountButtons(CONTAINER);
+					console.log('Se hizo clic en el botón de "ACCOUNT"');
 			});
-		}
 	}
 }
+
+toggleAccountButtons(container: HTMLElement) {
+	let accountButtons = container.querySelector('.account-buttons');
+
+	if (!accountButtons) {
+			accountButtons = document.createElement('div');
+			accountButtons.classList.add('account-buttons');
+
+			const profileButton = this.createDropdownButton('Profile', 'profile-icon.png', Screens.PROFILE);
+
+
+			accountButtons.appendChild(profileButton);
+			container.appendChild(accountButtons);
+	} else {
+			accountButtons.remove();
+	}
+}
+
+createDropdownButton(text: string, imagePath: string, screen: Screens) {
+	const button = document.createElement('div');
+	button.className = 'dropdown-button';
+
+	const img = document.createElement('img');
+	img.src = `../../../../imagenes/${imagePath}`;
+	img.className = 'dropdown-icon';
+
+	const span = document.createElement('span');
+	span.textContent = text;
+
+	button.appendChild(img);
+	button.appendChild(span);
+
+	button.addEventListener('click', () => {
+			dispatch(navigate(screen));
+			console.log(`Se hizo clic en el botón de "${text}"`);
+	});
+
+	return button;
+}
+}
+
 customElements.define('my-button', button);
