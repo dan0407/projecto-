@@ -33,7 +33,7 @@ export const getPosts = async () => {
 export const registrarUsuario = async (user: string, age: number, benchpress: number, deadLift: number, squat: number, emailaddress: string, password: string) => {
   await createUserWithEmailAndPassword(auth, emailaddress, password)
     .then(async (userCredential) => {
-      // Signed up 
+      // Signed up
       const userCredentials = userCredential.user.uid;
 
       console.log(userCredentials)
@@ -68,7 +68,7 @@ export const iniciarSesion = async (email: string, password: string) => {
 
   await signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed in 
+      // Signed in
       authUser = userCredential.user;
       console.log(authUser)
     })
@@ -90,3 +90,36 @@ export const getUserByEmail = async (email: string | null) => {
     }
   })
 }
+export const addPost = async (formData: Omit<Product, 'id'>) => {
+	try {
+		const docRef = await addDoc(collection(db, 'posts'), formData);
+		console.log('Document written with ID: ', docRef.id);
+	} catch (e) {
+		console.error('Error adding document: ', e);
+	}
+};
+
+export const getPosts = async () => {
+	const querySnapshot = await getDocs(collection(db, 'posts'));
+	const arrayProducts: Array<Product> = [];
+
+	querySnapshot.forEach((doc) => {
+		const data = doc.data() as any;
+		arrayProducts.push({ id: doc.id, ...data });
+	});
+
+	return arrayProducts;
+};
+
+export const getPostsProfile = async (idUser: string) => {
+	const q = query(collection(db, 'posts'), where('idUser', '==', idUser));
+	const querySnapshot = await getDocs(q);
+	const arrayProducts: Array<Product> = [];
+
+	querySnapshot.forEach((doc) => {
+		const data = doc.data() as any;
+		arrayProducts.push({ id: doc.id, ...data });
+	});
+
+	return arrayProducts;
+};
