@@ -1,6 +1,7 @@
 import Suggestions, { Attribute } from '../sidebar/Suggestions';
 //import { workers } from '../../../data/data';
 import styles from './suggestionsSection.css';
+import '../navbar/botones';
 
 export class sideC extends HTMLElement {
 	Component: Suggestions[] = [];
@@ -9,16 +10,6 @@ export class sideC extends HTMLElement {
 		super();
 		this.attachShadow({ mode: 'open' });
 
-		//const filterdworkers = workers.filter((item) => item.id);
-
-		//const shownWorkers = filterdworkers.slice(0, 8);
-
-		// shownWorkers.forEach((user: any) => {
-		// 	const mycomponentcard = this.ownerDocument.createElement('my-si') as Suggestions;
-		// 	mycomponentcard.setAttribute(Attribute.name, user.name);
-		// 	this.Component.push(mycomponentcard);
-		// 	console.log(this.Component);
-		// });
 	}
 
 	connectedCallback() {
@@ -37,9 +28,19 @@ export class sideC extends HTMLElement {
 		this.shadowRoot?.appendChild(suggestionsSection);
 
 		const titleSuggestions = document.createElement('h2');
-		titleSuggestions.textContent = 'Suggestions';
+		titleSuggestions.textContent = 'MENU';
 		titleSuggestions.className = 'h2';
 		suggestionsSection.appendChild(titleSuggestions);
+
+		const myBUTTONpost = this.ownerDocument.createElement('my-button');
+		myBUTTONpost.setAttribute('name', 'POST');
+		myBUTTONpost.setAttribute('image', `../../../../imagenes/icons8-add-100 1.png`);
+		suggestionsSection.appendChild(myBUTTONpost);
+
+		const myBUTTONaccount = this.ownerDocument.createElement('my-button');
+		myBUTTONaccount.setAttribute('name', 'ACCOUNT');
+		myBUTTONaccount.setAttribute('image', `../../../../imagenes/Ellipse 15.png`);
+		suggestionsSection.appendChild(myBUTTONaccount);
 
 		this.Component.forEach((component) => {
 			suggestionsSection.appendChild(component);

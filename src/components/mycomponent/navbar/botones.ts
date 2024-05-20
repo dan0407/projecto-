@@ -66,7 +66,7 @@ export class button extends HTMLElement {
 				window.location.reload();
 			});
 		}
-		if (this.name === 'USERS') {
+		if (this.name === 'MENU') {
 			CONTAINER.addEventListener('click', () => {
 				const suggestionContainer = this.ownerDocument
 					.querySelector('app-container')
