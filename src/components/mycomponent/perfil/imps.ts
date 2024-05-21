@@ -62,12 +62,7 @@ handlelogButton() {
 			editButton.classList.add('button');
 			editButton.textContent = '';
 
-			// Agregar evento de clic al botón de "crear cuenta"
-			// createButton.addEventListener("click", this.handleCreatButton, );
-			// 	console.log('Se hizo clic en el botón de "crear cuenta"');
-
-
-
+		
 			// Add the general div to the document body
 			document.body.appendChild(general);
 			this.shadowRoot.appendChild(general);
@@ -79,15 +74,10 @@ handlelogButton() {
 			const up = document.createElement('h5');
 			up.textContent = '';
 			up.classList.add('h5');
-			// up.addEventListener("click", this.handlelogButton, );
-			// 	console.log('Se hizo clic en el elemento h5');
-			;
+			
 
-			const titulo = document.createElement('text');
-			titulo.textContent = 'Create an account';
-			titulo.classList.add('text');
+	
 
-			inputsDiv.appendChild(titulo);
 			inputsDiv.appendChild(create);
 			inputsDiv.appendChild(up);
 			inputsDiv.appendChild(BenchpressLabel);

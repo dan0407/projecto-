@@ -4,6 +4,7 @@ import { Post } from '../types/data';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 
+
 const firebaseConfig = {
   apiKey: "AIzaSyCspx3Rb4sp29Vh7mY2M6rLldBTiVLkE2g",
   authDomain: "songs-e8720.firebaseapp.com",
@@ -45,7 +46,8 @@ export const registrarUsuario = async (user: string, age: number, benchpress: nu
         deadLift: deadLift,
         squat: squat,
         emailaddress: emailaddress,
-        authCredentials: userCredentials
+        authCredentials: userCredentials,
+        profile: "https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg"
       });
       //console.log("Document written with ID: ", docRef.id);
       await updateDoc(docRef, {
