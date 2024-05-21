@@ -93,6 +93,12 @@ export class button extends HTMLElement {
 				console.log('Se hizo clic en el botón de "POST"');
 			});
 		}
+		if (this.name === 'login') {
+			CONTAINER.addEventListener('click', () => {
+				dispatch(navigate(Screens.LOGIN))
+				console.log('Se hizo clic en el botón de "login"');
+			});
+		}
 		if (this.name === 'ACCOUNT') {
 			CONTAINER.addEventListener('click', () => {
 					this.toggleAccountButtons(CONTAINER);
