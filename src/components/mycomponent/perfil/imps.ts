@@ -2,6 +2,8 @@ import styles from '../perfil/imps.css';
 import { dispatch } from "../../../store/index";
 import { navigate } from "../../../store/actions";
 import { Screens } from "../../../types/trips";
+import { db } from '../../../utils/firebase';
+import { getData } from '../../../utils/firebase';
 
 class perfil extends HTMLElement {
 	constructor() {
@@ -75,9 +77,6 @@ handlelogButton() {
 			up.textContent = '';
 			up.classList.add('h5');
 			
-
-	
-
 			inputsDiv.appendChild(create);
 			inputsDiv.appendChild(up);
 			inputsDiv.appendChild(BenchpressLabel);
@@ -89,6 +88,10 @@ handlelogButton() {
 			inputsDiv.appendChild(createButton);
 			inputsDiv.appendChild(editButton);
 			general.appendChild(inputsDiv);
+
+			getData();
+			console.log(getData());
+			
 		}
 
 		const cssProfile = this.ownerDocument.createElement('style');

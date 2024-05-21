@@ -18,7 +18,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 
-const db = getFirestore(app);
+export const db = getFirestore(app);
 
 
 export const getPosts = async () => {
@@ -92,36 +92,13 @@ export const getUserByEmail = async (email: string | null) => {
     }
   })
 }
-// export const addPost = async (formData: Omit<Product, 'id'>) => {
-// 	try {
-// 		const docRef = await addDoc(collection(db, 'posts'), formData);
-// 		console.log('Document written with ID: ', docRef.id);
-// 	} catch (e) {
-// 		console.error('Error adding document: ', e);
-// 	}
-// };
-
-// export const getPosts = async () => {
-// 	const querySnapshot = await getDocs(collection(db, 'posts'));
-// 	const arrayProducts: Array<Product> = [];
-
-// 	querySnapshot.forEach((doc) => {
-// 		const data = doc.data() as any;
-// 		arrayProducts.push({ id: doc.id, ...data });
-// 	});
-
-// 	return arrayProducts;
-// };
-
-// export const getPostsProfile = async (idUser: string) => {
-// 	const q = query(collection(db, 'posts'), where('idUser', '==', idUser));
-// 	const querySnapshot = await getDocs(q);
-// 	const arrayProducts: Array<Product> = [];
-
-// 	querySnapshot.forEach((doc) => {
-// 		const data = doc.data() as any;
-// 		arrayProducts.push({ id: doc.id, ...data });
-// 	});
-
-// 	return arrayProducts;
-// };
+export const getData = async () => {
+  try {
+    const querySnapshot = await getDocs(collection(db, "users"));
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${doc.data()}`);
+    });
+  } catch (error) {
+    console.error("Error getting documents: ", error);
+  }
+};
