@@ -2,11 +2,16 @@
 
 
 :root {
-  --primary-color: #e53935; /* Rojo intenso */
-  --secondary-color: #212121; /* Gris oscuro */
-  --accent-color: #ffc107; /* Amarillo */
-  --text-color: #ffffff; /* Blanco */
-  --background-color: #f5f5f5; /* Gris claro */
+  --primary-color: #e53935;
+  /* Rojo intenso */
+  --secondary-color: #212121;
+  /* Gris oscuro */
+  --accent-color: #ffc107;
+  /* Amarillo */
+  --text-color: #ffffff;
+  /* Blanco */
+  --background-color: #f5f5f5;
+  /* Gris claro */
 }
 
 .hidden {
@@ -26,6 +31,7 @@
   height: 16rem;
   box-shadow: inset 20px 1px 40px 20px rgba(0, 0, 0, 0.1);
 }
+
 .h2 {
   display: flex;
   flex-direction: column;
@@ -67,11 +73,11 @@
 }
 
 
-/* @media (max-width: 431px) {
+@media (max-width: 431px) {
   .suggestionsSectionShow {
     width: 17rem;
     margin-left: 8rem;
     margin-top: 4rem;
     height: 35rem;
   }
-} */
+}

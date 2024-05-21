@@ -90,36 +90,36 @@ export const getUserByEmail = async (email: string | null) => {
     }
   })
 }
-export const addPost = async (formData: Omit<Product, 'id'>) => {
-	try {
-		const docRef = await addDoc(collection(db, 'posts'), formData);
-		console.log('Document written with ID: ', docRef.id);
-	} catch (e) {
-		console.error('Error adding document: ', e);
-	}
-};
+// export const addPost = async (formData: Omit<Product, 'id'>) => {
+// 	try {
+// 		const docRef = await addDoc(collection(db, 'posts'), formData);
+// 		console.log('Document written with ID: ', docRef.id);
+// 	} catch (e) {
+// 		console.error('Error adding document: ', e);
+// 	}
+// };
 
-export const getPosts = async () => {
-	const querySnapshot = await getDocs(collection(db, 'posts'));
-	const arrayProducts: Array<Product> = [];
+// export const getPosts = async () => {
+// 	const querySnapshot = await getDocs(collection(db, 'posts'));
+// 	const arrayProducts: Array<Product> = [];
 
-	querySnapshot.forEach((doc) => {
-		const data = doc.data() as any;
-		arrayProducts.push({ id: doc.id, ...data });
-	});
+// 	querySnapshot.forEach((doc) => {
+// 		const data = doc.data() as any;
+// 		arrayProducts.push({ id: doc.id, ...data });
+// 	});
 
-	return arrayProducts;
-};
+// 	return arrayProducts;
+// };
 
-export const getPostsProfile = async (idUser: string) => {
-	const q = query(collection(db, 'posts'), where('idUser', '==', idUser));
-	const querySnapshot = await getDocs(q);
-	const arrayProducts: Array<Product> = [];
+// export const getPostsProfile = async (idUser: string) => {
+// 	const q = query(collection(db, 'posts'), where('idUser', '==', idUser));
+// 	const querySnapshot = await getDocs(q);
+// 	const arrayProducts: Array<Product> = [];
 
-	querySnapshot.forEach((doc) => {
-		const data = doc.data() as any;
-		arrayProducts.push({ id: doc.id, ...data });
-	});
+// 	querySnapshot.forEach((doc) => {
+// 		const data = doc.data() as any;
+// 		arrayProducts.push({ id: doc.id, ...data });
+// 	});
 
-	return arrayProducts;
-};
+// 	return arrayProducts;
+// };
