@@ -1,16 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap');
 
 :root {
-  --primary-color: #e53935;
-  /* Rojo intenso */
-  --secondary-color: #212121;
-  /* Gris oscuro */
-  --accent-color: #ffc107;
-  /* Amarillo */
+  --primary-color: #d32f2f;
+  /* Rojo deportivo */
+  --secondary-color: #1b1b1b;
+  /* Gris muy oscuro */
+  --accent-color: #fbc02d;
+  /* Amarillo brillante */
   --text-color: #ffffff;
   /* Blanco */
-  --background-color: #f5f5f5;
+  --background-color: #e0e0e0;
   /* Gris claro */
 }
 
@@ -19,37 +18,37 @@
 }
 
 .suggestionsSectionShow {
-  width: 16rem;
+  width: 18rem;
   display: flex;
   position: fixed;
   z-index: 10;
   flex-direction: column;
   background-color: var(--text-color);
-  border-radius: 14px;
-  margin-left: 68rem;
-  margin-top: 7rem;
-  height: 16rem;
-  box-shadow: inset 20px 1px 40px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-left: 60rem;
+  margin-top: 6rem;
+  height: 18rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  align-content: center;
-  flex-wrap: wrap;
-  font-family: 'Poppins', sans-serif;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
   color: var(--primary-color);
-  font-size: 24px;
-  margin-top: 20px;
+  font-size: 26px;
+  margin-top: 16px;
+  font-weight: 700;
 }
 
 .suggestion-item {
   display: flex;
   align-items: center;
-  padding: 10px 20px;
+  padding: 12px 16px;
   transition: background-color 0.3s ease;
+  border-bottom: 1px solid var(--background-color);
 }
 
 .suggestion-item:hover {
@@ -61,23 +60,22 @@
   align-items: center;
   text-decoration: none;
   color: var(--secondary-color);
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
 }
 
 .suggestion-item img {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 14px;
 }
-
 
 @media (max-width: 431px) {
   .suggestionsSectionShow {
-    width: 17rem;
-    margin-left: 8rem;
-    margin-top: 4rem;
-    height: 35rem;
+    width: 18rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    height: 30rem;
   }
 }
