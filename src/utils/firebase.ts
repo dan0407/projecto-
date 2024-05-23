@@ -86,7 +86,7 @@ export const getUserByEmail = async (email: string | null) => {
   const querySnapshot = await getDocs(collection(db, "users"))
   querySnapshot.forEach((doc) => {
     const userData = doc.data()
-    console.log(userData)
+    
     if (userData.email === email) {
       return userData
     }
@@ -96,7 +96,10 @@ export const getData = async () => {
   try {
     const querySnapshot = await getDocs(collection(db, "users"));
     querySnapshot.forEach((doc) => {
-      console.log(`${doc.id} => ${doc.data()}`);
+      const data = doc.data();
+      console.log("Hola")
+      console.log(data);
+      
     });
   } catch (error) {
     console.error("Error getting documents: ", error);
