@@ -22,3 +22,9 @@ export const getPostsAction = async () => {
 		payload: posts,
 	};
 };
+export const connecteduser= (user: string) => {
+	return {
+		action: 'CONNECTUSER',
+		payload: user,
+	};
+};

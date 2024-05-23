@@ -38,6 +38,7 @@ export const dispatch = (action: any) => {
   const newState = reducer(action, clone);
   appState = newState;
 
+  console.log(appState)
   persistStore(newState);
   notifyObservers();
 };

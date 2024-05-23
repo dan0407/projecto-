@@ -18,10 +18,6 @@ export class dashboard extends HTMLElement {
 	}
 
 	async render() {
-		console.log("Auth user:")
-		const authUser = Object.keys(window.localStorage)
-		console.log(authUser)
-
 		const divContainer = this.ownerDocument.createElement('div');
 		divContainer.classList.add('container');
 

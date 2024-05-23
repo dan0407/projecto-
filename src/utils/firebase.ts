@@ -2,8 +2,10 @@ import { initializeApp } from 'firebase/app'
 import { addDoc, collection, doc, getDocs, getFirestore, setDoc, updateDoc } from 'firebase/firestore';
 import { Post } from '../types/data';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { appState, dispatch } from '../store';
+import { connecteduser } from '../store/actions';
 
-
+let prueba = {}
 
 const firebaseConfig = {
   apiKey: "AIzaSyCspx3Rb4sp29Vh7mY2M6rLldBTiVLkE2g",
@@ -73,6 +75,13 @@ export const iniciarSesion = async (email: string, password: string) => {
       // Signed in
       authUser = userCredential.user;
       console.log(authUser)
+      dispatch(
+        connecteduser(authUser)
+      )
+      appState.user = authUser
+      console.log(appState)
+      prueba = authUser
+      console.log(prueba)
     })
     .catch((error) => {
       const errorCode = error.code;

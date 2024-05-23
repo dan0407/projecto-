@@ -1,5 +1,5 @@
 import styles from '../perfil/imps.css';
-import { dispatch } from "../../../store/index";
+import { appState, dispatch } from "../../../store/index";
 import { navigate } from "../../../store/actions";
 import { Screens } from "../../../types/trips";
 import { db } from '../../../utils/firebase';
@@ -74,7 +74,7 @@ handlelogButton() {
 			create.textContent = '';
 
 			const up = document.createElement('h5');
-			up.textContent = '';
+			up.innerText = appState.user.email;
 			up.classList.add('h5');
 			
 			inputsDiv.appendChild(create);
