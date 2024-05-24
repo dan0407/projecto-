@@ -101,6 +101,16 @@ export const getUserByEmail = async (email: string | null) => {
     }
   })
 }
+export const getUserByuser = async (user: string | null) => {
+  const querySnapshot = await getDocs(collection(db, "users"))
+  querySnapshot.forEach((doc) => {
+    const userData = doc.data()
+    
+    if (userData.user === user) {
+      return userData
+    }
+  })
+}
 export const getData = async () => {
   try {
     const querySnapshot = await getDocs(collection(db, "users"));

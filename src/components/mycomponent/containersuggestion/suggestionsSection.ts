@@ -44,7 +44,7 @@ export class sideC extends HTMLElement {
 
 		const myBUTTONaccount = this.ownerDocument.createElement('my-button');
 		myBUTTONaccount.setAttribute('name', 'ACCOUNT');
-		myBUTTONaccount.setAttribute('image', `../../../../imagenes/Ellipse 15.png`);
+		myBUTTONaccount.setAttribute('image', `../../../../imagenes/icons8-usuario-60.png`);
 		suggestionsSection.appendChild(myBUTTONaccount);
 
 		this.Component.forEach((component) => {

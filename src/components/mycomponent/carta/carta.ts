@@ -59,6 +59,10 @@ class card extends HTMLElement {
 			const divsegundo = document.createElement('div');
 			divsegundo.className = 'divsegundo';
 
+			const divtercero = document.createElement('div');
+			divtercero.className = 'divtercero';
+			
+
 			// Crear el elemento h1
 			const h1 = document.createElement('h1');
 			h1.className = 'h1';
@@ -109,8 +113,9 @@ class card extends HTMLElement {
 					saveIcon.src = save;
 				}
 			});
-			section.appendChild(h1);
-			section.appendChild(img1);
+			section.appendChild(divtercero);
+			divtercero.appendChild(img1);
+			divtercero.appendChild(h1);
 			section.appendChild(img2);
 			div.appendChild(likeIcon);
 			div.appendChild(comentIcon);

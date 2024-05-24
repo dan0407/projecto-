@@ -102,6 +102,7 @@ export class button extends HTMLElement {
 		if (this.name === 'ACCOUNT') {
 			CONTAINER.addEventListener('click', () => {
 					this.toggleAccountButtons(CONTAINER);
+					dispatch(navigate(Screens.PROFILE))
 					console.log('Se hizo clic en el botón de "ACCOUNT"');
 			});
 	}
@@ -114,36 +115,36 @@ toggleAccountButtons(container: HTMLElement) {
 			accountButtons = document.createElement('div');
 			accountButtons.classList.add('account-buttons');
 
-			const profileButton = this.createDropdownButton('Profile', 'profile-icon.png', Screens.PROFILE);
+			// const profileButton = this.createDropdownButton('Profile', 'profile-icon.png', Screens.PROFILE);
 
 
-			accountButtons.appendChild(profileButton);
-			container.appendChild(accountButtons);
-	} else {
-			accountButtons.remove();
-	}
+	// 		accountButtons.appendChild(profileButton);
+	// 		container.appendChild(accountButtons);
+	// } else {
+	// 		accountButtons.remove();
+	// }
 }
 
-createDropdownButton(text: string, imagePath: string, screen: Screens) {
-	const button = document.createElement('div');
-	button.className = 'dropdown-button';
+// createDropdownButton(text: string, imagePath: string, screen: Screens) {
+// 	const button = document.createElement('div');
+// 	button.className = 'dropdown-button';
 
-	const img = document.createElement('img');
-	img.src = `../../../../imagenes/icons8-usuario-60.png`;;
-	img.className = 'dropdown-icon';
+// 	const img = document.createElement('img');
+// 	img.src = `../../../../imagenes/icons8-usuario-60.png`;;
+// 	img.className = 'dropdown-icon';
 
-	const span = document.createElement('span');
-	span.textContent = text;
+// 	const span = document.createElement('span');
+// 	span.textContent = text;
 
-	button.appendChild(img);
-	button.appendChild(span);
+// 	button.appendChild(img);
+// 	button.appendChild(span);
 
-	button.addEventListener('click', () => {
-			dispatch(navigate(screen));
-			console.log(`Se hizo clic en el botón de "${text}"`);
-	});
+// 	button.addEventListener('click', () => {
+// 			dispatch(navigate(screen));
+// 			console.log(`Se hizo clic en el botón de "${text}"`);
+// 	});
 
-	return button;
+// 	return button;
 }
 }
 
