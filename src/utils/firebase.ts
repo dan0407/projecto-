@@ -14,11 +14,9 @@ const firebaseConfig = {
   appId: "1:550395699183:web:fc148de80a26d2c964e01a",
   measurementId: "G-1P6PPRXY9V"
 };
-
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-
-export const db = getFirestore(app);
+const db = getFirestore(app);
 
 
 export const getPosts = async () => {
@@ -32,37 +30,34 @@ export const getPosts = async () => {
 }
 
 
-  export const createUser = (user: string, age: number, benchpress: number, deadLift: number, squat: number, emailaddress: string, password: string) => {
-    createUserWithEmailAndPassword(auth, emailaddress, password)
-		.then(async (userCredential) => {
-      //Primer paso es obtener el id
-			const user = userCredential.user;
-			console.log(user.uid);
-      
-			//Segundo paso es agregar un documento con más info bajo ese id
-			try {
-        const where = doc(db, 'users', user.uid);
-        const data = {
-          user: user.uid,
-          age: age,
-          benchpress: benchpress,
-          deadLift: deadLift,
-          squat: squat,
-          emailaddress: emailaddress,
-          authCredentials: userCredential,
-          profile: "https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg"
-        };
-        await setDoc(where, data);
-				alert('Se creó el usuario');
-			} catch (error) {
-				console.error(error);
-			}
-		})
-		.catch((error: any) => {
-			const errorCode = error.code;
-			const errorMessage = error.message;
-			console.error(errorCode, errorMessage);
-		});
+export const createUser = (username: string, age: number, benchpress: number, deadLift: number, squat: number, emailaddress: string, password: string) => {
+  createUserWithEmailAndPassword(auth, emailaddress, password)
+  .then(async (userCredential) => {
+      const firebaseUser = userCredential.user;
+      console.log(firebaseUser.uid);
+
+      try {
+          const userDocRef = doc(db, 'users', firebaseUser.uid);
+          const data = {
+              username: username,
+              age: age,
+              benchpress: benchpress,
+              deadLift: deadLift,
+              squat: squat,
+              emailaddress: emailaddress,
+              profile: "https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg"
+          };
+          await setDoc(userDocRef, data);
+          alert('Se creó el usuario');
+      } catch (error) {
+          console.error("Error writing document: ", error);
+      }
+  })
+  .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.error(errorCode, errorMessage);
+  });
 };
 
 
@@ -99,7 +94,7 @@ export const getData = async () => {
       const data = doc.data();
       console.log("Hola")
       console.log(data);
-      
+
     });
   } catch (error) {
     console.error("Error getting documents: ", error);

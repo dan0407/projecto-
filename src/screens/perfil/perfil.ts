@@ -54,19 +54,19 @@ export class perfilPge extends HTMLElement {
 		if (this.shadowRoot) {
 			console.log(appState.userdata);
 
-			// this.shadowRoot.innerHTML = ``;
-			// const something = this.ownerDocument.createElement('my-perfil');
-			// this.shadowRoot?.appendChild(something);
+			this.shadowRoot.innerHTML = ``;
+			const something = this.ownerDocument.createElement('my-perfil');
+			this.shadowRoot?.appendChild(something);
 
 			const Logo = document.createElement('img');
 			Logo.src = `../../../../imagenes/pesa.png`;
 			Logo.alt = 'Logo';
 			Logo.id = 'logo';
-			// this.shadowRoot.appendChild(Logo);		Logo.addEventListener('click', () => {
-			// 	Logo.addEventListener("click", this.handleButton);
-			// 	console.log('Se hizo clic en "Sign up"');
+			this.shadowRoot.appendChild(Logo);		Logo.addEventListener('click', () => {
+				Logo.addEventListener("click", this.handleButton);
+				console.log('Se hizo clic en "Sign up"');
 
-			// });
+			});
 
 
 

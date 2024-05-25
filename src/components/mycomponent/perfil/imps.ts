@@ -2,7 +2,6 @@ import styles from '../perfil/imps.css';
 import { appState, dispatch } from "../../../store/index";
 import { navigate } from "../../../store/actions";
 import { Screens } from "../../../types/trips";
-import { db } from '../../../utils/firebase';
 import { getData } from '../../../utils/firebase';
 
 class perfil extends HTMLElement {
@@ -12,7 +11,7 @@ class perfil extends HTMLElement {
 	}
 
 	connectedCallback() {
-		
+
 		this.render();
 	}
 
@@ -66,7 +65,7 @@ class perfil extends HTMLElement {
 			editButton.classList.add('button');
 			editButton.textContent = '';
 
-		
+
 			// Add the general div to the document body
 			document.body.appendChild(general);
 			this.shadowRoot.appendChild(general);
@@ -76,9 +75,9 @@ class perfil extends HTMLElement {
 			create.textContent = '';
 
 			const up = document.createElement('h5');
-			
+
 			up.classList.add('h5');
-			
+
 			inputsDiv.appendChild(create);
 			inputsDiv.appendChild(up);
 			inputsDiv.appendChild(BenchpressLabel);
@@ -93,7 +92,7 @@ class perfil extends HTMLElement {
 
 			getData();
 			console.log(getData());
-			
+
 		}
 
 		const cssProfile = this.ownerDocument.createElement('style');
