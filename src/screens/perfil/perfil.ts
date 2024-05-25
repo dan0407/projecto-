@@ -1,9 +1,9 @@
 import styles from './perfil.css';
 import '../../components/indexpadre';
-import { dispatch } from "../../store/index";
-import { navigate } from "../../store/actions";
-import { Screens } from "../../types/trips";
-
+import { addObserver, appState, dispatch } from "../../store/index";
+import { getUserDataAction } from '../../store/actions';
+import { navigate } from '../../store/actions';
+import { Screens } from '../../types/trips';
 
 export enum AttributeCard {
 	'name' = 'name',
@@ -17,6 +17,7 @@ export class perfilPge extends HTMLElement {
 	constructor() {
 		super(); // always call super() first in the ctor.
 		this.attachShadow({ mode: 'open' });
+		addObserver(this);
 	}
 
 	static get observedAttributes() {
@@ -35,27 +36,37 @@ export class perfilPge extends HTMLElement {
 
 		this.render();
 	}
-	connectedCallback() {
-		this.render();
+	async connectedCallback() {
+		console.log(appState.user);
+		if (appState.userdata.length === 0) {
+			const action = await getUserDataAction(appState.user);
+			dispatch(action);
+		} else {
+			this.render();
+		}
 	}
+
 	handleButton() {
 		dispatch(navigate(Screens.DASHBOARD));
-}
+	}
+
 	render() {
 		if (this.shadowRoot) {
-			this.shadowRoot.innerHTML = ``;
-			const something = this.ownerDocument.createElement('my-perfil');
-			this.shadowRoot?.appendChild(something);
+			console.log(appState.userdata);
+
+			// this.shadowRoot.innerHTML = ``;
+			// const something = this.ownerDocument.createElement('my-perfil');
+			// this.shadowRoot?.appendChild(something);
 
 			const Logo = document.createElement('img');
 			Logo.src = `../../../../imagenes/pesa.png`;
 			Logo.alt = 'Logo';
 			Logo.id = 'logo';
-			this.shadowRoot.appendChild(Logo);		Logo.addEventListener('click', () => {
-				Logo.addEventListener("click", this.handleButton);
-				console.log('Se hizo clic en "Sign up"');
+			// this.shadowRoot.appendChild(Logo);		Logo.addEventListener('click', () => {
+			// 	Logo.addEventListener("click", this.handleButton);
+			// 	console.log('Se hizo clic en "Sign up"');
 
-			});
+			// });
 
 
 

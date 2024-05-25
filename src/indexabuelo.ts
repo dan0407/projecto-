@@ -4,7 +4,6 @@ import './screens/indesx';
 import { addObserver } from "./store/index";
 import { appState } from "./store/index";
 import { Screens } from "./types/trips";
-import { getPosts } from './utils/firebase';
 
 class AppContainer extends HTMLElement {
 	constructor() {
@@ -18,16 +17,12 @@ class AppContainer extends HTMLElement {
 	}
 
 	render() {
-
-getPosts()
-
 		if(this.shadowRoot) this.shadowRoot.innerHTML = ``
 		switch (appState.screen) {
-
 			case Screens.DASHBOARD:
-					const dashboard = this.ownerDocument.createElement("app-dashboard");
-					this.shadowRoot?.appendChild(dashboard);
-					break;
+				const dashboard = this.ownerDocument.createElement("app-dashboard");
+				this.shadowRoot?.appendChild(dashboard);
+				break;
 
 					case Screens.LOGIN:
             const login = this.ownerDocument.createElement("login-page");
@@ -51,6 +46,7 @@ getPosts()
         default:
             break;
 		}
+		
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;
 		this.shadowRoot?.appendChild(cssProfile);

@@ -1,17 +1,25 @@
 import { Screens } from "../types/trips";
-import { getPosts, } from '../utils/firebase';
+import { getPosts, getUserByid, } from '../utils/firebase';
 
 export const navigate = (screen: Screens) => {
     return {
-        type: "NAVIGATE",
+        action: "NAVIGATE",
         payload: screen,
     };
 };
 
-export const setUserCredentials = (user: string) => {
+export const setUserCredentials = (id:string) => {
 	return {
 		action: 'SETUSER',
-		payload: user,
+		payload: id,
+	};
+};
+
+export const getUserDataAction = async(id: string) => {
+	const userdata = await getUserByid(id)
+	return {
+		action: 'GETUSERDATA',
+		payload: userdata,
 	};
 };
 export const getPostsAction = async () => {
@@ -22,7 +30,7 @@ export const getPostsAction = async () => {
 		payload: posts,
 	};
 };
-export const connecteduser= (user: string) => {
+export const connecteduser= (user: any) => {
 	return {
 		action: 'CONNECTUSER',
 		payload: user,

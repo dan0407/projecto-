@@ -1,11 +1,9 @@
 import { initializeApp } from 'firebase/app'
-import { addDoc, collection, doc, getDocs, getFirestore, setDoc, updateDoc } from 'firebase/firestore';
+import { addDoc, collection, doc, getDoc, getDocs, getFirestore, setDoc, updateDoc } from 'firebase/firestore';
 import { Post } from '../types/data';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { appState, dispatch } from '../store';
-import { connecteduser } from '../store/actions';
 
-let prueba = {}
 
 const firebaseConfig = {
   apiKey: "AIzaSyCspx3Rb4sp29Vh7mY2M6rLldBTiVLkE2g",
@@ -75,42 +73,23 @@ export const iniciarSesion = async (email: string, password: string) => {
       // Signed in
       authUser = userCredential.user;
       console.log(authUser)
-      dispatch(
-        connecteduser(authUser)
-      )
-      appState.user = authUser
-      console.log(appState)
-      prueba = authUser
-      console.log(prueba)
     })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      console.error(errorMessage)
     });
 
 
 }
 
-export const getUserByEmail = async (email: string | null) => {
-  const querySnapshot = await getDocs(collection(db, "users"))
-  querySnapshot.forEach((doc) => {
-    const userData = doc.data()
-    
-    if (userData.email === email) {
-      return userData
-    }
-  })
+export const getUserByid = async (id: string) => {
+  const docRef  = doc(db, "users", id)
+  const docsnap = await getDoc(docRef)
+  return docsnap.data()
 }
-export const getUserByuser = async (user: string | null) => {
-  const querySnapshot = await getDocs(collection(db, "users"))
-  querySnapshot.forEach((doc) => {
-    const userData = doc.data()
-    
-    if (userData.user === user) {
-      return userData
-    }
-  })
-}
+
+
 export const getData = async () => {
   try {
     const querySnapshot = await getDocs(collection(db, "users"));

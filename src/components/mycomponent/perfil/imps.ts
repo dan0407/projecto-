@@ -12,15 +12,17 @@ class perfil extends HTMLElement {
 	}
 
 	connectedCallback() {
+		
 		this.render();
 	}
+
 	handleCreatButton() {
 		dispatch(navigate(Screens.DASHBOARD));
+	}
 
-}
-handlelogButton() {
-	dispatch(navigate(Screens.LOGIN));
-}
+	handlelogButton() {
+		dispatch(navigate(Screens.LOGIN));
+	}
 
 	render() {
 		if (this.shadowRoot) {
@@ -74,7 +76,7 @@ handlelogButton() {
 			create.textContent = '';
 
 			const up = document.createElement('h5');
-			up.innerText = appState.user.email;
+			
 			up.classList.add('h5');
 			
 			inputsDiv.appendChild(create);

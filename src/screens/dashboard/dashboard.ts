@@ -5,6 +5,7 @@ import styles from './dashboard.css';
 
 import '../../components/indexpadre';
 import { getPosts } from '../../utils/firebase';
+import { dispatch } from '../../store';
 
 export class dashboard extends HTMLElement {
 	cards: Card[] = [];
@@ -27,7 +28,6 @@ export class dashboard extends HTMLElement {
 		const sideBarC = this.ownerDocument.createElement('my-sidec');
 		this.shadowRoot?.appendChild(sideBarC);
 
-		console.log("Traer los datos")
 		const firebaseCardsData: Array<any> = await getPosts()
 		console.log(firebaseCardsData)
 

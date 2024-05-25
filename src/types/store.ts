@@ -2,7 +2,8 @@ export type Observer = ({ render: () => void } & HTMLElement);
 
 export type AppState = {
     screen: string,
-    user: any
+    user: any,
+    userdata: any
 }
 
 export enum ScreenActions {

@@ -1,11 +1,16 @@
 export const reducer = (currentAction: any, currentState: any) => {
-    const { type, payload } = currentAction;
-
-    switch (type) {
+    const { action, payload } = currentAction;
+    
+    switch (action) {
         case "NAVIGATE":
             currentState.screen = payload
         break;
-        case "CONNECTUSER":
+
+        case "GETUSERDATA":
+            currentState.userdata = payload
+            break; 
+
+        case "SETUSER":
             currentState.user = payload
             break; 
     }
