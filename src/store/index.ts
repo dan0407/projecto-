@@ -16,9 +16,11 @@ onAuthStateChanged(auth, (user) => {
 });
 
 const emptyState = {
-  screen: Screens.DASHBOARD,
-  user: '',
-  userdata: []
+	screen: Screens.DASHBOARD,
+	user: '',
+	userdata: [],
+	posts: [],
+	postsProfile: [],
 };
 
 export let appState = emptyState;

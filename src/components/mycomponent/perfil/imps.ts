@@ -23,6 +23,12 @@ class perfil extends HTMLElement {
 		dispatch(navigate(Screens.LOGIN));
 	}
 
+	logout() {
+		indexedDB.deleteDatabase('firebase-heartbeat-database');
+		indexedDB.deleteDatabase('firebaseLocalStorageDb');
+		window.location.reload();
+	}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ` `;
@@ -61,9 +67,11 @@ class perfil extends HTMLElement {
 			createButton.classList.add('button');
 			createButton.textContent = '';
 
-			const editButton = document.createElement('button');
-			editButton.classList.add('button');
-			editButton.textContent = '';
+			const logoutBtn = document.createElement('button');
+			logoutBtn.classList.add('button');
+			logoutBtn.textContent = 'logout';
+			logoutBtn.addEventListener('click', this.logout);
+		this.shadowRoot?.appendChild(logoutBtn);
 
 
 			// Add the general div to the document body
@@ -87,7 +95,7 @@ class perfil extends HTMLElement {
 			inputsDiv.appendChild(SquatLabel);
 			inputsDiv.appendChild(SquatInput);
 			inputsDiv.appendChild(createButton);
-			inputsDiv.appendChild(editButton);
+			inputsDiv.appendChild(logoutBtn);
 			general.appendChild(inputsDiv);
 
 			getData();

@@ -1,6 +1,19 @@
 import { Screens } from "../types/trips";
-import { getPosts, getUserByid, } from '../utils/firebase';
+import { getPosts, getUserByid, getPostsProfile} from '../utils/firebase';
 
+
+
+
+
+
+export const getPostsProfileAction = async (idUser: string) => {
+	//Ir al utils de firebase y ejecutar la función getPostsProfile
+	const postsProfile = await getPostsProfile(idUser);
+	return {
+		action: 'GETPOSTSPROFILE',
+		payload: postsProfile,
+	};
+};
 export const navigate = (screen: Screens) => {
     return {
         action: "NAVIGATE",

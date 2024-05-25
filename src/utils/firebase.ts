@@ -1,8 +1,9 @@
 import { initializeApp } from 'firebase/app'
-import { addDoc, collection, doc, getDoc, getDocs, getFirestore, setDoc, updateDoc } from 'firebase/firestore';
+import { addDoc, collection, doc, getDoc, getDocs, getFirestore, setDoc, updateDoc,query, where } from 'firebase/firestore';
 import { Post } from '../types/data';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { appState, dispatch } from '../store';
+
 
 
 const firebaseConfig = {
@@ -17,17 +18,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 const db = getFirestore(app);
-
-
-export const getPosts = async () => {
-  // Query a reference to a subcollection
-  const querySnapshot = await getDocs(collection(db, "posts"));
-  const postData: Array<any> = []
-  querySnapshot.forEach((doc: any) => {
-    postData.push(doc.data())
-  });
-  return postData
-}
 
 
 export const createUser = (username: string, age: number, benchpress: number, deadLift: number, squat: number, emailaddress: string, password: string) => {
@@ -99,4 +89,37 @@ export const getData = async () => {
   } catch (error) {
     console.error("Error getting documents: ", error);
   }
+};
+export const addPost = async (formData: Omit<Post, 'id'>) => {
+	try {
+		const docRef = await addDoc(collection(db, 'posts'), formData);
+		console.log('Document written with ID: ', docRef.id);
+	} catch (e) {
+		console.error('Error adding document: ', e);
+	}
+};
+
+export const getPosts = async () => {
+	const querySnapshot = await getDocs(collection(db, 'posts'));
+	const arrayProducts: Array<Post> = [];
+
+	querySnapshot.forEach((doc) => {
+		const data = doc.data() as any;
+		arrayProducts.push({ id: doc.id, ...data });
+	});
+
+	return arrayProducts;
+};
+
+export const getPostsProfile = async (idUser: string) => {
+  const q = query(collection(db, 'posts'), where('idUser', '==', idUser));
+  const querySnapshot = await getDocs(q);
+  const arrayProducts: Array<Post> = [];
+
+  querySnapshot.forEach((doc) => {
+    const data = doc.data() as any;
+    arrayProducts.push({ id: doc.id, ...data });
+  });
+
+  return arrayProducts;
 };

@@ -4,6 +4,7 @@ export type AppState = {
     screen: string,
     user: any,
     userdata: any
+    
 }
 
 export enum ScreenActions {
