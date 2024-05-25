@@ -31,38 +31,40 @@ export const getPosts = async () => {
   return postData
 }
 
-export const registrarUsuario = async (user: string, age: number, benchpress: number, deadLift: number, squat: number, emailaddress: string, password: string) => {
-  await createUserWithEmailAndPassword(auth, emailaddress, password)
-    .then(async (userCredential) => {
-      // Signed up
-      const userCredentials = userCredential.user.uid;
 
-      console.log(userCredentials)
+  export const createUser = (user: string, age: number, benchpress: number, deadLift: number, squat: number, emailaddress: string, password: string) => {
+    createUserWithEmailAndPassword(auth, emailaddress, password)
+		.then(async (userCredential) => {
+      //Primer paso es obtener el id
+			const user = userCredential.user;
+			console.log(user.uid);
+      
+			//Segundo paso es agregar un documento con más info bajo ese id
+			try {
+        const where = doc(db, 'users', user.uid);
+        const data = {
+          user: user.uid,
+          age: age,
+          benchpress: benchpress,
+          deadLift: deadLift,
+          squat: squat,
+          emailaddress: emailaddress,
+          authCredentials: userCredential,
+          profile: "https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg"
+        };
+        await setDoc(where, data);
+				alert('Se creó el usuario');
+			} catch (error) {
+				console.error(error);
+			}
+		})
+		.catch((error: any) => {
+			const errorCode = error.code;
+			const errorMessage = error.message;
+			console.error(errorCode, errorMessage);
+		});
+};
 
-      const docRef = await addDoc(collection(db, "users"), {
-        user: user,
-        age: age,
-        benchpress: benchpress,
-        deadLift: deadLift,
-        squat: squat,
-        emailaddress: emailaddress,
-        authCredentials: userCredentials,
-        profile: "https://static.vecteezy.com/system/resources/previews/005/544/718/original/profile-icon-design-free-vector.jpg"
-      });
-      //console.log("Document written with ID: ", docRef.id);
-      await updateDoc(docRef, {
-        firebaseID: docRef.id
-      });
-
-      return docRef.id
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      alert(errorMessage)
-      // ..
-    });
-}
 
 export const iniciarSesion = async (email: string, password: string) => {
   let authUser: any = ""

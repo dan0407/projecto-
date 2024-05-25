@@ -2,7 +2,7 @@ import styles from '../singup/singup.css';
 import { dispatch } from "../../../store/index";
 import { navigate } from "../../../store/actions";
 import { Screens } from "../../../types/trips";
-import { registrarUsuario } from '../../../utils/firebase';
+import { createUser } from '../../../utils/firebase';
 
 class singup extends HTMLElement {
 	constructor() {
@@ -133,7 +133,7 @@ handlelogButton() {
 
 			// Agregar evento de clic al botón de "crear cuenta"
 			createButton.addEventListener("click", async () => {
-				const userId = await registrarUsuario(userInput.value, parseInt(ageInput.value), parseInt(BenchpressInput.value), parseInt(DeadLiftInput.value), parseInt(SquatInput.value),  emailInput.value, passwordInput.value )
+				const userId = await createUser(userInput.value, parseInt(ageInput.value), parseInt(BenchpressInput.value), parseInt(DeadLiftInput.value), parseInt(SquatInput.value),  emailInput.value, passwordInput.value )
 				alert(`Usuario registrado con id: ${userId}`)
 				dispatch(navigate(Screens.DASHBOARD));
 			});
