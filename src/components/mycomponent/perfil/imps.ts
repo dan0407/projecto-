@@ -70,9 +70,9 @@ class perfil extends HTMLElement {
 			document.body.appendChild(general);
 			this.shadowRoot.appendChild(general);
 
-			const create = document.createElement('h4');
-			create.classList.add('h4');
-			create.textContent = '';
+			const create = document.createElement('h8');
+			create.classList.add('h8');
+			create.textContent = appState.user;
 
 			const up = document.createElement('h5');
 
@@ -92,6 +92,7 @@ class perfil extends HTMLElement {
 
 			getData();
 			console.log(getData());
+
 
 		}
 
