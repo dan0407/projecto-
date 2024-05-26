@@ -1,7 +1,8 @@
 import styles from './post.css';
-import { dispatch } from "../../../store/index";
+import { appState, dispatch } from "../../../store/index";
 import { navigate } from "../../../store/actions";
 import { Screens } from "../../../types/trips";
+import { addPost, uploadFile } from '../../../utils/firebase';
 
 export class postcard extends HTMLElement {
 	constructor() {
@@ -14,7 +15,13 @@ export class postcard extends HTMLElement {
 	}
 	handlepostButton() {
 		dispatch(navigate(Screens.DASHBOARD));
-}
+	}
+
+	submitForm() {
+		const formData = new FormData();
+		formData.append('idUser', appState.user.toString());
+		addPost(formData);
+	}
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ` `;
@@ -34,6 +41,12 @@ export class postcard extends HTMLElement {
 			const postInput = document.createElement('input');
 			postInput.type = 'file';
 			postInput.id = 'file';
+
+
+			const save = this.ownerDocument.createElement('button');
+		save.innerText = 'Save';
+		save.addEventListener('click', this.submitForm);
+		this.shadowRoot?.appendChild(save);
 
 			// Create the login button
 			const postButton = document.createElement('button');
@@ -56,4 +69,7 @@ export class postcard extends HTMLElement {
 	}
 }
 customElements.define('my-post', postcard);
+function submitForm() {
+	throw new Error('Function not implemented.');
+}
 

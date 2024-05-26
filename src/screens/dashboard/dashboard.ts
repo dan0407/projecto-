@@ -59,7 +59,7 @@ export class dashboard extends HTMLElement {
 
 	async createCards(data: any) {
 		this.cards = []; // Inicializar el array de tarjetas
-		console.log("Firebase Cards Data")
+
 
 		this.renderCards(data)
 

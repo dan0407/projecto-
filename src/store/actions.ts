@@ -2,10 +2,6 @@ import { Screens } from "../types/trips";
 import { getPosts, getUserByid, getPostsProfile} from '../utils/firebase';
 
 
-
-
-
-
 export const getPostsProfileAction = async (idUser: string) => {
 	//Ir al utils de firebase y ejecutar la función getPostsProfile
 	const postsProfile = await getPostsProfile(idUser);

@@ -37,9 +37,8 @@ export class perfilPge extends HTMLElement {
 		this.render();
 	}
 	async connectedCallback() {
-		console.log(appState.user);
-		if (appState.userdata.length === 0) {
-			const action = await getUserDataAction(appState.user);
+		if (!appState.userdata || Object.keys(appState.userdata).length === 0) {
+			const action = await getUserDataAction(String(appState.user));
 			dispatch(action);
 		} else {
 			this.render();

@@ -80,7 +80,9 @@ class perfil extends HTMLElement {
 
 			const create = document.createElement('h8');
 			create.classList.add('h8');
-			create.textContent = appState.user;
+			// create.textContent = appState.userdata.username;
+			// console.log("AAAAAAAA",appState.userdata.username);
+
 
 			const up = document.createElement('h5');
 
@@ -98,8 +100,6 @@ class perfil extends HTMLElement {
 			inputsDiv.appendChild(logoutBtn);
 			general.appendChild(inputsDiv);
 
-			getData();
-			console.log(getData());
 
 
 		}

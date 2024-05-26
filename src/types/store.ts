@@ -3,9 +3,10 @@ export type Observer = ({ render: () => void } & HTMLElement);
 export type AppState = {
     screen: string,
     user: any,
-    userdata: any
-    
+    userdata: any,
+
 }
+
 
 export enum ScreenActions {
     "NAVIGATE" = "NAVIGATE",
