@@ -18,8 +18,9 @@ class perfil extends HTMLElement {
     dispatch(navigate(Screens.DASHBOARD));
   }
 
-  handlelogButton() {
-    dispatch(navigate(Screens.LOGIN));
+ 
+  handleeditButton() {
+    dispatch(navigate(Screens.EDIT));
   }
 
   logout() {
@@ -40,37 +41,14 @@ class perfil extends HTMLElement {
       const inputsDiv = document.createElement("div");
       inputsDiv.id = "inputs";
 
-      const BenchpressLabel = document.createElement("label");
-      BenchpressLabel.textContent = "Bench press";
-
-      const BenchpressInput = document.createElement("input");
-      BenchpressInput.type = "text";
-      BenchpressInput.id = "Bench press";
-
-      const DeadLiftLabel = document.createElement("label");
-      DeadLiftLabel.textContent = "DeadLift";
-
-      const DeadLiftInput = document.createElement("input");
-      DeadLiftInput.type = "text";
-      DeadLiftInput.id = "DeadLift";
-
-      const SquatLabel = document.createElement("label");
-      SquatLabel.textContent = "Squat";
-
-      const SquatInput = document.createElement("input");
-      SquatInput.type = "text";
-      SquatInput.id = "Squat";
-
+      
       // Create the login button
       const createButton = document.createElement("button");
       createButton.classList.add("button");
-      createButton.textContent = "";
-
-      const logoutBtn = document.createElement("button");
-      logoutBtn.classList.add("button");
-      logoutBtn.textContent = "logout";
-      logoutBtn.addEventListener("click", this.logout);
-      this.shadowRoot?.appendChild(logoutBtn);
+      createButton.textContent = "editprofile";
+	  createButton.addEventListener('click', () => {
+		createButton.addEventListener("click", this.handleeditButton);	
+	});
 
       // Add the general div to the document body
       document.body.appendChild(general);
@@ -105,14 +83,7 @@ class perfil extends HTMLElement {
       inputsDiv.appendChild(userbenchpress);
       inputsDiv.appendChild(userdeadLift);
       inputsDiv.appendChild(usersquat);
-      inputsDiv.appendChild(BenchpressLabel);
-      inputsDiv.appendChild(BenchpressInput);
-      inputsDiv.appendChild(DeadLiftLabel);
-      inputsDiv.appendChild(DeadLiftInput);
-      inputsDiv.appendChild(SquatLabel);
-      inputsDiv.appendChild(SquatInput);
       inputsDiv.appendChild(createButton);
-      inputsDiv.appendChild(logoutBtn);
       general.appendChild(inputsDiv);
     }
 

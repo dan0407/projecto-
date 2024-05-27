@@ -43,6 +43,7 @@ class imputs extends HTMLElement {
 	handleSignupButton() {
 		dispatch(navigate(Screens.SINGUP));
 }
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ` `;
@@ -79,10 +80,6 @@ class imputs extends HTMLElement {
 			loginButton.textContent = 'login';
 			loginButton.style.fontFamily = 'Poppins, sans-serif';
 
-			
-			
-			
-			
 			const image = document.createElement('img');
 			image.src = '';
 			
@@ -97,7 +94,7 @@ class imputs extends HTMLElement {
 			// Agregar evento de clic
 			up.addEventListener('click', () => {
 				up.addEventListener("click", this.handleSignupButton);
-				console.log('Se hizo clic en "Sign up"');
+				
 				
 			});
 			const sing = document.createElement('h6');

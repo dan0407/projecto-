@@ -4,5 +4,7 @@ export enum Screens {
     SINGUP = "SINGUP",
     POST = "POST",
     PROFILE = "PROFILE",
+    EDIT = "EDIT",
+
 
 }

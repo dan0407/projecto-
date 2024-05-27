@@ -3,3 +3,4 @@ export { dashboard } from './dashboard/dashboard';
 export { singuppage } from './singup/singup';
 export { publica } from './publicar/postcarddiv';
 export { perfilPge} from './perfil/perfil';
+export {editp} from './edit/editp';

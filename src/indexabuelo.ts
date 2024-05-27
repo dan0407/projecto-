@@ -43,6 +43,11 @@ class AppContainer extends HTMLElement {
             this.shadowRoot?.appendChild(PROFILE);
             break;
 
+					case Screens.EDIT:
+            const EDIT = this.ownerDocument.createElement("edit-page");
+            this.shadowRoot?.appendChild(EDIT);
+            break;
+
         default:
             break;
 		}
