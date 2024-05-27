@@ -1,4 +1,4 @@
-import { Observer } from "../types/store";
+import { AppState, Observer } from "../types/store";
 import { reducer } from "./reducer";
 import { Screens } from "../types/trips";
 import { onAuthStateChanged } from 'firebase/auth';
@@ -15,10 +15,18 @@ onAuthStateChanged(auth, (user) => {
 	}
 });
 
-const emptyState = {
+const emptyState: AppState = {
 	screen: Screens.DASHBOARD,
 	user: {},
-	userdata: {},
+	userdata: {
+		age: 0,
+		benchpress: 0,
+		deadLift: 0,
+		emailaddress: "",
+		profile: "",
+		squat: 0,
+		username: ""
+	},
 	posts: [],
 	postsProfile: [],
 };

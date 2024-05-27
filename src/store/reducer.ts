@@ -7,6 +7,8 @@ export const reducer = (currentAction: any, currentState: any) => {
         break;
 
         case "GETUSERDATA":
+            console.log("User Data")
+            console.log(payload)
             currentState.userdata = payload
             break; 
 

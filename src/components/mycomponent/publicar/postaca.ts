@@ -2,7 +2,7 @@ import styles from './post.css';
 import { appState, dispatch } from "../../../store/index";
 import { navigate } from "../../../store/actions";
 import { Screens } from "../../../types/trips";
-import { addPost, uploadFile } from '../../../utils/firebase';
+import { addPost} from '../../../utils/firebase';
 
 export class postcard extends HTMLElement {
 	constructor() {
@@ -18,9 +18,9 @@ export class postcard extends HTMLElement {
 	}
 
 	submitForm() {
-		const formData = new FormData();
-		formData.append('idUser', appState.user.toString());
-		addPost(formData);
+		// const formData = new FormData();
+		// formData.append('idUser', appState.user.toString());
+		// addPost(formData);
 	}
 	render() {
 		if (this.shadowRoot) {
@@ -69,6 +69,7 @@ export class postcard extends HTMLElement {
 	}
 }
 customElements.define('my-post', postcard);
+
 function submitForm() {
 	throw new Error('Function not implemented.');
 }

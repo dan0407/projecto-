@@ -37,7 +37,7 @@ export class perfilPge extends HTMLElement {
 		this.render();
 	}
 	async connectedCallback() {
-		if (!appState.userdata || Object.keys(appState.userdata).length === 0) {
+		if (appState.userdata.username === "" || Object.keys(appState.userdata).length === 0) {
 			const action = await getUserDataAction(String(appState.user));
 			dispatch(action);
 		} else {
@@ -51,6 +51,7 @@ export class perfilPge extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
+			console.log("prueba")
 			console.log(appState.userdata);
 
 			this.shadowRoot.innerHTML = ``;
