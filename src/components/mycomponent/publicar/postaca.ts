@@ -2,19 +2,20 @@ import styles from './post.css';
 import { appState, dispatch } from "../../../store/index";
 import { navigate } from "../../../store/actions";
 import { Screens } from "../../../types/trips";
-import { addPost} from '../../../utils/firebase';
+import { addPost, subirPost} from '../../../utils/firebase';
 
 export class postcard extends HTMLElement {
 	constructor() {
-		super(); // always call super() first in the ctor.
+		super();
 		this.attachShadow({ mode: 'open' });
 	}
 
 	connectedCallback() {
 		this.render();
 	}
-	handlepostButton() {
-		dispatch(navigate(Screens.DASHBOARD));
+	handlepostButton(imagen: File) {
+		// dispatch(navigate(Screens.DASHBOARD));
+		subirPost(imagen);
 	}
 
 	submitForm() {
@@ -43,18 +44,20 @@ export class postcard extends HTMLElement {
 			postInput.id = 'file';
 
 
-			const save = this.ownerDocument.createElement('button');
-		save.innerText = 'Save';
-		save.addEventListener('click', this.submitForm);
-		this.shadowRoot?.appendChild(save);
+		// 	const save = this.ownerDocument.createElement('button');
+		// save.innerText = 'Save';
+		// save.addEventListener('click', this.submitForm);
+		// this.shadowRoot?.appendChild(save);
 
 			// Create the login button
 			const postButton = document.createElement('button');
 			postButton.classList.add('button');
 			postButton.textContent = 'Post';
 			postButton.addEventListener('click', () => {
-				postButton.addEventListener("click", this.handlepostButton);
-				console.log('Se hizo clic en "post"');
+				if (postInput.files && postInput.files.length > 0) {
+					this.handlepostButton(postInput.files[0]);
+					console.log('Se hizo clic en "post"');
+				}
 			});
 			inputsDiv.appendChild(postLabel)
 			inputsDiv.appendChild(postInput)
@@ -70,7 +73,5 @@ export class postcard extends HTMLElement {
 }
 customElements.define('my-post', postcard);
 
-function submitForm() {
-	throw new Error('Function not implemented.');
-}
+
 

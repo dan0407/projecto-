@@ -2,7 +2,8 @@ import { initializeApp } from 'firebase/app'
 import { addDoc, collection, doc, getDoc, getDocs, getFirestore, setDoc, updateDoc,query, where } from 'firebase/firestore';
 import { Post } from '../types/data';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { appState, dispatch } from '../store';
+import { appState } from '../store';
+import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
 
 
 
@@ -18,6 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 const db = getFirestore(app);
+const storage = getStorage(app)
 
 
 export const createUser = (username: string, age: number, benchpress: number, deadLift: number, squat: number, emailaddress: string, password: string) => {
@@ -57,7 +59,6 @@ export const iniciarSesion = async (email: string, password: string) => {
 
   await signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-      // Signed in
       authUser = userCredential.user;
       console.log(authUser)
     })
@@ -76,28 +77,33 @@ export const getUserByid = async (id: string) => {
   return docsnap.data()
 }
 
+export const subirPost = async (imagen: File) => {
+  const URLimagen = await subirImagen(imagen)
+  console.log(URLimagen)
+  addPost(appState.userdata.username, appState.userdata.emailaddress, URLimagen, appState.userdata.profile)
+}
 
-export const getData = async () => {
-  try {
-    const querySnapshot = await getDocs(collection(db, "users"));
-    querySnapshot.forEach((doc) => {
-      const data = doc.data();
-      console.log("Hola")
-      console.log(data);
-
-    });
-  } catch (error) {
-    console.error("Error getting documents: ", error);
-  }
-};
-export const addPost = async (formData: Omit<Post, 'id'>) => {
+export const addPost = async (userName: string, userId: string, imageURL: string, userProfileImage: string) => {
 	try {
-		const docRef = await addDoc(collection(db, 'posts'), formData);
-		console.log('Document written with ID: ', docRef.id);
+		const docRef = await addDoc(collection(db, 'posts'), {
+      name: userName,
+        userId: userId,
+        image: imageURL,
+        profileImage: userProfileImage
+    });
+		console.log('Creado Post con ID: ', docRef.id);
 	} catch (e) {
 		console.error('Error adding document: ', e);
 	}
 };
+
+const subirImagen = async (imagen: File) => {
+  const storageRef = await ref(storage, `imagesPosts/${imagen.name}`);
+  await uploadBytes(storageRef, imagen).then((snapshot) => {
+    console.log('Uploaded a blob or file!');
+  });
+  return getDownloadURL(storageRef);
+}
 
 export const getPosts = async () => {
 	const querySnapshot = await getDocs(collection(db, 'posts'));

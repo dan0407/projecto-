@@ -4,36 +4,10 @@ import { dispatch } from "../../store/index";
 import { navigate } from "../../store/actions";
 import { Screens } from "../../types/trips";
 
-
-export enum AttributeCard {
-	'name' = 'name',
-	'image' = 'image',
-}
-
 export class publica extends HTMLElement {
-	name?: string;
-	image?: string;
-
 	constructor() {
 		super(); // always call super() first in the ctor.
 		this.attachShadow({ mode: 'open' });
-	}
-
-	static get observedAttributes() {
-		const attrs: Record<AttributeCard, null> = {
-			name: null,
-			image: null,
-		};
-		return Object.keys(attrs);
-	}
-	attributeChangedCallback(propName: AttributeCard, oldValue: string | undefined, newValue: string | undefined) {
-		switch (propName) {
-			default:
-				this[propName] = newValue;
-				break;
-		}
-
-		this.render();
 	}
 	connectedCallback() {
 		this.render();

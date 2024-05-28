@@ -5,7 +5,8 @@ import styles from './dashboard.css';
 
 import '../../components/indexpadre';
 import { getPosts } from '../../utils/firebase';
-import { dispatch } from '../../store';
+import { appState, dispatch } from '../../store';
+import { getUserDataAction } from '../../store/actions';
 
 export class dashboard extends HTMLElement {
 	cards: Card[] = [];
@@ -14,11 +15,18 @@ export class dashboard extends HTMLElement {
 		this.attachShadow({ mode: 'open' });
 	}
 
-	connectedCallback() {
-		this.render();
+	async connectedCallback() {
+			this.render();
 	}
 
 	async render() {
+		console.log("User Age")
+		console.log(appState.userdata.age)
+		if (appState.userdata.age === 0) {
+			const action = await getUserDataAction(String(appState.user));
+			dispatch(action);
+		}
+
 		const divContainer = this.ownerDocument.createElement('div');
 		divContainer.classList.add('container');
 
