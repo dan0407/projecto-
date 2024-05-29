@@ -90,6 +90,12 @@ class perfil extends HTMLElement {
       perfil.src = appState.userdata.profile;
       perfil.classList.add("h8");
 
+      const logoutBtn = document.createElement('button');
+			logoutBtn.classList.add('button');
+			logoutBtn.textContent = 'logout';
+			logoutBtn.addEventListener('click', this.logout);
+		this.shadowRoot?.appendChild(logoutBtn);
+    
       inputsDiv.appendChild(create);
       inputsDiv.appendChild(perfil);
       inputsDiv.appendChild(ageLabelp);
