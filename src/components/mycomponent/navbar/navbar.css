@@ -14,16 +14,13 @@
   /* Gris claro */
 }
 
-/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--background-color);
-  /* Cambio de color de fondo */
   padding: 15px 20px;
-  /* Aumento de espacio interno */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 52%);
 }
 
 .navbar-brand img {

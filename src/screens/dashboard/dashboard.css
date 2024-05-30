@@ -1,4 +1,4 @@
-/* .container {
+.container {
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(192, 192, 192, 0.8));
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -6,7 +6,8 @@
     backdrop-filter: blur(7px);
     display: flex;
     flex-direction: column;
-} */
+    margin:0%;
+}
 
 
 @media (max-width: 431px) {

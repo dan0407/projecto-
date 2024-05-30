@@ -26,6 +26,8 @@ export class dashboard extends HTMLElement {
 			const action = await getUserDataAction(String(appState.user));
 			dispatch(action);
 		}
+		const divContainer = this.ownerDocument.createElement('div');
+		divContainer.classList.add('container');
 
 		
 
@@ -35,8 +37,9 @@ export class dashboard extends HTMLElement {
 		const sideBarC = this.ownerDocument.createElement('my-sidec');
 		this.shadowRoot?.appendChild(sideBarC);
 
+		this.shadowRoot?.appendChild(divContainer);
+
 		const firebaseCardsData: Array<any> = await getPosts()
-		console.log(firebaseCardsData)
 
 		// Crear y añadir las tarjetas
 		this.createCards(firebaseCardsData);
@@ -45,8 +48,8 @@ export class dashboard extends HTMLElement {
 		});
 
 		// Añadir elementos al contenedor principal
-		this.shadowRoot?.appendChild(navBar);
-		this.shadowRoot?.appendChild(cardContainer);
+		divContainer.appendChild(navBar);
+		divContainer.appendChild(cardContainer);
 
 		// Añadir el contenedor principal al shadow root
 

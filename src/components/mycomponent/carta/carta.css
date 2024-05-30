@@ -28,14 +28,12 @@ body {
 }
 
 .section {
- 
   width: 38%;
   margin: 6rem auto 0;
   padding: 2rem;
   border-radius: 20px;
-  box-shadow: 10px 17px 11px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 10px 17px 10px 13px rgb(0 0 0 / 22%);
 }
-
 .h1 {
   margin-top: 0rem;
   font-size: 2rem;
