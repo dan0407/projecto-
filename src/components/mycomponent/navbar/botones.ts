@@ -1,8 +1,9 @@
 import styles from './botones.css';
 import '../../indexpadre';
-import { addObserver, appState, dispatch } from "../../../store/index";
+import { dispatch } from "../../../store/index";
 import { navigate } from "../../../store/actions";
 import { Screens } from "../../../types/trips";
+
 export enum AttributeCard {
 	'name' = 'name',
 	'image' = 'image',

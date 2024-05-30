@@ -42,6 +42,7 @@ class perfil extends HTMLElement {
       inputsDiv.id = "inputs";
 
 
+
       // Create the login button
       const createButton = document.createElement("button");
       createButton.classList.add("button");
@@ -88,14 +89,15 @@ class perfil extends HTMLElement {
 
 	  const perfil = document.createElement("img");
       perfil.src = appState.userdata.profile;
-      perfil.classList.add("h8");
+      perfil.classList.add("img");
 
       const logoutBtn = document.createElement('button');
 			logoutBtn.classList.add('button');
 			logoutBtn.textContent = 'logout';
 			logoutBtn.addEventListener('click', this.logout);
-		this.shadowRoot?.appendChild(logoutBtn);
+		
     
+      
       inputsDiv.appendChild(create);
       inputsDiv.appendChild(perfil);
       inputsDiv.appendChild(ageLabelp);
@@ -107,7 +109,10 @@ class perfil extends HTMLElement {
       inputsDiv.appendChild(squatLabelp);
       inputsDiv.appendChild(usersquat);
       inputsDiv.appendChild(createButton);
+      general.appendChild(logoutBtn);
       general.appendChild(inputsDiv);
+
+
     }
 
     const cssProfile = this.ownerDocument.createElement("style");

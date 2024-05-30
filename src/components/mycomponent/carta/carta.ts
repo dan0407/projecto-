@@ -18,7 +18,7 @@ class card extends HTMLElement {
 	profileimage?: string;
 
 	constructor() {
-		super(); // always call super() first in the ctor.
+		super(); 
 		this.attachShadow({ mode: 'open' });
 	}
 
@@ -44,11 +44,7 @@ class card extends HTMLElement {
 	}
 	render() {
 		if (this.shadowRoot) {
-			this.shadowRoot.innerHTML = `
-
-
-
-				`;
+			this.shadowRoot.innerHTML = ``;
 
 			const section = document.createElement('section');
 			section.className = 'section';
@@ -63,17 +59,17 @@ class card extends HTMLElement {
 			divtercero.className = 'divtercero';
 			
 
-			// Crear el elemento h1
+
 			const h1 = document.createElement('h1');
 			h1.className = 'h1';
 			h1.textContent = this.name || '';
 
-			// Crear el primer elemento img
+
 			const img1 = document.createElement('img');
 			img1.className = 'img-i';
 			img1.src = this.profileimage || '';
 
-			// Crear el segundo elemento img
+
 			const img2 = document.createElement('img');
 			img2.className = 'img';
 			img2.src = this.image || '';
@@ -82,14 +78,14 @@ class card extends HTMLElement {
 			likeIcon.src = like;
 			likeIcon.className = 'likeicon1';
 
-			// Agregar event listener al botón
+			
 			likeIcon.addEventListener('click', function () {
-				// Verificar la imagen actual
+			
 				if (likeIcon.src === like) {
-					// Cambiar a la nueva imagen
+					
 					likeIcon.src = dislike;
 				} else {
-					// Cambiar a la imagen original
+					
 					likeIcon.src = like;
 				}
 			});
@@ -102,14 +98,10 @@ class card extends HTMLElement {
 			saveIcon.src = save;
 			saveIcon.className = 'saveicon';
 
-			// Agregar event listener al botón
 			saveIcon.addEventListener('click', function () {
-				// Verificar la imagen actual
 				if (saveIcon.src === save) {
-					// Cambiar a la nueva imagen
 					saveIcon.src = saveoscuro;
 				} else {
-					// Cambiar a la imagen original
 					saveIcon.src = save;
 				}
 			});

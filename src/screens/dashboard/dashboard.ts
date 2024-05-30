@@ -27,8 +27,7 @@ export class dashboard extends HTMLElement {
 			dispatch(action);
 		}
 
-		const divContainer = this.ownerDocument.createElement('div');
-		divContainer.classList.add('container');
+		
 
 		const navBar = this.createNavigationBar();
 		const cardContainer = this.ownerDocument.createElement('div');
@@ -46,11 +45,11 @@ export class dashboard extends HTMLElement {
 		});
 
 		// Añadir elementos al contenedor principal
-		divContainer.appendChild(navBar);
-		divContainer.appendChild(cardContainer);
+		this.shadowRoot?.appendChild(navBar);
+		this.shadowRoot?.appendChild(cardContainer);
 
 		// Añadir el contenedor principal al shadow root
-		this.shadowRoot?.appendChild(divContainer);
+
 
 		// Añadir estilos
 		const cssProfile = this.ownerDocument.createElement('style');

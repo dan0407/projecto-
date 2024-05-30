@@ -11,7 +11,6 @@
  	font-family: 'Poppins', sans-serif;
  }
 
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
  #general {
  	background: rgb(255 255 255 / 8%);
@@ -22,7 +21,6 @@
  	font-family: 'Poppins', sans-serif;
  }
 
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
  label {
  	display: block;
@@ -33,7 +31,6 @@
  	font-family: 'Poppins', sans-serif;
  }
 
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
  input {
  	border: 1px solid #ddd;
@@ -76,17 +73,14 @@
  	font-family: 'Poppins', sans-serif;
  }
 
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
  h5 {
- 	color: #000000;
- 	font-size: 21px;
- 	margin-left: 16rem;
- 	margin-top: -13%;
- 	font-family: 'Poppins', sans-serif;
- }
-
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    color: #000000;
+    font-size: 21px;
+    margin-left: 18rem;
+    margin-top: -13%;
+    font-family: 'Poppins', sans-serif;
+}
 
  h6 {
  	display: flex;
@@ -97,7 +91,6 @@
  	font-family: 'Poppins', sans-serif;
  }
 
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
  @media (max-width: 431px) {
  	.text {

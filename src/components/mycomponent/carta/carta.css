@@ -28,7 +28,7 @@ body {
 }
 
 .section {
-  background-color: var(--text-color);
+ 
   width: 38%;
   margin: 6rem auto 0;
   padding: 2rem;
@@ -45,6 +45,7 @@ body {
   border-bottom: 2px solid var(--gymshark-accent);
   margin-bottom: -4rem;
   margin-right: 13rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .img {

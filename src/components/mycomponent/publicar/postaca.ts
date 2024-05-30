@@ -18,11 +18,7 @@ export class postcard extends HTMLElement {
 		subirPost(imagen);
 	}
 
-	submitForm() {
-		// const formData = new FormData();
-		// formData.append('idUser', appState.user.toString());
-		// addPost(formData);
-	}
+
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ` `;
@@ -37,17 +33,11 @@ export class postcard extends HTMLElement {
 
 			// Create the password label, input, and button
 			const postLabel = document.createElement('label');
-			postLabel.textContent = 'post';
+			postLabel.textContent = 'POST';
 
 			const postInput = document.createElement('input');
 			postInput.type = 'file';
 			postInput.id = 'file';
-
-
-		// 	const save = this.ownerDocument.createElement('button');
-		// save.innerText = 'Save';
-		// save.addEventListener('click', this.submitForm);
-		// this.shadowRoot?.appendChild(save);
 
 			// Create the login button
 			const postButton = document.createElement('button');
