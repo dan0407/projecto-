@@ -87,16 +87,38 @@ button:hover {
   flex-direction: column;
   font-family: 'Poppins', sans-serif;
 }
-.img {
-  width: 100%;
+.imgDOS {
+  width: 15%;
   height: auto;
-  border-radius: 20px;
+  border-radius: 50%;
   display: block;
   margin: 2rem 0;
-
 }
 
+.dimg {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: aqua;
+  margin-top: 9rem;
+  margin-left: 3rem;
+}
 
+.title{
+    display: flex;
+    color: black;
+    font-size: 3rem;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 2rem;
+}
+.labeluno{
+  display: flex;
+  color: black;
+  font-size: 3rem;
+  font-family: 'Poppins', sans-serif;
+  margin-left: 2rem;
+}
 
 
 @media (max-width: 431px) {

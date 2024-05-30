@@ -33,15 +33,16 @@ class perfil extends HTMLElement {
     if (this.shadowRoot) {
       this.shadowRoot.innerHTML = ` `;
 
-      // Create the general div
-      const general = document.createElement("section");
-      general.id = "general";
 
       // Create the inputs div
       const inputsDiv = document.createElement("div");
       inputsDiv.id = "inputs";
 
+      const IMGDiv = document.createElement("div");
+      IMGDiv.classList.add("dimg");
 
+      const contdiv = document.createElement("div");
+      contdiv.classList.add("dimg");
 
       // Create the login button
       const createButton = document.createElement("button");
@@ -51,16 +52,14 @@ class perfil extends HTMLElement {
 		createButton.addEventListener("click", this.handleeditButton);
 	});
 
-      // Add the general div to the document body
-      document.body.appendChild(general);
-      this.shadowRoot.appendChild(general);
-
-      const create = document.createElement("h9");
+      
+      const create = document.createElement("title");
       create.textContent = appState.userdata.username;
-      create.classList.add("h9");
+      create.classList.add("title");
 
       const ageLabelp = document.createElement('label');
 			ageLabelp.textContent = 'age';
+      ageLabelp.classList.add("labeluno");
 
       const userage = document.createElement("h9");
 	  userage.textContent = String(appState.userdata.age);
@@ -89,7 +88,7 @@ class perfil extends HTMLElement {
 
 	  const perfil = document.createElement("img");
       perfil.src = appState.userdata.profile;
-      perfil.classList.add("img");
+      perfil.classList.add("imgDOS");
 
       const logoutBtn = document.createElement('button');
 			logoutBtn.classList.add('button');
@@ -98,10 +97,10 @@ class perfil extends HTMLElement {
 		
     
       
-      inputsDiv.appendChild(create);
-      inputsDiv.appendChild(perfil);
-      inputsDiv.appendChild(ageLabelp);
-      inputsDiv.appendChild(userage);
+      IMGDiv.appendChild(create);
+      IMGDiv.appendChild(ageLabelp);
+      IMGDiv.appendChild(userage);
+      IMGDiv.appendChild(perfil);
       inputsDiv.appendChild(benchpressLabelp);
       inputsDiv.appendChild(userbenchpress);
       inputsDiv.appendChild(deadLiftLabelp);
@@ -109,9 +108,9 @@ class perfil extends HTMLElement {
       inputsDiv.appendChild(squatLabelp);
       inputsDiv.appendChild(usersquat);
       inputsDiv.appendChild(createButton);
-      general.appendChild(logoutBtn);
-      general.appendChild(inputsDiv);
-
+      inputsDiv.appendChild(logoutBtn);
+      this.shadowRoot.appendChild(IMGDiv)
+      this.shadowRoot.appendChild(inputsDiv)
 
     }
 
