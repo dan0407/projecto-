@@ -205,3 +205,9 @@ export const addFavorite = async (postId: string) => {
   }
 
 }
+
+export const getPostbyid = async (id: string) => {
+  const docRef = doc(db, "posts", id);
+  const docsnap = await getDoc(docRef);
+  return docsnap.data();
+};

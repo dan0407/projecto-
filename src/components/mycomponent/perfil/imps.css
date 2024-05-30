@@ -88,8 +88,8 @@ button:hover {
   font-family: 'Poppins', sans-serif;
 }
 .imgDOS {
-  width: 15%;
-  height: auto;
+  width: 12rem;
+  height: 12rem;
   border-radius: 50%;
   display: block;
   margin: 2rem 0;

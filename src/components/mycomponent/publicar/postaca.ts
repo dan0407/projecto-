@@ -14,10 +14,11 @@ export class postcard extends HTMLElement {
 		this.render();
 	}
 	handlepostButton(imagen: File) {
-		// dispatch(navigate(Screens.DASHBOARD));
 		subirPost(imagen);
 	}
-
+	handlepostunoButton() {
+		dispatch(navigate(Screens.DASHBOARD));
+}
 
 	render() {
 		if (this.shadowRoot) {
@@ -44,9 +45,11 @@ export class postcard extends HTMLElement {
 			postButton.classList.add('button');
 			postButton.textContent = 'Post';
 			postButton.addEventListener('click', () => {
-				if (postInput.files && postInput.files.length > 0) {
+				
+							if (postInput.files && postInput.files.length > 0) {
 					this.handlepostButton(postInput.files[0]);
-				}
+					}
+					dispatch(navigate(Screens.DASHBOARD));
 			});
 			inputsDiv.appendChild(postLabel)
 			inputsDiv.appendChild(postInput)

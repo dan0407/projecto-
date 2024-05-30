@@ -4,6 +4,7 @@ import { addObserver, appState, dispatch } from "../../store/index";
 import { getUserDataAction } from '../../store/actions';
 import { navigate } from '../../store/actions';
 import { Screens } from '../../types/trips';
+import { getPostbyid, getUserByid } from '../../utils/firebase';
 
 export enum AttributeCard {
 	'name' = 'name',
@@ -63,12 +64,36 @@ export class perfilPge extends HTMLElement {
 				Logo.addEventListener("click", this.handleButton);
 			});
 
+			const contendorFavoritos = this.ownerDocument.createElement("div")
+			this.shadowRoot.appendChild(contendorFavoritos)
 
+			this.crearTarjetasFavoritas(contendorFavoritos)
 
 		}
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;
 		this.shadowRoot?.appendChild(cssProfile);
+	}
+
+	async crearTarjetasFavoritas(contendor: HTMLElement) {
+		const userData = await getUserByid(appState.user)
+
+		if (userData) {
+			console.log(userData.favorites)
+			
+			userData.favorites.forEach(async (post: string) => {
+				const postData = await getPostbyid(post)
+				const card = this.ownerDocument.createElement('my-card') as Card;
+			card.setAttribute(AttributeCard.name, postData.name);
+			card.setAttribute(AttributeCard.profileimage, postData.profileImage);
+			card.setAttribute(AttributeCard.image, postData.image);
+			card.setAttribute(AttributeCard.uid, postData.postFirebaseId)
+			this.cards.push(card);
+			});
+
+
+	
+		}
 	}
 }
 customElements.define('perfil-page', perfilPge);
