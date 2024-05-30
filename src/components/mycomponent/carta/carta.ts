@@ -114,8 +114,6 @@ class card extends HTMLElement {
 			divsegundo.appendChild(div)
 			divsegundo.appendChild(saveIcon);
 
-
-
 			section.appendChild(divsegundo);
 
 
