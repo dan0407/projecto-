@@ -149,32 +149,38 @@ export const getPostsProfile = async (idUser: string) => {
 };
 
 export const actualizarDatosUsuario = async (
-  img: File | undefined,
   benchPressParam: number,
   deadLiftParam: number,
   squatParam: number,
   ageParam: number
 ) => {
-  const userRef = doc(db, "users", appState.user)
-  let imageURL = "";
-  if (img) {
-    imageURL = await subirImagen(img);
-  }
+  console.log("actualizarDatosUsuario")
+  const userRef = doc(db, "users", appState.user);
+  await updateDoc(userRef, {
+    benchpress: benchPressParam,
+    deadLift: deadLiftParam,
+    squat: squatParam,
+    age: ageParam,
+  });
+};
 
-  if (imageURL !== "") {
-    await updateDoc( userRef, {
-      profile: imageURL,
-      benchpress: benchPressParam,
-      deadLift: deadLiftParam,
-      squat: squatParam,
-      age: ageParam
-    })
-  } else {
-    await updateDoc( userRef, {
-      benchpress: benchPressParam,
-      deadLift: deadLiftParam,
-      squat: squatParam,
-      age: ageParam
-    })
-  }
+export const actualizarDatosUsuarioConImagen = async (
+  img: File,
+  benchPressParam: number,
+  deadLiftParam: number,
+  squatParam: number,
+  ageParam: number
+) => {
+  console.log("actualizarDatosUsuarioConImagen")
+  const userRef = doc(db, "users", appState.user);
+
+  const imageURL = await subirImagen(img);
+
+  await updateDoc(userRef, {
+    profile: imageURL,
+    benchpress: benchPressParam,
+    deadLift: deadLiftParam,
+    squat: squatParam,
+    age: ageParam,
+  });
 };
