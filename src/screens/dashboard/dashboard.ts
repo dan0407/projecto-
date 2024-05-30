@@ -79,6 +79,7 @@ export class dashboard extends HTMLElement {
 			card.setAttribute(AttributeCard.name, cardData.name);
 			card.setAttribute(AttributeCard.profileimage, cardData.profileImage);
 			card.setAttribute(AttributeCard.image, cardData.image);
+			card.setAttribute(AttributeCard.uid, cardData.postFirebaseId)
 			this.cards.push(card);
 		});
 	}

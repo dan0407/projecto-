@@ -114,6 +114,9 @@ export const addPost = async (
       image: imageURL,
       profileImage: userProfileImage,
     });
+    await updateDoc(docRef, {
+      postFirebaseId: docRef.id
+    })
   } catch (e) {}
 };
 
@@ -184,3 +187,21 @@ export const actualizarDatosUsuarioConImagen = async (
     age: ageParam,
   });
 };
+
+export const addFavorite = async (postId: string) => {
+  const userRef = doc(db, "users", appState.user);
+
+  const actualUserData = await getDoc(userRef)
+  const actualFavorites = actualUserData.data()!.favorites
+
+  if (actualFavorites === undefined) {
+    await updateDoc(userRef, {
+      favorites: [postId]
+    })
+  } else {
+    await updateDoc(userRef, {
+      favorites: [...actualFavorites, postId]
+    })
+  }
+
+}

@@ -5,17 +5,20 @@ import dislike from '../../../../imagenes/dislike.png';
 import save from '../../../../imagenes/save.png';
 import saveoscuro from '../../../../imagenes/saveoscuro.png';
 import coment from '../../../../imagenes/coment.png';
+import { addFavorite } from '../../../utils/firebase';
 
 export enum AttributeCard {
 	'name' = 'name',
 	'image' = 'image',
 	'profileimage' = 'profileimage',
+	'uid' = 'uid'
 }
 
 class card extends HTMLElement {
 	name?: string;
 	image?: string;
 	profileimage?: string;
+	uid?: string
 
 	constructor() {
 		super(); 
@@ -27,6 +30,7 @@ class card extends HTMLElement {
 			name: null,
 			image: null,
 			profileimage: null,
+			uid: null
 		};
 		return Object.keys(attrs);
 	}
@@ -98,9 +102,13 @@ class card extends HTMLElement {
 			saveIcon.src = save;
 			saveIcon.className = 'saveicon';
 
-			saveIcon.addEventListener('click', function () {
+			saveIcon.addEventListener('click',  () => {
 				if (saveIcon.src === save) {
 					saveIcon.src = saveoscuro;
+					console.log(this.uid)
+					if (this.uid) {
+						addFavorite(this.uid)
+					}
 				} else {
 					saveIcon.src = save;
 				}
