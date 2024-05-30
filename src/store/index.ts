@@ -41,6 +41,7 @@ export const dispatch = (action: any) => {
   const clone = JSON.parse(JSON.stringify(appState));
 	const newState = reducer(action, clone);
 	appState = newState;
+	console.log("App State")
 	console.log(appState)
 	notifyObservers();
 };

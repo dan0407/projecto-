@@ -124,9 +124,7 @@ class imputs extends HTMLElement {
 
 			// Agregar evento de clic al botón de inicio de sesión
 			loginButton.addEventListener("click", async () => {
-				console.log('Se hizo clic en el botón de inicio de sesión');
 				const usuario = await iniciarSesion(emailInput.value, passwordInput.value)
-				console.log(`Inicio sesion: ${usuario}`)
 			});
 		
 		}

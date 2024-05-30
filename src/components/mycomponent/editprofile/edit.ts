@@ -22,6 +22,20 @@ export class edit extends HTMLElement {
       const inputsDiv = document.createElement("div");
       inputsDiv.id = "inputs";
 
+      const imglable = document.createElement('label');
+			imglable.textContent = 'imagen';
+
+			const imgInput = document.createElement('input');
+			imgInput.type = 'file';
+			imgInput.id = 'file';
+
+      const ageLabeldos = document.createElement('label');
+			ageLabeldos.textContent = 'age';
+
+      const ageInputdos = document.createElement('input');
+			ageInputdos.type = 'number';
+			ageInputdos.id = 'age';
+
       const BenchpressLabel = document.createElement("label");
       BenchpressLabel.textContent = "Bench press";
 
@@ -58,11 +72,11 @@ export class edit extends HTMLElement {
       this.shadowRoot.appendChild(general);
 
 
-	//   const perfil = document.createElement("h8");
-    //   perfil.textContent = String(appState.userdata.profile);
-    //   perfil.classList.add("h8");
-
       
+      inputsDiv.appendChild(imglable);
+      inputsDiv.appendChild(imgInput);
+      inputsDiv.appendChild(ageLabeldos);
+      inputsDiv.appendChild(ageInputdos);
       inputsDiv.appendChild(BenchpressLabel);
       inputsDiv.appendChild(BenchpressInput);
       inputsDiv.appendChild(DeadLiftLabel);

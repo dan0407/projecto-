@@ -29,12 +29,10 @@ class Suggestions extends HTMLElement {
 		this.render();
 		this.setupEventListeners();
 		// const sidebar = this.shadowRoot?.querySelector('.sidebar') as HTMLElement;
-		// console.log('Element', sidebar);
 	}
 
 	setupEventListeners() {
 		this.addEventListener('btnBarritaClicked', () => {
-			console.log('Evento btnBarritaClicked recibido en Suggestions');
 			// Realiza las acciones necesarias aquí cuando se recibe el evento
 		});
 	}

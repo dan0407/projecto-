@@ -16,7 +16,6 @@ export class button extends HTMLElement {
 	constructor() {
 		super(); // always call super() first in the ctor.
 		this.attachShadow({ mode: 'open' });
-		console.log('Contructor');
 	}
 
 	static get observedAttributes() {
@@ -75,11 +74,8 @@ export class button extends HTMLElement {
 					?.shadowRoot?.querySelector('my-sidec')
 					?.shadowRoot?.querySelector('section');
 
-				console.log('Sugggestion');
-				console.log(suggestionContainer);
 
 				if (suggestionContainer?.className === 'hidden') {
-					console.log('Hidden');
 					suggestionContainer.classList.remove('hidden');
 					suggestionContainer.classList.add('suggestionsSectionShow');
 				} else if (suggestionContainer?.className === 'suggestionsSectionShow') {
@@ -91,20 +87,17 @@ export class button extends HTMLElement {
 		if (this.name === 'POST') {
 			CONTAINER.addEventListener('click', () => {
 				dispatch(navigate(Screens.POST))
-				console.log('Se hizo clic en el botón de "POST"');
 			});
 		}
 		if (this.name === 'login') {
 			CONTAINER.addEventListener('click', () => {
 				dispatch(navigate(Screens.LOGIN))
-				console.log('Se hizo clic en el botón de "login"');
 			});
 		}
 		if (this.name === 'ACCOUNT') {
 			CONTAINER.addEventListener('click', () => {
 					this.toggleAccountButtons(CONTAINER);
 					dispatch(navigate(Screens.PROFILE))
-					console.log('Se hizo clic en el botón de "ACCOUNT"');
 			});
 	}
 }
@@ -142,7 +135,6 @@ toggleAccountButtons(container: HTMLElement) {
 
 // 	button.addEventListener('click', () => {
 // 			dispatch(navigate(screen));
-// 			console.log(`Se hizo clic en el botón de "${text}"`);
 // 	});
 
 // 	return button;

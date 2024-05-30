@@ -51,9 +51,6 @@ export class perfilPge extends HTMLElement {
 
 	render() {
 		if (this.shadowRoot) {
-			console.log("prueba")
-			console.log(appState.userdata);
-
 			this.shadowRoot.innerHTML = ``;
 			const something = this.ownerDocument.createElement('my-perfil');
 			this.shadowRoot?.appendChild(something);
@@ -64,8 +61,6 @@ export class perfilPge extends HTMLElement {
 			Logo.id = 'logo';
 			this.shadowRoot.appendChild(Logo);		Logo.addEventListener('click', () => {
 				Logo.addEventListener("click", this.handleButton);
-				console.log('Se hizo clic en "Sign up"');
-
 			});
 
 

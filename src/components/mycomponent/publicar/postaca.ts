@@ -46,7 +46,6 @@ export class postcard extends HTMLElement {
 			postButton.addEventListener('click', () => {
 				if (postInput.files && postInput.files.length > 0) {
 					this.handlepostButton(postInput.files[0]);
-					console.log('Se hizo clic en "post"');
 				}
 			});
 			inputsDiv.appendChild(postLabel)

@@ -20,8 +20,6 @@ export class dashboard extends HTMLElement {
 	}
 
 	async render() {
-		console.log("User Age")
-		console.log(appState.userdata.age)
 		if (appState.userdata.age === 0) {
 			const action = await getUserDataAction(String(appState.user));
 			dispatch(action);

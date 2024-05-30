@@ -89,9 +89,6 @@ handlelogButton() {
 			createButton.textContent = 'create account';
 
 
-			
-			
-			
 			// Add the general div to the document body
 			document.body.appendChild(general);
 			this.shadowRoot.appendChild(general);
@@ -104,7 +101,6 @@ handlelogButton() {
 			up.textContent = 'Log in';
 			up.classList.add('h5');
 			up.addEventListener("click", this.handlelogButton, );
-			console.log('Se hizo clic en el elemento h5');
 			;
 			
 			const titulo = document.createElement('text');
@@ -137,7 +133,6 @@ handlelogButton() {
 				alert(`Usuario registrado con id: ${userId}`)
 				dispatch(navigate(Screens.DASHBOARD));
 			});
-			console.log('Se hizo clic en el botón de "crear cuenta"');
 		}
 
 		const cssProfile = this.ownerDocument.createElement('style');

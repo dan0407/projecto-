@@ -29,8 +29,6 @@ export class publica extends HTMLElement {
 			Logo.id = 'logo';
 			this.shadowRoot.appendChild(Logo);		Logo.addEventListener('click', () => {
 				Logo.addEventListener("click", this.handleButtonpost);
-				console.log('Se hizo clic en "Sign up"');
-
 			});
 		}
 		const cssProfile = this.ownerDocument.createElement('style');

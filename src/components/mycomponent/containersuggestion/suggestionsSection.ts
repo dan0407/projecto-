@@ -13,8 +13,6 @@ export class sideC extends HTMLElement {
 	}
 
 	connectedCallback() {
-		console.log('emtraaaa');
-
 		this.render();
 	}
 

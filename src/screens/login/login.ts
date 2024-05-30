@@ -53,8 +53,6 @@ export class loginPge extends HTMLElement {
 			Logo.id = 'logo';
 			this.shadowRoot.appendChild(Logo);		Logo.addEventListener('click', () => {
 				Logo.addEventListener("click", this.handleButton);
-				console.log('Se hizo clic en "Sign up"');
-
 			});
 
 
