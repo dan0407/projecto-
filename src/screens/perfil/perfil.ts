@@ -80,19 +80,19 @@ export class perfilPge extends HTMLElement {
 
 		if (userData) {
 			console.log(userData.favorites)
-			
-			userData.favorites.forEach(async (post: string) => {
-				const postData = await getPostbyid(post)
-				const card = this.ownerDocument.createElement('my-card') as Card;
-			card.setAttribute(AttributeCard.name, postData.name);
-			card.setAttribute(AttributeCard.profileimage, postData.profileImage);
-			card.setAttribute(AttributeCard.image, postData.image);
-			card.setAttribute(AttributeCard.uid, postData.postFirebaseId)
-			this.cards.push(card);
-			});
+
+			// userData.favorites.forEach(async (post: string) => {
+			// 	const postData = await getPostbyid(post)
+			// 	const card = this.ownerDocument.createElement('my-card') as Card;
+			// card.setAttribute(AttributeCard.name, postData.name);
+			// card.setAttribute(AttributeCard.profileimage, postData.profileImage);
+			// card.setAttribute(AttributeCard.image, postData.image);
+			// card.setAttribute(AttributeCard.uid, postData.postFirebaseId)
+			// this.cards.push(card);
+			// });
 
 
-	
+
 		}
 	}
 }

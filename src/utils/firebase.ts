@@ -10,6 +10,7 @@ import {
   updateDoc,
   query,
   where,
+  onSnapshot
 } from "firebase/firestore";
 import { Post } from "../types/data";
 import {
@@ -210,4 +211,14 @@ export const getPostbyid = async (id: string) => {
   const docRef = doc(db, "posts", id);
   const docsnap = await getDoc(docRef);
   return docsnap.data();
+};
+export const getPostsListener = (callback: (posts: { id: string;[key: string]: any }[]) => void) => {
+  const q = query(collection(db, "posts"));
+  onSnapshot(q, (querySnapshot) => {
+    const posts: { id: string;[key: string]: any }[] = [];
+    querySnapshot.forEach((doc) => {
+      posts.push({ ...doc.data(), id: doc.id });
+    });
+    callback(posts);
+  });
 };
