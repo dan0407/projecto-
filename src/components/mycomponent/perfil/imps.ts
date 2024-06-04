@@ -84,7 +84,7 @@ class perfil extends HTMLElement {
       perfil.classList.add("imgDOS");
 
       const logoutBtn = document.createElement('button');
-      logoutBtn.classList.add('button');
+      logoutBtn.classList.add('buttonlogout');
       logoutBtn.textContent = 'logout';
       logoutBtn.setAttribute('aria-label', 'logout');
       logoutBtn.addEventListener('click', this.logout);
@@ -100,7 +100,7 @@ class perfil extends HTMLElement {
       inputsDiv.appendChild(squatLabelp);
       inputsDiv.appendChild(usersquat);
       inputsDiv.appendChild(createButton);
-      inputsDiv.appendChild(logoutBtn);
+      IMGDiv.appendChild(logoutBtn);
       this.shadowRoot.appendChild(IMGDiv);
       this.shadowRoot.appendChild(inputsDiv);
     }
