@@ -41,7 +41,7 @@ class perfil extends HTMLElement {
       // Create the login button
       const createButton = document.createElement("button");
       createButton.classList.add("button");
-      createButton.textContent = "editprofile";
+      createButton.textContent = "EDIT PROFILE";
       createButton.addEventListener('click', () => {
         createButton.addEventListener("click", this.handleeditButton);
       });
@@ -57,6 +57,10 @@ class perfil extends HTMLElement {
       const userage = document.createElement("span");
       userage.textContent = String(appState.userdata.age);
       userage.classList.add("h9");
+
+      const pr = document.createElement('title');
+      pr.textContent = 'PERSONAL RECORDS';
+      pr.classList.add("pr");
 
       const benchpressLabelp = document.createElement('label');
       benchpressLabelp.textContent = 'Bench press:';
@@ -85,14 +89,16 @@ class perfil extends HTMLElement {
 
       const logoutBtn = document.createElement('button');
       logoutBtn.classList.add('buttonlogout');
-      logoutBtn.textContent = 'logout';
+      logoutBtn.textContent = 'LOGOUT';
       logoutBtn.setAttribute('aria-label', 'logout');
       logoutBtn.addEventListener('click', this.logout);
 
+      IMGDiv.appendChild(logoutBtn);
       IMGDiv.appendChild(perfil);
       IMGDiv.appendChild(create);
       IMGDiv.appendChild(ageLabelp);
       IMGDiv.appendChild(userage);
+      inputsDiv.appendChild(pr);
       inputsDiv.appendChild(benchpressLabelp);
       inputsDiv.appendChild(userbenchpress);
       inputsDiv.appendChild(deadLiftLabelp);
@@ -100,7 +106,6 @@ class perfil extends HTMLElement {
       inputsDiv.appendChild(squatLabelp);
       inputsDiv.appendChild(usersquat);
       inputsDiv.appendChild(createButton);
-      IMGDiv.appendChild(logoutBtn);
       this.shadowRoot.appendChild(IMGDiv);
       this.shadowRoot.appendChild(inputsDiv);
     }
