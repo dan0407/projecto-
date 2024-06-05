@@ -60,7 +60,6 @@
 
 .button {
   display: inline-block;
-  padding: 10px 20px;
   font-size: 16px;
   display: flex;
   color: #fff;
@@ -87,7 +86,21 @@
   justify-content: center;
 }
 
-#inputs label {
+.benchpressLabelp {
+  font-size: 22px;
+  color: #000;
+  padding: 7rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.deadLiftLabelp {
+  font-size: 22px;
+  color: #000;
+  padding: 7rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.squatLabelp {
   font-size: 22px;
   color: #000;
   padding: 7rem;
@@ -171,7 +184,7 @@ button[aria-label="logout"] {
     font-size: 18px;
     color: #000;
     margin-bottom: 8px;
-    margin-left: 7rem;
+    margin-left: 5.5rem;
     font-family: 'Poppins', sans-serif;
   }
 
@@ -203,37 +216,71 @@ button[aria-label="logout"] {
     display: flex;
     flex-direction: column;
     background-color: #f9f9f9;
-    /* border-radius: 0px; */
+    border-radius: 0px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 
-  #inputs label {
+  .benchpressLabelp {
     font-size: 22px;
     color: #000;
     padding: 1rem;
     font-family: 'Poppins', sans-serif;
   }
 
+  .deadLiftLabelp {
+    font-size: 22px;
+    color: #000;
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 60%;
+    margin-top: -21%;
+  }
 
+  .squatLabelp {
+    font-size: 22px;
+    color: #000;
+    padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+  }
 
+  .h2 {
+    font-size: 18px;
+    font-weight: normal;
+    margin-left: 17rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1rem;
+  }
 
+  .h1 {
+    font-size: 18px;
+    font-weight: normal;
+    margin-left: 1rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1rem;
+  }
 
+  .h3 {
+    font-size: 18px;
+    font-weight: normal;
+    margin-left: 1rem;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1rem;
+  }
 
+  .button {
+    font-size: 14px;
+    margin-left: 8rem;
+    padding: 8px 16px;
+    margin-top: 17px;
+    margin-bottom: 6%;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
+  #inputs .button {
+    width: 31%;
+    height: 3rem;
+  }
 
 
 

@@ -64,6 +64,7 @@ class perfil extends HTMLElement {
 
       const benchpressLabelp = document.createElement('label');
       benchpressLabelp.textContent = 'Bench press:';
+      benchpressLabelp.classList.add("benchpressLabelp");
 
       const userbenchpress = document.createElement("span");
       userbenchpress.textContent = `${appState.userdata.benchpress}kg`;
@@ -71,6 +72,7 @@ class perfil extends HTMLElement {
 
       const deadLiftLabelp = document.createElement('label');
       deadLiftLabelp.textContent = 'Deadlift:';
+      deadLiftLabelp.classList.add("deadLiftLabelp");
 
       const userdeadLift = document.createElement("span");
       userdeadLift.textContent = `${appState.userdata.deadLift}kg`;
@@ -78,6 +80,8 @@ class perfil extends HTMLElement {
 
       const squatLabelp = document.createElement('label');
       squatLabelp.textContent = 'Squat:';
+      squatLabelp.classList.add("squatLabelp");
+
 
       const usersquat = document.createElement("span");
       usersquat.textContent = `${appState.userdata.squat}kg`;
