@@ -39,17 +39,6 @@
   margin-right: 20px;
 }
 
-.nav-item a,
-.nav-item p {
-  color: var(--text-color);
-  /* Cambio de color de texto */
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  margin-right: 10px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-}
 
 .nav-item p {
   margin-right: 7px;
@@ -74,16 +63,33 @@
     margin-right: 23px;
   }
 
-  .nav-item {
-    margin-right: 19px;
-    height: 24px;
+  .navbar {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    background-color: var(--background-color);
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 52%);
   }
 
   .navbar-icons {
-    height: 27px;
+    vertical-align: middle;
+    height: 16px;
+    margin-right: 45px;
   }
 
   .navbar-brand img {
     height: 18px;
+  }
+
+  .nav-item a,
+  .nav-item p {
+    color: var(--secondary-color);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-right: 7px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 8px;
   }
 }

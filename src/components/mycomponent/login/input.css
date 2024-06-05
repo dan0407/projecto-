@@ -75,12 +75,12 @@
 
 
  h5 {
-    color: #000000;
-    font-size: 21px;
-    margin-left: 18rem;
-    margin-top: -13%;
-    font-family: 'Poppins', sans-serif;
-}
+ 	color: #000000;
+ 	font-size: 21px;
+ 	margin-left: 18rem;
+ 	margin-top: -13%;
+ 	font-family: 'Poppins', sans-serif;
+ }
 
  h6 {
  	display: flex;
@@ -115,11 +115,13 @@
  	input {
  		border: 1px solid #ddd;
  		border-radius: 3px;
- 		padding: 10px;
- 		width: 86%;
+ 		padding: 7px;
+ 		width: 71%;
  		margin-bottom: 20px;
  		border-radius: 12px;
- 		height: 22px;
+ 		height: 13px;
+ 		margin-left: 10%;
+ 		flex-direction: row;
  	}
 
  	button {

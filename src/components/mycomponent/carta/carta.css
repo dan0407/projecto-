@@ -34,6 +34,7 @@ body {
   border-radius: 20px;
   box-shadow: 10px 17px 10px 13px rgb(0 0 0 / 22%);
 }
+
 .h1 {
   margin-top: 0rem;
   font-size: 2rem;
@@ -99,14 +100,14 @@ body {
   justify-content: space-between;
 }
 
-.divtercero{
+.divtercero {
   display: flex;
 }
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 431px) {
   .section {
-    width: 90%;
+    width: 60%;
     margin: 6rem auto;
     padding: 1rem;
     border-radius: 10px;
@@ -131,7 +132,7 @@ body {
   .img-i {
     height: 3rem;
     width: 3rem;
-    margin: 0;
+    margin: 7px;
   }
 
   .username {
@@ -143,11 +144,24 @@ body {
     margin-top: 1rem;
   }
 
+  .divsegundo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -10%;
+    margin-bottom: -6%;
+  }
+
   .likeicon1,
   .likeicon2,
   .saveicon {
     width: 2rem;
     height: 2rem;
     margin: 1rem 0.5rem;
+  }
+
+  .divtercero {
+    display: flex;
+    margin-bottom: -7%;
   }
 }
