@@ -93,15 +93,15 @@
 
 
  @media (max-width: 431px) {
- 	.text {
- 		display: block;
- 		font-size: 34px;
- 		color: #000;
- 		font-weight: 500;
- 		padding: 12px;
- 		font-family: 'Poppins', sans-serif;
- 		margin-top: -25%;
- 	}
+	.text {
+		display: block;
+		font-size: 30px;
+		color: #000;
+		font-weight: 500;
+		padding: 12px;
+		font-family: 'Poppins', sans-serif;
+		margin-top: -25%;
+}
 
  	label {
  		display: block;
