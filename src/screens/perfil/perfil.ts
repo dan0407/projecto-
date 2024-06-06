@@ -81,6 +81,12 @@ export class perfilPge extends HTMLElement {
 		if (userData) {
 			console.log(userData.favorites)
 
+			const favoritos = document.createElement('img');
+			favoritos.src =`${appState.posts.image}`;
+
+			console.log(appState.posts.image);
+
+
 			// userData.favorites.forEach(async (post: string) => {
 			// 	const postData = await getPostbyid(post)
 			// 	const card = this.ownerDocument.createElement('my-card') as Card;

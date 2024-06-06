@@ -109,35 +109,7 @@ toggleAccountButtons(container: HTMLElement) {
 			accountButtons = document.createElement('div');
 			accountButtons.classList.add('account-buttons');
 
-			// const profileButton = this.createDropdownButton('Profile', 'profile-icon.png', Screens.PROFILE);
-
-
-	// 		accountButtons.appendChild(profileButton);
-	// 		container.appendChild(accountButtons);
-	// } else {
-	// 		accountButtons.remove();
-	// }
-}
-
-// createDropdownButton(text: string, imagePath: string, screen: Screens) {
-// 	const button = document.createElement('div');
-// 	button.className = 'dropdown-button';
-
-// 	const img = document.createElement('img');
-// 	img.src = `../../../../imagenes/icons8-usuario-60.png`;;
-// 	img.className = 'dropdown-icon';
-
-// 	const span = document.createElement('span');
-// 	span.textContent = text;
-
-// 	button.appendChild(img);
-// 	button.appendChild(span);
-
-// 	button.addEventListener('click', () => {
-// 			dispatch(navigate(screen));
-// 	});
-
-// 	return button;
+	}
 }
 }
 

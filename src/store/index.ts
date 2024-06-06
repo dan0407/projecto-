@@ -27,7 +27,9 @@ const emptyState: AppState = {
 		squat: 0,
 		username: ""
 	},
-	posts: [],
+	posts: {
+		image:"",
+	},
 	postsProfile: [],
 };
 

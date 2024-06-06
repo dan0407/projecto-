@@ -136,7 +136,8 @@
 }
 
 #inputs .button {
-  width: 20%;
+  width: 19%;
+  height: 3rem;
 }
 
 button[aria-label="logout"] {

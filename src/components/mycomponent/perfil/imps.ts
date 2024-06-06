@@ -122,3 +122,4 @@ class perfil extends HTMLElement {
 
 customElements.define("my-perfil", perfil);
 export default perfil;
+

@@ -21,7 +21,7 @@ class card extends HTMLElement {
 	uid?: string
 
 	constructor() {
-		super(); 
+		super();
 		this.attachShadow({ mode: 'open' });
 	}
 
@@ -61,7 +61,7 @@ class card extends HTMLElement {
 
 			const divtercero = document.createElement('div');
 			divtercero.className = 'divtercero';
-			
+
 
 
 			const h1 = document.createElement('h1');
@@ -82,14 +82,14 @@ class card extends HTMLElement {
 			likeIcon.src = like;
 			likeIcon.className = 'likeicon1';
 
-			
+
 			likeIcon.addEventListener('click', function () {
-			
+
 				if (likeIcon.src === like) {
-					
+
 					likeIcon.src = dislike;
 				} else {
-					
+
 					likeIcon.src = like;
 				}
 			});
@@ -113,6 +113,24 @@ class card extends HTMLElement {
 					saveIcon.src = save;
 				}
 			});
+
+			// saveIcon.addEventListener('click', () => {
+			// 	const isSaved = saveIcon.src === save;
+			// 	saveIcon.src = isSaved ? saveoscuro : save;
+
+			// 	if (isSaved) {
+			// 		console.log(this.uid);
+			// 		if (this.uid) {
+			// 			addFavorite(this.uid);
+			// 		}
+			// 	}
+
+			// 	// Emitir un evento personalizado
+			// 	const event = new CustomEvent('saveIconClicked', {
+			// 		detail: { uid: this.uid, isSaved: !isSaved }
+			// 	});
+			// 	document.dispatchEvent(event);
+			// });
 			section.appendChild(divtercero);
 			divtercero.appendChild(img1);
 			divtercero.appendChild(h1);

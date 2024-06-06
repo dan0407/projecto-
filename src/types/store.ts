@@ -4,7 +4,7 @@ export type AppState = {
     screen: string,
     user: any,
     userdata: userType,
-    posts: any,
+    posts: postType,
     postsProfile: any
 
 }
@@ -25,3 +25,6 @@ interface userType {
     squat: number,
     username: string
 }
+interface postType {
+    image: string,
+    }
