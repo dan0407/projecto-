@@ -1,3 +1,5 @@
+import { appState } from "../store";
+
 export type Observer = ({ render: () => void } & HTMLElement);
 
 export type AppState = {
