@@ -57,7 +57,7 @@ export class button extends HTMLElement {
 		CONTAINER.appendChild(btnhome);
 
 		const img = document.createElement('img');
-		img.src = `../../../../imagenes/${this.image}`;
+		img.src = `../imagenes/${this.image}`;
 		img.className= 'navbar-icons';
 		CONTAINER.appendChild(img);
 
