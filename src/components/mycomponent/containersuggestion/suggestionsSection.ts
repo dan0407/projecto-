@@ -32,17 +32,17 @@ export class sideC extends HTMLElement {
 
 		const myBUTTONpost = this.ownerDocument.createElement('my-button');
 		myBUTTONpost.setAttribute('name', 'POST');
-		myBUTTONpost.setAttribute('image', `../../../../imagenes/icons8-add-100 1.png`);
+		myBUTTONpost.setAttribute('image', `../imagenes/icons8-add-100 1.png`);
 		suggestionsSection.appendChild(myBUTTONpost);
 
 		const myBUTTONlogin = this.ownerDocument.createElement('my-button');
 		myBUTTONlogin.setAttribute('name', 'login');
-		myBUTTONlogin.setAttribute('image', `../../../../imagenes/icons8-accede-redondeado-derecho-100.png`);
+		myBUTTONlogin.setAttribute('image', `../imagenes/icons8-accede-redondeado-derecho-100.png`);
 		suggestionsSection.appendChild(myBUTTONlogin);
 
 		const myBUTTONaccount = this.ownerDocument.createElement('my-button');
 		myBUTTONaccount.setAttribute('name', 'ACCOUNT');
-		myBUTTONaccount.setAttribute('image', `../../../../imagenes/icons8-usuario-60.png`);
+		myBUTTONaccount.setAttribute('image', `../imagenes/icons8-usuario-60.png`);
 		suggestionsSection.appendChild(myBUTTONaccount);
 
 		this.Component.forEach((component) => {
