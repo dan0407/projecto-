@@ -4,13 +4,25 @@
     background-repeat: no-repeat;
     background-size: cover;
     backdrop-filter: blur(7px);
+<<<<<<< HEAD
+=======
     display: flex;
     flex-direction: column;
     margin:0%;
+>>>>>>> ayuda
 }
 
 
 @media (max-width: 431px) {
+<<<<<<< HEAD
+	.container {
+		background-image: url('https://pbs.twimg.com/media/GKH9S3UXwAAONh9?format=jpg&name=large');
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+}
+=======
     .container {
         background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(192, 192, 192, 0.8));
         background-attachment: fixed;
@@ -22,3 +34,4 @@
     }
 
 }
+>>>>>>> ayuda

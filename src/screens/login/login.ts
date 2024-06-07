@@ -1,10 +1,13 @@
 import styles from './login.css';
 import '../../components/indexpadre';
+<<<<<<< HEAD
+=======
 import { dispatch } from "../../store/index";
 import { navigate } from "../../store/actions";
 import { Screens } from "../../types/trips";
 
 
+>>>>>>> ayuda
 export enum AttributeCard {
 	'name' = 'name',
 	'image' = 'image',
@@ -38,9 +41,12 @@ export class loginPge extends HTMLElement {
 	connectedCallback() {
 		this.render();
 	}
+<<<<<<< HEAD
+=======
 	handleButton() {
 		dispatch(navigate(Screens.DASHBOARD));
 }
+>>>>>>> ayuda
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ``;
@@ -51,12 +57,34 @@ export class loginPge extends HTMLElement {
 			Logo.src = `../imagenes/pesa.png`;
 			Logo.alt = 'Logo';
 			Logo.id = 'logo';
+<<<<<<< HEAD
+			this.shadowRoot.appendChild(Logo);
+
+			const email = this.ownerDocument.createElement("input");
+        	email.placeholder = "email";
+       		 email.type = "email";
+        	email.addEventListener(
+        	"change",
+        	(e: any) => (console.log(e))
+        	);
+        	this.shadowRoot?.appendChild(email);
+
+       		 const password = this.ownerDocument.createElement("input");
+        	password.placeholder = "*********";
+        	password.type = "password";
+        	password.addEventListener(
+        	"change",
+        	(e: any) => (console.log(e))
+        	);
+        	this.shadowRoot?.appendChild(password);
+=======
 			this.shadowRoot.appendChild(Logo);		Logo.addEventListener('click', () => {
 				Logo.addEventListener("click", this.handleButton);
 			});
 
 
 
+>>>>>>> ayuda
 		}
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;

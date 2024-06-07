@@ -40,10 +40,15 @@ a {
 	margin-bottom: 7px;
 	font-size: 2rem;
 }
+<<<<<<< HEAD
+/* iphone 14 pro max */
+@media (min-width: 431px) {
+=======
 
 /* iphone 14 pro max */
 @media (max-width: 431px) {
 
+>>>>>>> ayuda
 	#navbar-icons {
 		vertical-align: middle;
 		height: 45px;
@@ -53,10 +58,13 @@ a {
 		height: 35px;
 		margin-right: 13px;
 	}
+<<<<<<< HEAD
+=======
 
 	.suggestion-item > a {
 		text-decoration: none;
 		margin-bottom: 19px;
 		font-size: 137%;
 }
+>>>>>>> ayuda
 }

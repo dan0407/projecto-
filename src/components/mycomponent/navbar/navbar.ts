@@ -1,5 +1,13 @@
 import styles from './navbar.css';
 import Suggestions, { Attribute } from '../sidebar/Suggestions';
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+import { workers } from '../../../data/data';
+=======
+//import { workers } from '../../../data/data';
+>>>>>>> ayuda
+>>>>>>> main
 import './botones';
 
 class Bar extends HTMLElement {
@@ -8,6 +16,20 @@ class Bar extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+<<<<<<< HEAD
+
+		const filterdworkers = workers.filter((item) => item.id);
+
+		const shownWorkers = filterdworkers.slice(0, 8);
+
+		shownWorkers.forEach((user) => {
+			const mycomponentcard = this.ownerDocument.createElement('my-si') as Suggestions;
+			mycomponentcard.setAttribute(Attribute.name, user.name);
+			this.Component.push(mycomponentcard);
+			console.log(this.Component);
+		});
+=======
+>>>>>>> ayuda
 	}
 
 	connectedCallback() {
@@ -42,12 +64,34 @@ class Bar extends HTMLElement {
 		imgLogo.id = 'logo';
 		divBrand.appendChild(imgLogo);
 
+<<<<<<< HEAD
+		const myBUTTONhome = this.ownerDocument.createElement('my-button');
+		myBUTTONhome.setAttribute('name', 'HOME');
+		myBUTTONhome.setAttribute('image', `../../../../imagenes/icons8-chicle--100 1.png`);
+		nav.appendChild(myBUTTONhome);
+
+		const myBUTTONpost = this.ownerDocument.createElement('my-button');
+		myBUTTONpost.setAttribute('name', 'POST');
+		myBUTTONpost.setAttribute('image', `../../../../imagenes/icons8-add-100 1.png`);
+		nav.appendChild(myBUTTONpost);
+
+		const myBUTTONuser = this.ownerDocument.createElement('my-button');
+		myBUTTONuser.setAttribute('name', 'USERS');
+		myBUTTONuser.setAttribute('image', `../../../../imagenes/icons8-usuario-60.png`);
+		nav.appendChild(myBUTTONuser);
+
+		const myBUTTONaccount = this.ownerDocument.createElement('my-button');
+		myBUTTONaccount.setAttribute('name', 'ACCOUNT');
+		myBUTTONaccount.setAttribute('image', `../../../../imagenes/Ellipse 15.png`);
+		nav.appendChild(myBUTTONaccount);
+=======
 		const myBUTTONuser = this.ownerDocument.createElement('my-button');
 		myBUTTONuser.setAttribute('name', 'MENU');
 		myBUTTONuser.setAttribute('image', `../imagenes/icons8-menu-50.png`);
 		nav.appendChild(myBUTTONuser);
 
 
+>>>>>>> ayuda
 
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;

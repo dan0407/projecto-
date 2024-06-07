@@ -6,5 +6,8 @@ export { default as imputs } from './mycomponent/login/imput';
 export { default as singup } from './mycomponent/singup/singup';
 export { sideC } from './mycomponent/containersuggestion/suggestionsSection';
 export { postcard } from './mycomponent/publicar/postaca';
+<<<<<<< HEAD
+=======
 export { default as perfil } from './mycomponent/perfil/imps';
 export { edit } from './mycomponent/editprofile/edit';
+>>>>>>> ayuda

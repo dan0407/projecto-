@@ -1,7 +1,12 @@
 import Suggestions, { Attribute } from '../sidebar/Suggestions';
+<<<<<<< HEAD
+import { workers } from '../../../data/data';
+import styles from './suggestionsSection.css';
+=======
 //import { workers } from '../../../data/data';
 import styles from './suggestionsSection.css';
 import '../navbar/botones';
+>>>>>>> ayuda
 
 export class sideC extends HTMLElement {
 	Component: Suggestions[] = [];
@@ -10,9 +15,27 @@ export class sideC extends HTMLElement {
 		super();
 		this.attachShadow({ mode: 'open' });
 
+<<<<<<< HEAD
+		const filterdworkers = workers.filter((item) => item.id);
+
+		const shownWorkers = filterdworkers.slice(0, 8);
+
+		shownWorkers.forEach((user: any) => {
+			const mycomponentcard = this.ownerDocument.createElement('my-si') as Suggestions;
+			mycomponentcard.setAttribute(Attribute.name, user.name);
+			this.Component.push(mycomponentcard);
+			console.log(this.Component);
+		});
 	}
 
 	connectedCallback() {
+		console.log('emtraaaa');
+
+=======
+	}
+
+	connectedCallback() {
+>>>>>>> ayuda
 		this.render();
 	}
 
@@ -26,6 +49,12 @@ export class sideC extends HTMLElement {
 		this.shadowRoot?.appendChild(suggestionsSection);
 
 		const titleSuggestions = document.createElement('h2');
+<<<<<<< HEAD
+		titleSuggestions.textContent = 'Suggestions';
+		titleSuggestions.className = 'h2';
+		suggestionsSection.appendChild(titleSuggestions);
+
+=======
 		titleSuggestions.textContent = 'MENU';
 		titleSuggestions.className = 'h2';
 		suggestionsSection.appendChild(titleSuggestions);
@@ -45,6 +74,7 @@ export class sideC extends HTMLElement {
 		myBUTTONaccount.setAttribute('image', `../../../../imagenes/icons8-usuario-60.png`);
 		suggestionsSection.appendChild(myBUTTONaccount);
 
+>>>>>>> ayuda
 		this.Component.forEach((component) => {
 			suggestionsSection.appendChild(component);
 		});

@@ -1,4 +1,12 @@
 import { Screens } from "../types/trips";
+<<<<<<< HEAD
+
+export const navigate = (screen: Screens) => {
+    return {
+        type: "NAVIGATE",
+        payload: screen,
+    };
+=======
 import { getPosts, getUserByid, getPostsProfile} from '../utils/firebase';
 
 
@@ -44,4 +52,5 @@ export const connecteduser= (user: any) => {
 		action: 'CONNECTUSER',
 		payload: user,
 	};
+>>>>>>> ayuda
 };

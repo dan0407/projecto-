@@ -1,5 +1,22 @@
+<<<<<<< HEAD
+/* .container {
+	background-image: url('https://pbs.twimg.com/media/GKHrydJWUAADY89?format=jpg&name=large');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+@media (max-width: 431px) {
+	.container {
+		background-image: url('https://pbs.twimg.com/media/GKH9S3UXwAAONh9?format=jpg&name=large');
+		background-attachment: fixed;
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+=======
 /* .body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+>>>>>>> ayuda
 } */

@@ -2,7 +2,10 @@ import styles from './input.css';
 import { dispatch } from "../../../store/index";
 import { navigate } from "../../../store/actions";
 import { Screens } from "../../../types/trips";
+<<<<<<< HEAD
+=======
 import { iniciarSesion } from '../../../utils/firebase';
+>>>>>>> ayuda
 export enum AttributeCard {
 	'name' = 'name',
 	'image' = 'image',
@@ -43,7 +46,10 @@ class imputs extends HTMLElement {
 	handleSignupButton() {
 		dispatch(navigate(Screens.SINGUP));
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> ayuda
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ` `;
@@ -80,6 +86,32 @@ class imputs extends HTMLElement {
 			loginButton.textContent = 'login';
 			loginButton.style.fontFamily = 'Poppins, sans-serif';
 
+<<<<<<< HEAD
+			// Agregar evento de clic al botón de inicio de sesión
+			loginButton.addEventListener("click", this.handleLoginButton);
+
+				console.log('Se hizo clic en el botón de inicio de sesión');
+
+
+
+
+			const image = document.createElement('img');
+			image.src = '';
+
+			const create = document.createElement('h4');
+			create.classList.add('h4');
+			create.textContent = 'Don’t have an acount?';
+
+			const up = document.createElement('h5');
+			up.textContent = 'Sign up';
+			up.classList.add('h5');
+
+			// Agregar evento de clic
+			up.addEventListener('click', () => {
+				up.addEventListener("click", this.handleSignupButton);
+				console.log('Se hizo clic en "Sign up"');
+
+=======
 			const image = document.createElement('img');
 			image.src = '';
 			
@@ -96,16 +128,25 @@ class imputs extends HTMLElement {
 				up.addEventListener("click", this.handleSignupButton);
 				
 				
+>>>>>>> ayuda
 			});
 			const sing = document.createElement('h6');
 			sing.textContent = 'Forget your password';
 			sing.classList.add('h6');
+<<<<<<< HEAD
+
+=======
 			
+>>>>>>> ayuda
 			const titulo = document.createElement('text');
 			titulo.textContent = 'log in';
 			titulo.classList.add('text');
 			inputsDiv.appendChild(titulo);
+<<<<<<< HEAD
+
+=======
 			
+>>>>>>> ayuda
 			// Append the elements to build the structure
 			inputsDiv.appendChild(emailLabel);
 			inputsDiv.appendChild(emailInput);
@@ -115,6 +156,14 @@ class imputs extends HTMLElement {
 			inputsDiv.appendChild(sing);
 			inputsDiv.appendChild(create);
 			inputsDiv.appendChild(up);
+<<<<<<< HEAD
+
+			generalDiv.appendChild(inputsDiv);
+
+			// Add the general div to the document body
+			document.body.appendChild(generalDiv);
+			this.shadowRoot.appendChild(generalDiv);
+=======
 			
 			generalDiv.appendChild(inputsDiv);
 			
@@ -127,6 +176,7 @@ class imputs extends HTMLElement {
 				const usuario = await iniciarSesion(emailInput.value, passwordInput.value)
 			});
 		
+>>>>>>> ayuda
 		}
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;

@@ -1,4 +1,13 @@
 import styles from './post.css';
+<<<<<<< HEAD
+import { dispatch } from "../../../store/index";
+import { navigate } from "../../../store/actions";
+import { Screens } from "../../../types/trips";
+
+export class postcard extends HTMLElement {
+	constructor() {
+		super(); // always call super() first in the ctor.
+=======
 import { appState, dispatch } from "../../../store/index";
 import { navigate } from "../../../store/actions";
 import { Screens } from "../../../types/trips";
@@ -7,12 +16,18 @@ import { addPost, subirPost} from '../../../utils/firebase';
 export class postcard extends HTMLElement {
 	constructor() {
 		super();
+>>>>>>> ayuda
 		this.attachShadow({ mode: 'open' });
 	}
 
 	connectedCallback() {
 		this.render();
 	}
+<<<<<<< HEAD
+	handlepostButton() {
+		dispatch(navigate(Screens.DASHBOARD));
+}
+=======
 	handlepostButton(imagen: File) {
 		subirPost(imagen);
 	}
@@ -20,6 +35,7 @@ export class postcard extends HTMLElement {
 		dispatch(navigate(Screens.DASHBOARD));
 }
 
+>>>>>>> ayuda
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ` `;
@@ -34,7 +50,11 @@ export class postcard extends HTMLElement {
 
 			// Create the password label, input, and button
 			const postLabel = document.createElement('label');
+<<<<<<< HEAD
+			postLabel.textContent = 'post';
+=======
 			postLabel.textContent = 'POST';
+>>>>>>> ayuda
 
 			const postInput = document.createElement('input');
 			postInput.type = 'file';
@@ -45,11 +65,16 @@ export class postcard extends HTMLElement {
 			postButton.classList.add('button');
 			postButton.textContent = 'Post';
 			postButton.addEventListener('click', () => {
+<<<<<<< HEAD
+				postButton.addEventListener("click", this.handlepostButton);
+				console.log('Se hizo clic en "post"');
+=======
 				
 							if (postInput.files && postInput.files.length > 0) {
 					this.handlepostButton(postInput.files[0]);
 					}
 					dispatch(navigate(Screens.DASHBOARD));
+>>>>>>> ayuda
 			});
 			inputsDiv.appendChild(postLabel)
 			inputsDiv.appendChild(postInput)
@@ -65,5 +90,8 @@ export class postcard extends HTMLElement {
 }
 customElements.define('my-post', postcard);
 
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> ayuda

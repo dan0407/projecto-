@@ -2,7 +2,10 @@ import styles from '../singup/singup.css';
 import { dispatch } from "../../../store/index";
 import { navigate } from "../../../store/actions";
 import { Screens } from "../../../types/trips";
+<<<<<<< HEAD
+=======
 import { createUser } from '../../../utils/firebase';
+>>>>>>> ayuda
 
 class singup extends HTMLElement {
 	constructor() {
@@ -13,7 +16,14 @@ class singup extends HTMLElement {
 	connectedCallback() {
 		this.render();
 	}
+<<<<<<< HEAD
+	handleCreatButton() {
+		dispatch(navigate(Screens.DASHBOARD));
 
+}
+=======
+
+>>>>>>> ayuda
 handlelogButton() {
 	dispatch(navigate(Screens.LOGIN));
 }
@@ -33,7 +43,11 @@ handlelogButton() {
 			// Create the email label and input
 			const emailLabel = document.createElement('label');
 			emailLabel.setAttribute('for', 'email');
+<<<<<<< HEAD
+			emailLabel.textContent = 'Email address or user name';
+=======
 			emailLabel.textContent = 'Email address ';
+>>>>>>> ayuda
 
 			const emailInput = document.createElement('input');
 			emailInput.type = 'email';
@@ -59,28 +73,44 @@ handlelogButton() {
 			ageLabel.textContent = 'age';
 
 			const ageInput = document.createElement('input');
+<<<<<<< HEAD
+			ageInput.type = 'text';
+=======
 			ageInput.type = 'number';
+>>>>>>> ayuda
 			ageInput.id = 'age';
 
 			const BenchpressLabel = document.createElement('label');
 			BenchpressLabel.textContent = 'Bench press';
 
 			const BenchpressInput = document.createElement('input');
+<<<<<<< HEAD
+			BenchpressInput.type = 'text';
+=======
 			BenchpressInput.type = 'number';
+>>>>>>> ayuda
 			BenchpressInput.id = 'Bench press';
 
 			const DeadLiftLabel = document.createElement('label');
 			DeadLiftLabel.textContent = 'DeadLift';
 
 			const DeadLiftInput = document.createElement('input');
+<<<<<<< HEAD
+			DeadLiftInput.type = 'text';
+=======
 			DeadLiftInput.type = 'number';
+>>>>>>> ayuda
 			DeadLiftInput.id = 'DeadLift';
 
 			const SquatLabel = document.createElement('label');
 			SquatLabel.textContent = 'Squat';
 
 			const SquatInput = document.createElement('input');
+<<<<<<< HEAD
+			SquatInput.type = 'text';
+=======
 			SquatInput.type = 'number';
+>>>>>>> ayuda
 			SquatInput.id = 'Squat';
 
 			// Create the login button
@@ -88,25 +118,51 @@ handlelogButton() {
 			createButton.classList.add('button');
 			createButton.textContent = 'create account';
 
+<<<<<<< HEAD
+			// Agregar evento de clic al botón de "crear cuenta"
+			createButton.addEventListener("click", this.handleCreatButton, );
+				console.log('Se hizo clic en el botón de "crear cuenta"');
+
+
+=======
+>>>>>>> ayuda
 
 			// Add the general div to the document body
 			document.body.appendChild(general);
 			this.shadowRoot.appendChild(general);
+<<<<<<< HEAD
+
+			const create = document.createElement('h4');
+			create.classList.add('h4');
+			create.textContent = 'Already have an ccount?';
+
+=======
 			
 			const create = document.createElement('h4');
 			create.classList.add('h4');
 			create.textContent = 'Already have an ccount?';
 			
+>>>>>>> ayuda
 			const up = document.createElement('h5');
 			up.textContent = 'Log in';
 			up.classList.add('h5');
 			up.addEventListener("click", this.handlelogButton, );
+<<<<<<< HEAD
+				console.log('Se hizo clic en el elemento h5');
+			;
+
+			const titulo = document.createElement('text');
+			titulo.textContent = 'Create an account';
+			titulo.classList.add('text');
+
+=======
 			;
 			
 			const titulo = document.createElement('text');
 			titulo.textContent = 'Create an account';
 			titulo.classList.add('text');
 			
+>>>>>>> ayuda
 			inputsDiv.appendChild(titulo);
 			inputsDiv.appendChild(create);
 			inputsDiv.appendChild(up);
@@ -126,6 +182,8 @@ handlelogButton() {
 			inputsDiv.appendChild(passwordInput);
 			inputsDiv.appendChild(createButton);
 			general.appendChild(inputsDiv);
+<<<<<<< HEAD
+=======
 
 			// Agregar evento de clic al botón de "crear cuenta"
 			createButton.addEventListener("click", async () => {
@@ -133,15 +191,23 @@ handlelogButton() {
 				alert(`Usuario registrado con id: ${userId}`)
 				dispatch(navigate(Screens.DASHBOARD));
 			});
+>>>>>>> ayuda
 		}
 
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;
 		this.shadowRoot?.appendChild(cssProfile);
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> ayuda
 	}
 }
 
 customElements.define('my-singup', singup);
+<<<<<<< HEAD
+export default singup;
+=======
 export default singup;  
+>>>>>>> ayuda
