@@ -59,7 +59,7 @@ class imputs extends HTMLElement {
 			// Create the email label and input
 			const emailLabel = document.createElement('label');
 			emailLabel.setAttribute('for', 'email');
-			emailLabel.textContent = 'Email address or user name';
+			emailLabel.textContent = 'Email address ';
 
 			const emailInput = document.createElement('input');
 			emailInput.type = 'email';
@@ -82,30 +82,30 @@ class imputs extends HTMLElement {
 
 			const image = document.createElement('img');
 			image.src = '';
-			
+
 			const create = document.createElement('h4');
 			create.classList.add('h4');
 			create.textContent = 'Don’t have an acount?';
-			
+
 			const up = document.createElement('h5');
 			up.textContent = 'Sign up';
 			up.classList.add('h5');
-			
+
 			// Agregar evento de clic
 			up.addEventListener('click', () => {
 				up.addEventListener("click", this.handleSignupButton);
-				
-				
+
+
 			});
 			const sing = document.createElement('h6');
 			sing.textContent = 'Forget your password';
 			sing.classList.add('h6');
-			
+
 			const titulo = document.createElement('text');
 			titulo.textContent = 'log in';
 			titulo.classList.add('text');
 			inputsDiv.appendChild(titulo);
-			
+
 			// Append the elements to build the structure
 			inputsDiv.appendChild(emailLabel);
 			inputsDiv.appendChild(emailInput);
@@ -115,9 +115,9 @@ class imputs extends HTMLElement {
 			inputsDiv.appendChild(sing);
 			inputsDiv.appendChild(create);
 			inputsDiv.appendChild(up);
-			
+
 			generalDiv.appendChild(inputsDiv);
-			
+
 			// Add the general div to the document body
 			document.body.appendChild(generalDiv);
 			this.shadowRoot.appendChild(generalDiv);
@@ -126,7 +126,7 @@ class imputs extends HTMLElement {
 			loginButton.addEventListener("click", async () => {
 				const usuario = await iniciarSesion(emailInput.value, passwordInput.value)
 			});
-		
+
 		}
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;
