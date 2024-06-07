@@ -47,6 +47,11 @@ class Bar extends HTMLElement {
 		myBUTTONuser.setAttribute('image', `../imagenes/icons8-menu-50.png`);
 		nav.appendChild(myBUTTONuser);
 
+		const myBUTTO= this.ownerDocument.createElement('my-button');
+		myBUTTO.setAttribute('name', 'POST');
+		myBUTTO.setAttribute('image', `../imagenes/icons8-add-100 1.png`);
+		nav.appendChild(myBUTTO);
+
 
 
 		const cssProfile = this.ownerDocument.createElement('style');

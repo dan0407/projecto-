@@ -2,7 +2,6 @@ import Suggestions, { Attribute } from '../../components/mycomponent/sidebar/Sug
 import Bar from '../../components/mycomponent/navbar/navbar';
 import Card, { AttributeCard } from '../../components/mycomponent/carta/carta';
 import styles from './dashboard.css';
-
 import '../../components/indexpadre';
 import { getPosts, getPostsListener } from '../../utils/firebase';
 import { appState, dispatch } from '../../store';
