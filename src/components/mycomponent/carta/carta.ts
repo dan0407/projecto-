@@ -114,23 +114,7 @@ class card extends HTMLElement {
 				}
 			});
 
-			// saveIcon.addEventListener('click', () => {
-			// 	const isSaved = saveIcon.src === save;
-			// 	saveIcon.src = isSaved ? saveoscuro : save;
-
-			// 	if (isSaved) {
-			// 		console.log(this.uid);
-			// 		if (this.uid) {
-			// 			addFavorite(this.uid);
-			// 		}
-			// 	}
-
-			// 	// Emitir un evento personalizado
-			// 	const event = new CustomEvent('saveIconClicked', {
-			// 		detail: { uid: this.uid, isSaved: !isSaved }
-			// 	});
-			// 	document.dispatchEvent(event);
-			// });
+			
 			section.appendChild(divtercero);
 			divtercero.appendChild(img1);
 			divtercero.appendChild(h1);

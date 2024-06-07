@@ -4,11 +4,9 @@ export type AppState = {
     screen: string,
     user: any,
     userdata: userType,
-    posts: postType,
+    posts: PostType,
     postsProfile: any
-
 }
-
 
 export enum ScreenActions {
     "NAVIGATE" = "NAVIGATE",
@@ -25,6 +23,11 @@ interface userType {
     squat: number,
     username: string
 }
-interface postType {
+
+export interface PostType {
     image: string,
-    }
+    name: string,
+    postFirebaseId: string,
+    profileImage: string,
+    userId: string;
+}

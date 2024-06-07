@@ -79,15 +79,30 @@ export class perfilPge extends HTMLElement {
 		const userData = await getUserByid(appState.user)
 
 		if (userData) {
-			console.log(userData.favorites)
+			console.log("2222222220",userData.favorites)
+				userData.favorites.forEach(async(postId:string) => {
+				const postdata = await getPostbyid(postId)
+				console.log(postdata);
 
+
+if (postdata) {
+	const card = this.ownerDocument.createElement('my-card');
+	card.setAttribute("name", postdata.name);
+	card.setAttribute("profileimage", postdata.profileImage);
+	card.setAttribute("image", postdata.image);
+	card.setAttribute("uid",postdata.postFirebaseId);
+	contendor.appendChild(card);
+
+}
+
+
+});
 			const favoritos = document.createElement('img');
-			favoritos.src =`${appState.posts.image}`;
-
-			console.log(appState.posts.image);
+			favoritos.src =``;
 
 
-		
+
+
 
 
 		}

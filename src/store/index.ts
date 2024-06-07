@@ -29,6 +29,10 @@ const emptyState: AppState = {
 	},
 	posts: {
 		image:"",
+		name: "",
+    postFirebaseId: "",
+    profileImage: "",
+    userId: "",
 	},
 	postsProfile: [],
 };
