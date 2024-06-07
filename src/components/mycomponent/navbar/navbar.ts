@@ -1,6 +1,5 @@
 import styles from './navbar.css';
 import Suggestions, { Attribute } from '../sidebar/Suggestions';
-//import { workers } from '../../../data/data';
 import './botones';
 
 class Bar extends HTMLElement {
