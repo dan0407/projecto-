@@ -1,6 +1,10 @@
 import styles from './navbar.css';
 import Suggestions, { Attribute } from '../sidebar/Suggestions';
+<<<<<<< HEAD
 import { workers } from '../../../data/data';
+=======
+//import { workers } from '../../../data/data';
+>>>>>>> ayuda
 import './botones';
 
 class Bar extends HTMLElement {
@@ -9,6 +13,7 @@ class Bar extends HTMLElement {
 	constructor() {
 		super();
 		this.attachShadow({ mode: 'open' });
+<<<<<<< HEAD
 
 		const filterdworkers = workers.filter((item) => item.id);
 
@@ -20,6 +25,8 @@ class Bar extends HTMLElement {
 			this.Component.push(mycomponentcard);
 			console.log(this.Component);
 		});
+=======
+>>>>>>> ayuda
 	}
 
 	connectedCallback() {
@@ -54,6 +61,7 @@ class Bar extends HTMLElement {
 		imgLogo.id = 'logo';
 		divBrand.appendChild(imgLogo);
 
+<<<<<<< HEAD
 		const myBUTTONhome = this.ownerDocument.createElement('my-button');
 		myBUTTONhome.setAttribute('name', 'HOME');
 		myBUTTONhome.setAttribute('image', `../../../../imagenes/icons8-chicle--100 1.png`);
@@ -73,6 +81,14 @@ class Bar extends HTMLElement {
 		myBUTTONaccount.setAttribute('name', 'ACCOUNT');
 		myBUTTONaccount.setAttribute('image', `../../../../imagenes/Ellipse 15.png`);
 		nav.appendChild(myBUTTONaccount);
+=======
+		const myBUTTONuser = this.ownerDocument.createElement('my-button');
+		myBUTTONuser.setAttribute('name', 'MENU');
+		myBUTTONuser.setAttribute('image', `../../../../imagenes/icons8-menu-50.png`);
+		nav.appendChild(myBUTTONuser);
+
+
+>>>>>>> ayuda
 
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;

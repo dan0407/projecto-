@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Estilos generales */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
@@ -85,3 +86,172 @@
         margin: 0 0.5rem;
     }
 }
+=======
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root {
+  --primary-color: #e53935;
+  /* Rojo intenso */
+  --secondary-color: #212121;
+  /* Gris oscuro */
+  --accent-color: #ffc107;
+  /* Amarillo */
+  --text-color: #ffffff;
+  /* Blanco */
+  --background-color: #f5f5f5;
+  /* Gris claro */
+  --gymshark-dark: #121212;
+  /* Color oscuro típico de Gymshark */
+  --gymshark-gray: #444444;
+  /* Gris típico de Gymshark */
+  --gymshark-accent: #F06292;
+  /* Un acento rosado moderno */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+}
+
+.section {
+  width: 38%;
+  margin: 6rem auto 0;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 10px 17px 10px 13px rgb(0 0 0 / 22%);
+}
+
+.h1 {
+  margin-top: 0rem;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--gymshark-dark);
+  padding: 1rem 0;
+  border-bottom: 2px solid var(--gymshark-accent);
+  margin-bottom: -4rem;
+  margin-right: 13rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  margin: 2rem 0;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.img-i {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+.username {
+  font-size: 1.5rem;
+  color: var(--gymshark-dark);
+}
+
+.icon-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.likeicon1,
+.likeicon2 {
+  width: 2rem;
+  height: 2rem;
+}
+
+.saveicon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.div {
+  width: auto;
+}
+
+.divsegundo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.divtercero {
+  display: flex;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 431px) {
+  .section {
+    width: 60%;
+    margin: 6rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-i {
+    height: 3rem;
+    width: 3rem;
+    margin: 7px;
+  }
+
+  .username {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  .icon-container {
+    margin-top: 1rem;
+  }
+
+  .divsegundo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: -10%;
+    margin-bottom: -6%;
+  }
+
+  .likeicon1,
+  .likeicon2,
+  .saveicon {
+    width: 2rem;
+    height: 2rem;
+    margin: 1rem 0.5rem;
+  }
+
+  .divtercero {
+    display: flex;
+    margin-bottom: -7%;
+  }
+}
+>>>>>>> ayuda

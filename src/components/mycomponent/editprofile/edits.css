@@ -19,11 +19,7 @@
 	margin: 214px auto;
 	font-family: 'Poppins', sans-serif;
 }
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-=======
 
->>>>>>> ayuda
 
 label {
 	display: block;
@@ -33,11 +29,7 @@ label {
 	padding: 12px;
 	font-family: 'Poppins', sans-serif;
 }
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-=======
 
->>>>>>> ayuda
 
 input {
 	border: 1px solid #ddd;
@@ -78,11 +70,7 @@ h4 {
 	font-family: 'Poppins', sans-serif;
 	margin: 24px;
 }
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-=======
 
->>>>>>> ayuda
 h5 {
 	color: #000000;
 	font-size: 21px;
@@ -90,11 +78,7 @@ h5 {
 	margin-top: -12%;
 	font-family: 'Poppins', sans-serif;
 }
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-=======
 
->>>>>>> ayuda
 
 h6 {
 	display: flex;
@@ -104,9 +88,6 @@ h6 {
 	flex-direction: column;
 	font-family: 'Poppins', sans-serif;
 }
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-=======
 
 
 @media (max-width: 431px) {
@@ -169,4 +150,3 @@ button {
 	margin-left: 9%;
 }
 }
->>>>>>> ayuda

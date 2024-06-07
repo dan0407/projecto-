@@ -1,5 +1,12 @@
 import styles from './singup.css';
 import '../../components/indexpadre';
+<<<<<<< HEAD
+=======
+import { dispatch } from "../../store/index";
+import { navigate } from "../../store/actions";
+import { Screens } from "../../types/trips";
+
+>>>>>>> ayuda
 
 export class singuppage extends HTMLElement {
 	constructor() {
@@ -10,6 +17,14 @@ export class singuppage extends HTMLElement {
 	connectedCallback() {
 		this.render();
 	}
+<<<<<<< HEAD
+=======
+
+
+handleButtonsing() {
+	dispatch(navigate(Screens.LOGIN));
+}
+>>>>>>> ayuda
 	render() {
 		if (this.shadowRoot) {
 			this.shadowRoot.innerHTML = ``;
@@ -20,7 +35,13 @@ export class singuppage extends HTMLElement {
 			Logo.src = `../../../../imagenes/pesa.png`;
 			Logo.alt = 'Logo';
 			Logo.id = 'logo';
+<<<<<<< HEAD
 			this.shadowRoot.appendChild(Logo);
+=======
+			this.shadowRoot.appendChild(Logo);		Logo.addEventListener('click', () => {
+				Logo.addEventListener("click", this.handleButtonsing);
+			});
+>>>>>>> ayuda
 		}
 		const cssProfile = this.ownerDocument.createElement('style');
 		cssProfile.innerHTML = styles;

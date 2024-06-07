@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .hidden {
 	display: none;
 }
@@ -24,3 +25,101 @@
 	font-family: 'Poppins', sans-serif;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+=======
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --primary-color: #d32f2f;
+  /* Rojo deportivo */
+  --secondary-color: #1b1b1b;
+  /* Gris muy oscuro */
+  --accent-color: #fbc02d;
+  /* Amarillo brillante */
+  --text-color: #ffffff;
+  /* Blanco */
+  --background-color: #e0e0e0;
+  /* Gris claro */
+}
+
+.hidden {
+  display: none;
+}
+
+.suggestionsSectionShow {
+  width: auto;
+  display: flex;
+  position: fixed;
+  z-index: 10;
+  background-color: var(--text-color);
+  border-radius: 10px;
+  margin-left: 56%;
+  margin-top: 6rem;
+  box-shadow: inset 0px 0px 0px 2px rgb(0 0 0);
+  padding-left: 1%;
+}
+
+.h2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  color: var(--primary-color);
+  font-size: 25px;
+  margin: auto;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  transition: background-color 0.3s ease;
+  border-bottom: 1px solid var(--background-color);
+}
+
+.suggestion-item:hover {
+  background-color: var(--background-color);
+}
+
+.suggestion-item a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.suggestion-item img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 14px;
+}
+
+@media (max-width: 431px) {
+  .suggestionsSectionShow {
+    width: auto;
+    display: flex;
+    position: fixed;
+    z-index: 10;
+    background-color: var(--text-color);
+    border-radius: 10px;
+    margin-left: 30%;
+    margin-top: 4rem;
+    box-shadow: inset 0px 0px 0px 2px rgb(0 0 0);
+    padding-left: 1%;
+  }
+
+  .h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-color);
+    font-size: 11px;
+    margin-left: 1%;
+  }
+}
+>>>>>>> ayuda

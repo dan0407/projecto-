@@ -1,8 +1,15 @@
 import styles from './botones.css';
 import '../../indexpadre';
+<<<<<<< HEAD
 import { addObserver, appState, dispatch } from "../../../store/index";
 import { navigate } from "../../../store/actions";
 import { Screens } from "../../../types/trips";
+=======
+import { dispatch } from "../../../store/index";
+import { navigate } from "../../../store/actions";
+import { Screens } from "../../../types/trips";
+
+>>>>>>> ayuda
 export enum AttributeCard {
 	'name' = 'name',
 	'image' = 'image',
@@ -15,7 +22,10 @@ export class button extends HTMLElement {
 	constructor() {
 		super(); // always call super() first in the ctor.
 		this.attachShadow({ mode: 'open' });
+<<<<<<< HEAD
 		console.log('Contructor');
+=======
+>>>>>>> ayuda
 	}
 
 	static get observedAttributes() {
@@ -58,7 +68,11 @@ export class button extends HTMLElement {
 
 		const img = document.createElement('img');
 		img.src = `../../../../imagenes/${this.image}`;
+<<<<<<< HEAD
 		img.id = 'navbar-icons';
+=======
+		img.className= 'navbar-icons';
+>>>>>>> ayuda
 		CONTAINER.appendChild(img);
 
 		if (this.name === 'HOME') {
@@ -66,7 +80,11 @@ export class button extends HTMLElement {
 				window.location.reload();
 			});
 		}
+<<<<<<< HEAD
 		if (this.name === 'USERS') {
+=======
+		if (this.name === 'MENU') {
+>>>>>>> ayuda
 			CONTAINER.addEventListener('click', () => {
 				const suggestionContainer = this.ownerDocument
 					.querySelector('app-container')
@@ -74,11 +92,16 @@ export class button extends HTMLElement {
 					?.shadowRoot?.querySelector('my-sidec')
 					?.shadowRoot?.querySelector('section');
 
+<<<<<<< HEAD
 				console.log('Sugggestion');
 				console.log(suggestionContainer);
 
 				if (suggestionContainer?.className === 'hidden') {
 					console.log('Hidden');
+=======
+
+				if (suggestionContainer?.className === 'hidden') {
+>>>>>>> ayuda
 					suggestionContainer.classList.remove('hidden');
 					suggestionContainer.classList.add('suggestionsSectionShow');
 				} else if (suggestionContainer?.className === 'suggestionsSectionShow') {
@@ -90,11 +113,20 @@ export class button extends HTMLElement {
 		if (this.name === 'POST') {
 			CONTAINER.addEventListener('click', () => {
 				dispatch(navigate(Screens.POST))
+<<<<<<< HEAD
 				console.log('Se hizo clic en el botón de "POST"');
+=======
+			});
+		}
+		if (this.name === 'login') {
+			CONTAINER.addEventListener('click', () => {
+				dispatch(navigate(Screens.LOGIN))
+>>>>>>> ayuda
 			});
 		}
 		if (this.name === 'ACCOUNT') {
 			CONTAINER.addEventListener('click', () => {
+<<<<<<< HEAD
 				dispatch(navigate(Screens.LOGIN))
 
 				console.log('Se hizo clic en el botón de "ACCOUNT"');
@@ -102,4 +134,23 @@ export class button extends HTMLElement {
 		}
 	}
 }
+=======
+					this.toggleAccountButtons(CONTAINER);
+					dispatch(navigate(Screens.PROFILE))
+			});
+	}
+}
+
+toggleAccountButtons(container: HTMLElement) {
+	let accountButtons = container.querySelector('.account-buttons');
+
+	if (!accountButtons) {
+			accountButtons = document.createElement('div');
+			accountButtons.classList.add('account-buttons');
+
+	}
+}
+}
+
+>>>>>>> ayuda
 customElements.define('my-button', button);
