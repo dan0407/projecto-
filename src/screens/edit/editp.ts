@@ -6,7 +6,7 @@ import { Screens } from "../../types/trips";
 
 
 export class editp extends HTMLElement {
-	
+
 	constructor() {
 		super(); // always call super() first in the ctor.
 		this.attachShadow({ mode: 'open' });
@@ -27,7 +27,7 @@ export class editp extends HTMLElement {
 			this.shadowRoot?.appendChild(something);
 
 			const Logo = document.createElement('img');
-			Logo.src = `../../../../imagenes/pesa.png`;
+			Logo.src = `../imagenes/pesa.png`;
 			Logo.alt = 'Logo';
 			Logo.id = 'logo';
 			this.shadowRoot.appendChild(Logo);		Logo.addEventListener('click', () => {

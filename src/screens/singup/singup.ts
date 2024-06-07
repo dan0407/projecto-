@@ -26,7 +26,7 @@ handleButtonsing() {
 			this.shadowRoot?.appendChild(something);
 
 			const Logo = document.createElement('img');
-			Logo.src = `../../../../imagenes/pesa.png`;
+			Logo.src = `../imagenes/pesa.png`;
 			Logo.alt = 'Logo';
 			Logo.id = 'logo';
 			this.shadowRoot.appendChild(Logo);		Logo.addEventListener('click', () => {
