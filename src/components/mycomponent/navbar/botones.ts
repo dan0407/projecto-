@@ -56,10 +56,10 @@ export class button extends HTMLElement {
 		}
 		CONTAINER.appendChild(btnhome);
 
-		// const img = document.createElement('img');
-		// img.src = `${this.image}`;
-		// img.className= 'navbar-icons';
-		// CONTAINER.appendChild(img);
+		const img = document.createElement('img');
+		img.src = `${this.image}`;
+		img.className= 'navbar-icons';
+		CONTAINER.appendChild(img);
 
 		if (this.name === 'HOME') {
 			CONTAINER.addEventListener('click', () => {
