@@ -38,14 +38,14 @@ class Bar extends HTMLElement {
 		nav.appendChild(divBrand);
 
 		const imgLogo = document.createElement('img');
-		imgLogo.src = `../../../../imagenes/pesa.png`;
+		imgLogo.src = `../imagenes/pesa.png`;
 		imgLogo.alt = 'Logo';
 		imgLogo.id = 'logo';
 		divBrand.appendChild(imgLogo);
 
 		const myBUTTONuser = this.ownerDocument.createElement('my-button');
 		myBUTTONuser.setAttribute('name', 'MENU');
-		myBUTTONuser.setAttribute('image', `../../../../imagenes/icons8-menu-50.png`);
+		myBUTTONuser.setAttribute('image', `../imagenes/icons8-menu-50.png`);
 		nav.appendChild(myBUTTONuser);
 
 
